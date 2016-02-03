@@ -1,4 +1,3 @@
-<!--This should be separate?-->
 <style>
   body {
     font-size: 30px;
@@ -15,7 +14,7 @@
   <p>{{compliment}}</p>
 </div>
 
-<form action="/:name/new" method="POST">
+<form action="/{{name}}/new" method="POST">
  <input type="text" name="name" placeholder="Please Add A Compliment" />
  <input type="submit" value="Submit" />
 </form>
