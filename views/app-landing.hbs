@@ -1,1 +1,7 @@
 <h2>You are an awesome individual</h2>
+
+<h3>{{comps.length}} compliments</h3>
+
+{{#each comps as |comp index|}}
+  <h4>{{comp.compliment}}</h4>
+{{/each}}
