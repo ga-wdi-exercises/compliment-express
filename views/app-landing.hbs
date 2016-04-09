@@ -13,10 +13,19 @@ var button = $("#new-comp");
 
 button.on("click", changeCompliment);
 
+var isOne = true;
+
 function changeCompliment(event){
   event.preventDefault();
-  $("#compliment").html("{{randComp2.compliment}}");
-  changeColor();
+  if (isOne == true) {
+    $("#compliment").html("{{randComp2.compliment}}");
+    changeColor();
+    isOne = false;
+  } else if (isOne == false) {
+    $("#compliment").html("{{randComp1.compliment}}");
+    changeColor();
+    isOne = true;
+  }
 }
 
 function changeColor(event){

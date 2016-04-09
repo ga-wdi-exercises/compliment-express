@@ -15,7 +15,12 @@ app.use("/assets", express.static("public"));
 
 app.get("/", function(req, res){
   randComp1 = db.compliments[Math.floor(Math.random() * db.compliments.length)];
-  randComp2 = db.compliments[Math.floor(Math.random() * db.compliments.length)];
+  randCompX = db.compliments[Math.floor(Math.random() * db.compliments.length)];
+  if (randComp1 != randCompX) {
+    randComp2 = randCompX;
+  } else {
+    randComp2 = db.compliments[Math.floor(Math.random() * db.compliments.length)];
+  }
   res.render("app-landing", {
     comps: db.compliments,
     randComp1: randComp1,
