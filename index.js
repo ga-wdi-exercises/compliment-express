@@ -14,8 +14,9 @@ app.engine(".hbs", hbs({
 app.use("/assets", express.static("public"));
 
 app.get("/", function(req, res){
-  randComp1 = db.compliments[Math.floor(Math.random() * db.compliments.length)];
-  randCompX = db.compliments[Math.floor(Math.random() * db.compliments.length)];
+  var randComp1 = db.compliments[Math.floor(Math.random() * db.compliments.length)];
+  var randCompX = db.compliments[Math.floor(Math.random() * db.compliments.length)];
+  var randComp2;
   if (randComp1 != randCompX) {
     randComp2 = randCompX;
   } else {
