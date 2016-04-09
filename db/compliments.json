@@ -1,17 +1,22 @@
 [
   {
+    "id": 1,
     "compliment": "Your instructors love you"
   },
   {
+    "id": 2,
     "compliment": "High five = ^5"
   },
   {
+    "id": 3,
     "compliment": "Is it Ruby Tuesday yet?"
   },
   {
+    "id": 4,
     "compliment": "It's almost beer o'clock"
   },
   {
+    "id": 5,
     "compliment": "The Force is strong with you"
   }
 ]

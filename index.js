@@ -14,8 +14,12 @@ app.engine(".hbs", hbs({
 app.use("/assets", express.static("public"));
 
 app.get("/", function(req, res){
+  randComp1 = db.compliments[Math.floor(Math.random() * db.compliments.length)];
+  randComp2 = db.compliments[Math.floor(Math.random() * db.compliments.length)];
   res.render("app-landing", {
-    comps: db.comps
+    comps: db.compliments,
+    randComp1: randComp1,
+    randComp2: randComp2
   });
 });
 
