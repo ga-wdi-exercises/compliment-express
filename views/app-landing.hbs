@@ -5,3 +5,14 @@
 {{#each comps as |comp index|}}
   <h4>{{comp.compliment}}</h4>
 {{/each}}
+
+<button type="button" name="button" class="btn btn-primary" id="new-comp">New Compliment</button>
+
+<script type="text/javascript">
+var button = $("#new-comp");
+
+button.on("click", function(event){
+  event.preventDefault();
+  console.log("clicked!");
+});
+</script>
