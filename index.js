@@ -16,6 +16,16 @@ app.get("/", function(req, res){
   res.render("app-welcome");
 });
 
+app.get("/:name", function(req, res){
+  var data = {
+      name: req.params.name
+  }
+  res.render("name-show", {
+    randomNum: 100,
+    name: data.name
+  });
+});
+
 app.listen(3005, function(){
   console.log("IT'S ALIIIVE");
 });
