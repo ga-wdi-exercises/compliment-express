@@ -1,0 +1,10 @@
+Goal(s):
+greet users with a randomly picked wdi-themed compliment
+store compliments in a database
+  hold compliments in an array
+change the background color to a random color
+  hold colors in an array
+App Structure
+  index.js
+  views
+  database
