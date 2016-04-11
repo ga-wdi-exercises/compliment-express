@@ -10,6 +10,7 @@ app.engine(".hbs", hbs({
   layoutsDir: "views/",
   defaultLayout: "layout-main"
 }));
+app.use("/assets", express.static("public"));
 
 app.get("/", function(req, res) {
   res.render("app-welcome");
