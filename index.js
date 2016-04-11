@@ -15,7 +15,8 @@ app.use("/public", express.static("public"));
 
 app.get("/", function(req, res) {
   res.render("app-welcome", {
-    compliment: db.compliments[Math.floor((Math.random() * db.compliments.length))]
+    compliment: db.compliments[Math.floor((Math.random() * db.compliments.length))],
+    color: db.colors[Math.floor((Math.random() * db.colors.length))]
   });
 });
 
