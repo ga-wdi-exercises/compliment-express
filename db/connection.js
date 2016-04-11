@@ -1,4 +1,4 @@
-var seedData = require("./seeds.json");
+// var seedData = require("./seeds.json");
 
 var compliments = require("../models/compliment.js");
 var colors = require("../models/color.js");
@@ -6,5 +6,6 @@ var colors = require("../models/color.js");
 
 
 module.exports = {
-  compliments: seedData
+  compliments: compliments,
+  colors: colors
 };
