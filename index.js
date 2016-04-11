@@ -1,5 +1,6 @@
 var express = require('express');
 var hbs = require('express-handlebars');
+var db = require("./db/connection");
 
 var app = express();
 
@@ -10,7 +11,7 @@ app.engine(".hbs", hbs({
   layoutsDir: "views/",
   defaultLayout: "layout-main"
 }));
-app.use("/assets", express.static("public"));
+app.use("/public", express.static("public"));
 
 app.get("/", function(req, res) {
   res.render("app-welcome");
