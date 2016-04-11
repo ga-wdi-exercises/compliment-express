@@ -1,10 +1,18 @@
 //add modules
 var express = require('express');
-
+var hbs = require('express-handlebars');
 var app = express();
 
+//sets up app to render views and use handlebars
+app.set('view engine', hbs);
+app.engine('.hbs', hbs({
+  extname: '.hbs',
+  partialsDir: 'views/',
+  layoutsDir: 'views/',
+  defaultLayout: 'main-layout'
+}));
 app.get('/', function(req, res){
-  res.send('hola, mundo!');
+  res.render('welcome')
 });
 
 app.listen(3001, function(){
