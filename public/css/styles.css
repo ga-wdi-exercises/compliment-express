@@ -5,3 +5,11 @@ body {
 a {
   text-decoration: none;
 }
+
+
+.container {
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
