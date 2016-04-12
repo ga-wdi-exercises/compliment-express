@@ -1,4 +1,5 @@
 body {
   text-align: center;
-  background-color: aquamarine;
+  font-size: 40px;
+  background-color: {{color}};
 }
