@@ -15,11 +15,16 @@ a{
   text-decoration: none;
   color:inherit;
 }
+.lead {
+    color: rgb(180,27,24);
+}
 .container.button{
   background-color: rgba(148,27,24,0.8);
 }
 
 .container{
+  padding: 2px;
+  font-size: 42px;
   text-align:center;
   border: solid black 5px;
   border-radius: 5px;
