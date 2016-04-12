@@ -1,6 +1,8 @@
 //add modules
 var express = require('express');
 var hbs = require('express-handlebars');
+var db = require("./db/connection")
+
 var app = express();
 
 //sets up app to render views and use handlebars
