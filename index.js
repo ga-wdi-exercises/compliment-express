@@ -17,7 +17,11 @@ app.engine('.hbs', hbs({
 app.use('/assets', express.static('public'));
 
 app.get('/', function(req, res){
-  res.render('welcome')
+  var compliments = db.compliments
+  var rando = Math.floor(Math.random() * 7); 
+  res.render('welcome', {
+    compliment: db.compliments[rando]
+  });
 });
 
 app.listen(3001, function(){
