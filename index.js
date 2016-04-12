@@ -12,7 +12,7 @@ app.engine(".hbs",hbs({
 }));
 
 app.get("/", function(req, res){
-  res.send("Hello, world!");
+  res.render("welcome-compliment");
 })
 
 app.listen(3001, function(){
