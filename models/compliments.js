@@ -5,3 +5,5 @@ module.exports = [
     "Ewe look so much better than you smell.",
     "The whole flocking crew has it so baaaaaaaaaad for ewe!"
 ]
+// we don't need this anymore. This is an example of how to call data from a hard-coded module
+//orignally I did this to balance out the fact that I could 
