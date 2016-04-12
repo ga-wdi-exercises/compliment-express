@@ -5,6 +5,8 @@ var compliments = require("./models/compliments")
 
 var app         = express();
 
+app.set("port", process.env.PORT || 3001);
+
 app.set("view engine", "hbs");
 app.engine(".hbs",hbs({
   extname:      ".hbs",
@@ -34,6 +36,6 @@ app.get("/compliments", function(req,res){
 });
 
 
-app.listen(3001, function(){
+app.listen(app.get("port"), function(){
   console.log("It's Aliiiive!");
 });
