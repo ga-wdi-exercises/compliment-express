@@ -13,8 +13,8 @@ var compliments = [
 ];
 
 function randomize (array){
-  randomNumber = array[Math.floor(Math.random()*array.length)];
-  return randomNumber;
+  randomElement = array[Math.floor(Math.random()*array.length)];
+  return randomElement;
 }
 
 var app = express();
