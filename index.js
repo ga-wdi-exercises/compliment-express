@@ -4,7 +4,7 @@ var hbs = require('express-handlebars');
 var app = express();
 
 //sets up app to render views and use handlebars
-app.set('view engine', hbs);
+app.set('view engine', 'hbs');
 app.engine('.hbs', hbs({
   extname: '.hbs',
   partialsDir: 'views/',
