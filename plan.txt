@@ -6,5 +6,9 @@ change the background color to a random color
   hold colors in an array
 App Structure
   index.js
+    main 'engine' for app
+    renders views, implements express, handlebars, etc.
+  Data
+    place arrays for colors and compliments in app.js
   views
-  database
+    main layout, welcome, show pages for different names
