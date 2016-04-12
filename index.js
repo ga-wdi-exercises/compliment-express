@@ -1,5 +1,6 @@
 var express = require("express");
 var hbs     = require("express-handlebars");
+var db      = require("./db/connection");
 
 var app = express();
 
@@ -10,6 +11,7 @@ app.engine(".hbs",hbs({
   layoutsDir:   "views/",
   defaultLayout: "layout-main"
 }));
+
 app.use("/assets", express.static("public"));
 
 app.get("/", function(req, res){
@@ -18,9 +20,9 @@ app.get("/", function(req, res){
 
 app.get("/compliments", function(req,res){
   res.render("compliments",{
-    numCompliments: 5
-  })
-})
+    candidates: db.candidates
+  });
+});
 
 
 app.listen(3001, function(){
