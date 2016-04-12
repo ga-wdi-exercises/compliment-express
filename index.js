@@ -14,7 +14,14 @@ app.use("/assets", express.static("public"));
 
 app.get("/", function(req, res){
   res.render("welcome-compliment");
+});
+
+app.get("/compliments", function(req,res){
+  res.render("compliments",{
+    numCompliments: 5
+  })
 })
+
 
 app.listen(3001, function(){
   console.log("It's Aliiiive!");
