@@ -1,6 +1,21 @@
 var express = require("express");
 var hbs = require("express-handlebars");
-var db = require("./db/connection");
+
+var compliments = [
+  "Your instructors love you",
+  "High five = ^5",
+  "Is it Ruby Tuesday yet?",
+  "It's almost beer o'clock",
+  "The Force is strong with you",
+  "You're a monster",
+  "Ain't found a way to kill me yet",
+  "Holy diver, you've been down too long in the midnight sea"
+];
+
+function randomize (array){
+  randomNumber = array[Math.floor(Math.random()*array.length)];
+  return randomNumber;
+}
 
 var app = express();
 
@@ -16,9 +31,16 @@ app.use("/assets", express.static("public"));
 
 
 app.get("/", function(req, res){
-  var compliments = db.compliments;
-  var randomCompliment = compliments[Math.floor(Math.random()*compliments.length)];
+  var randomCompliment = randomize(compliments);
   res.render("app-home", {
+    compliment: randomCompliment,
+  });
+});
+
+app.get("/:name", function(req, res){
+  var randomCompliment = randomize(compliments);
+  res.render("name-view", {
+    name: req.params.name,
     compliment: randomCompliment,
   });
 });
