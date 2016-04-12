@@ -1,5 +1,6 @@
 var express = require("express");
 var hbs = require("express-handlebars");
+var db = require("./db/connection");
 
 var app = express();
 
@@ -15,7 +16,7 @@ app.use("/assets", express.static("public"));
 
 app.get("/", function(req, res){
   res.render("app-home", {
-    
+
   });
 });
 
