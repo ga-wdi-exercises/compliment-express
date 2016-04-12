@@ -17,6 +17,12 @@ app.get("/", function(req, res){
   res.render("layout-main");
 });
 
+app.get("/compliments", function(req, res){
+  res.render("compliments-index", {
+    numCompliments: 5
+  });
+});
+
 app.listen(3001, function(){
   console.log("it's aliiiiive!");
 });
