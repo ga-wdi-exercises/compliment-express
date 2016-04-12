@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Wyatt23/compliment-express/issues"
   },
-  "homepage": "https://github.com/Wyatt23/compliment-express#readme"
+  "homepage": "https://github.com/Wyatt23/compliment-express#readme",
+  "dependencies": {
+    "express-handlebars": "^3.0.0"
+  }
 }
