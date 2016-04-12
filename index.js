@@ -1,7 +1,7 @@
 var express     = require("express");
 var hbs         = require("express-handlebars");
 var db          = require("./db/connection");
-var compliments = require("./models/compliments")
+// var compliments = require("./models/compliments")
 
 var app         = express();
 
@@ -17,9 +17,9 @@ app.engine(".hbs",hbs({
 
 app.use("/assets", express.static("public"));
 
-function getRandomCompliments(module){
-  var randomIndex = Math.floor((Math.random() * module.length));
-  var randomInstance = module[randomIndex];
+function getRandomItem(arrayOfItems){
+  var randomIndex = Math.floor((Math.random() * arrayOfItems.length));
+  var randomInstance = arrayOfItems[randomIndex];
   return randomInstance;
 }
 
@@ -28,10 +28,10 @@ app.get("/", function(req, res){
 });
 
 app.get("/compliments", function(req,res){
-  var randomCompliment = getRandomCompliments(compliments);
-  res.render("compliments",{
-    compliment: randomCompliment,
-    compliments: db.compliments
+  var randomCompliment = getRandomItem(db.compliments);
+  res.render("compliments-index",{
+    compliment: randomCompliment // e.g.  {"body":"a compliment"}
+    // compliments: db.compliments
   });
 });
 
