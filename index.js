@@ -1,6 +1,6 @@
-var express = require("express");
-var hbs     = require("express-handlebars");
-var db      = require("./db/connection");
+var express     = require("express");
+var hbs         = require("express-handlebars");
+var db          = require("./db/connection");
 
 var app = express();
 
@@ -20,7 +20,7 @@ app.get("/", function(req, res){
 
 app.get("/compliments", function(req,res){
   res.render("compliments",{
-    candidates: db.candidates
+    compliments: db.compliments
   });
 });
 
