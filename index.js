@@ -20,6 +20,15 @@ app.get("/", function(req, res) {
   });
 });
 
+app.get("/:name", function(req, res) {
+  res.render("app-personalized", {
+    name: req.params.name,
+    compliment: db.compliments[Math.floor((Math.random() * db.compliments.length))],
+    color: db.colors[Math.floor((Math.random() * db.colors.length))]
+  });
+});
+
+
 app.listen(3001, function() {
 
 });
