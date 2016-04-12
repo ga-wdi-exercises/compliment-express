@@ -4,8 +4,8 @@
     "color": "#01DF3A"
   },
   {
-    "compliment": "High five = ^5",
-    "color": "#FF0080"
+    "compliment": "All life is suffering",
+    "color": "#7FFF00"
   },
   {
     "compliment": "Is it Ruby Tuesday yet?",
@@ -18,5 +18,13 @@
   {
     "compliment": "The Force is strong with you",
     "color": "#01DF3A"
+  },
+  {
+    "compliment": "I hope you choke",
+    "color": "#FFE4C4"
+  },
+  {
+    "compliment": "Ain't found a way to kill me yet",
+    "color": "#FF00FF"
   }
 ]

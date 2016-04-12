@@ -1,1 +1,5 @@
-var seedData = require("./seeds.json")
+var seedData = require("./seeds.json");
+
+module.exports = {
+  compliments: seedData
+};
