@@ -45,6 +45,11 @@ app.get("/:name", function(req, res){
   });
 });
 
+app.post("/:name/new", function(res, req){
+  console.log(req.params);
+  res.redirect("/" + req.params.name);
+});
+
 app.listen(3001, function(){
   console.log("Nodemon running");
 });
