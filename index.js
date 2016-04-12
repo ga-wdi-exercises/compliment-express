@@ -14,7 +14,9 @@ app.engine(".hbs", hbs({
 app.use("/assets", express.static("public"));
 
 app.get("/", function(req, res){
-  res.send("Welcome to emergency compliment generator!");
+  res.render("app-home", {
+    
+  });
 });
 
 app.listen(3001, function(){
