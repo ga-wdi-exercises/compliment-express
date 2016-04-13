@@ -15,7 +15,10 @@ app.engine(".hbs", hbs({
 app.use("/assets", express.static("public"));
 
 function RandomCompliment(mycomplimentsdata){
-  finalcompliment = mycomplimentsdata[Math.floor((Math.random() * mycomplimentsdata.length) + 1)];
+  var randomindex = Math.floor((Math.random() * mycomplimentsdata.length))
+  console.log(randomindex);
+  finalcompliment = mycomplimentsdata[randomindex];
+
   return finalcompliment;
 }
 
