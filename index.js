@@ -1,6 +1,7 @@
 var express  = require("express");
 var hbs      = require("express-handlebars");
 var comdata  = require("./db/seeds.json");
+// var random_compfunc = require('./random');
 var app      = express();
 
 app.set("view engine", "hbs");
@@ -13,13 +14,15 @@ app.engine(".hbs", hbs({
 
 app.use("/assets", express.static("public"));
 
-function RandomCompliment(){
-  randNum = comdata[Math.floor((Math.random() * comdata.length) + 1)]['comdata.ment'];
+function RandomCompliment(mycomplimentsdata){
+  finalcompliment = mycomplimentsdata[Math.floor((Math.random() * mycomplimentsdata.length) + 1)];
+  return finalcompliment;
 }
 
 app.get("/", function(req, res){
+  finalcompliment = RandomCompliment(comdata);
   res.render("app-compliment", {
-    compliments: comdata
+    compliments: finalcompliment["ment"]
   });
 });
 
