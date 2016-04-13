@@ -35,6 +35,7 @@ app.get("/:name", function(req, res){
     color: randEntry(colors),
     name: req.params.name
   });
+
 });
 
 app.listen(3001, function(){
