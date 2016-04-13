@@ -14,9 +14,15 @@ app.engine(".hbs", hbs({
 
 app.use("/assets", express.static("public"));
 
+function getCompliment(){
+  var randomCompliment = db.compliments[Math.floor(Math.random() * db.compliments.length)];
+  return randomCompliment
+}
+
 app.get("/", function(req, res){
+  var randomCompliment = getCompliment();
   res.render("app-welcome", {
-    compliments: db.compliments
+    compliment: randomCompliment,
   });
 });
 
