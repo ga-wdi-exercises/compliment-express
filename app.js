@@ -13,6 +13,13 @@ var compliments = [
 
 colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
+names = [
+  "Harry",
+  "Jerry",
+  "Mary",
+  "Larry",
+  "Barry"
+]
 
   app.get("/", function(req, res){
     var index = Math.floor(Math.random() * compliments.length);
