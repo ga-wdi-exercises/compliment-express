@@ -1,4 +1,5 @@
 var express = require("express");
+var parser  = require("body-parser");
 var hbs     = require("express-handlebars");
 var db      = require("./db/connection");
 
@@ -14,38 +15,36 @@ app.engine(".hbs", hbs({
 
 app.use("/assets", express.static("public"));
 
-var compliments_seeds =
-[
-  "It's a free-happy-hour-at-GA-on-Friday-after-project-week party... and you're invited",
-  "You got this, you perfect human, you",
-  "You've got eyes like a Ruby gem",
-  "Oprah called to say, 'you're getting a car!'",
-  "The Force is strong with your friend's mom. Oh, and also with you!"
-];
+app.use(parser.urlencoded({extended: true}));
 
 function chooseRandom(array){
   var randomized = array[Math.floor(Math.random() * array.length)];
   return randomized;
 }
 
+// routes and controllers
 app.get("/", function(req, res){
   res.render("app-welcome");
 });
 
 app.get("/compliment", function(req, res){
-  var randomCompliment = chooseRandom(compliments_seeds);
+  var randomCompliment = chooseRandom(db.myCompliments);
   res.render("compliment-index", {
     compliment: randomCompliment
   });
 });
 
 app.get("/compliment/:name", function(req, res){
-  var randomCompliment = chooseRandom(compliments_seeds);
-  console.log(compliments_seeds);
+  var randomCompliment = chooseRandom(db.myCompliments);
   res.render("compliment-name", {
     name: req.params.name,
     compliment: randomCompliment
   });
+});
+
+app.post("/compliment", function(req, res){
+  // this passes in the name stored in req.body as an argument to .create
+  db.myCompliments.push(req.body.name);
 });
 
 app.listen(3001, function(){

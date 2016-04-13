@@ -3,4 +3,4 @@ window.addEventListener("load", function(){
   document.body.style.background=bgColors[Math.floor(Math.random()*bgColors.length)];
 });
 
-console.log("javascript's werkin'");
+// console.log("javascript's werkin'");
