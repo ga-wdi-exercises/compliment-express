@@ -1,4 +1,15 @@
+var express  = require("express");
+var hbs      = require("express-handlebars");
 
+var app      = express();
+
+app.get("/", function(req, res){
+  res.send("Hello Beautiful!");
+});
+
+app.listen(3001, function(){
+  console.log("It's aliiive!");
+});
 
 compliments = [
   "Your instructors love you",
