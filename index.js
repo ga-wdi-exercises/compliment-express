@@ -1,6 +1,6 @@
 var express = require("express")
 var hbs     = require("express-handlebars")
-var params  = require("body-parser")
+var bodyParser  = require("body-parser")
 var app     = express()
 
 var compliments = [
@@ -23,6 +23,8 @@ function getRandomColor(colors){
   return colors[randomColorIndex]
 }
 
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 app.set("view engine", "hbs");
 app.engine(".hbs", hbs({
@@ -52,11 +54,10 @@ app.get("/:name", function(req, res){
 })
 
 app.post("/:name/new", function(req, res){
-  compliments.push(params.compliment)
+  compliments.push(req.body.name)
   var name = req.params.name
   res.redirect("/" + name )
 })
-
 
 app.listen(3001, function(){
   console.log("I'm alive")
