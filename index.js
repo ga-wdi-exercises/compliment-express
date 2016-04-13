@@ -16,8 +16,10 @@ app.use("/assets", express.static("public"));
 
 
 app.get("/", function(req, res){
-  res.render("app-index", {
-    compilments: db.compliments
+  var compliments = db.compliments;
+  var myRandom = Math.floor(Math.random() * compliments.length);
+  res.render("compliments-index", {
+    compilment: db.compliments[myRandom]
   });
 });
 
