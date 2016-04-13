@@ -14,7 +14,7 @@ app.engine(".hbs", hbs({
 
 app.use("/assets", express.static("public"));
 
-var compliments =
+var compliments_seeds =
 [
   "It's a free-happy-hour-at-GA-on-Friday-after-project-week party... and you're invited",
   "You got this, you perfect human, you",
@@ -33,13 +33,15 @@ app.get("/", function(req, res){
 });
 
 app.get("/compliment", function(req, res){
-  var randomCompliment = chooseRandom(db.compliments);
+  var randomCompliment = chooseRandom(compliments_seeds);
   res.render("compliment-index", {
     compliment: randomCompliment
   });
 });
 
 app.get("/compliment/:name", function(req, res){
+  var randomCompliment = chooseRandom(compliments_seeds);
+  console.log(compliments_seeds);
   res.render("compliment-name", {
     name: req.params.name,
     compliment: randomCompliment
