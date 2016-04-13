@@ -1,6 +1,8 @@
 var express = require("express");
 var hbs = require("express-handlebars");
-var compliments = require("./models/compliment");
+var compliments = require("./models/compliments");
+
+var randomNum = Math.floor(Math.random()*compliments.length);
 
 var app = express();
 
@@ -16,9 +18,11 @@ app.engine(".hbs", hbs({
 app.use("/assets", express.static("public"));
 
 app.get("/", function(req, res){
-  res.render("app-compliment");
+  res.render("app-compliment", {
+    compliment: compliments[randomNum]
+  });
 }); // end get index
 
 app.listen(3001, function(){
-  console.log("yay!");
+  console.log(randomNum);
 }); //end app listen
