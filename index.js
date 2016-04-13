@@ -35,6 +35,17 @@ app.get("/", function(req, res){
   });
 });
 
+app.get("/:name", function(req, res){
+  var name = req.params.name
+  var randomCompliment = getCompliment();
+  var randomColor = getRandomColor();
+  res.render("personal-compliment", {
+    compliment: randomCompliment,
+    color: randomColor,
+    name: name
+  })
+})
+
 app.listen(3001, function(){
   console.log("It's aliiive!");
 });
