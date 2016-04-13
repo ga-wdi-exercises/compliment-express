@@ -1,0 +1,41 @@
+<h2 id="compliment">{{randComp1.compliment}}</h2>
+
+<!-- <h3>{{comps.length}} compliments</h3>
+
+{{#each comps as |comp index|}}
+  <h4>{{comp.id}}. {{comp.compliment}}</h4>
+{{/each}} -->
+
+<button type="button" name="button" class="btn btn-primary" id="new-comp">New Compliment</button>
+
+<script type="text/javascript">
+var button = $("#new-comp");
+
+button.on("click", changeCompliment);
+
+var isOne = true;
+
+function changeCompliment(event){
+  event.preventDefault();
+  if (isOne == true) {
+    $("#compliment").html("{{randComp2.compliment}}");
+    changeColor();
+    isOne = false;
+  } else if (isOne == false) {
+    $("#compliment").html("{{randComp1.compliment}}");
+    changeColor();
+    isOne = true;
+  }
+}
+
+function changeColor(event){
+  // Assign each named color a random number 0-255
+  var red = Math.floor(Math.random() * 255);
+  var green = Math.floor(Math.random() * 255);
+  var blue = Math.floor(Math.random() * 255);
+  // Generate an RGBA value from red, green, and blue
+  var randomRGBA = 'rgba('+red+','+green+','+blue+',1)';
+  // and change the body's background to our random color
+  $("body").css("background", randomRGBA);
+}
+</script>
