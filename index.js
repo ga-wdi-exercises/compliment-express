@@ -1,5 +1,6 @@
 var express = require("express");
 var hbs = require("express-handlebars");
+var compliments = require("./models/compliment");
 
 var app = express();
 
