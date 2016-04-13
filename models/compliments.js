@@ -3,4 +3,4 @@ module.exports = [
   "Compliment 2",
   "Compliment 3",
   "Compliment 4"
-]
+];
