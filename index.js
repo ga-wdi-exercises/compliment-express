@@ -2,8 +2,6 @@ var express = require("express");
 var hbs = require("express-handlebars");
 var compliments = require("./models/compliments");
 
-var randomNum = Math.floor(Math.random()*compliments.length);
-
 var app = express();
 
 app.set("view engine", "hbs");
@@ -17,12 +15,19 @@ app.engine(".hbs", hbs({
 
 app.use("/assets", express.static("public"));
 
+function randomCompliment(model){
+  var randomNum = Math.floor(Math.random()*model.length);
+  var randomCom = model[randomNum];
+  return randomCom;
+}
+
 app.get("/", function(req, res){
+  var randomCom = randomCompliment(compliments);
   res.render("app-compliment", {
-    compliment: compliments[randomNum]
+    compliment: randomCom
   });
 }); // end get index
 
 app.listen(3001, function(){
-  console.log(randomNum);
+  console.log("yay!");
 }); //end app listen
