@@ -1,0 +1,24 @@
+{
+  "name": "compliment-express",
+  "version": "1.0.0",
+  "description": "## Mission…",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamedrchalal/compliment-express.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohamedrchalal/compliment-express/issues"
+  },
+  "homepage": "https://github.com/mohamedrchalal/compliment-express#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "hbs": "^4.0.0"
+  }
+}
