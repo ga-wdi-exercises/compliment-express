@@ -9,6 +9,7 @@ var compliments = [
   "The Force is strong with you",
   "You're a monster",
   "Ain't found a way to kill me yet",
+  "U R 2 KUTE",
   "Holy diver, you've been down too long in the midnight sea"
 ];
 
@@ -45,10 +46,10 @@ app.get("/:name", function(req, res){
   });
 });
 
-app.post("/:name/new", function(res, req){
-  console.log(req.params);
-  res.redirect("/" + req.params.name);
-});
+// app.post("/:name/new", function(res, req){
+//   console.log(req.params);
+//   res.redirect("/" + req.params.name);
+// });
 
 app.listen(3001, function(){
   console.log("Nodemon running");
