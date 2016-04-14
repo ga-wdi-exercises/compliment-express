@@ -21,7 +21,7 @@ app.get("/", function(req, res){
   res.render("app-welcome");
 });
 
-app.get("/compliments", function(req, res){
+app.get("/compliment", function(req, res){
   res.render("compliments-index", {
     compliments: db.compliments
     // compliments could be named anything. it is looking at db variable and compliments is looking at compliments in connection.js file   compliments: seedData
