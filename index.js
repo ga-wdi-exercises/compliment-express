@@ -18,12 +18,20 @@ function getCompliment(){
   return rendomCompliment
 }
 
+var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
+
+function getRandomColor(){
+  var randomColor = colors[Math.floor(Math.random()*colors.length)];
+  return randomColor
+}
 
 
 app.get("/", function(req, res){
   var rendomCompliment = getCompliment();
+  var randomColor = getRandomColor();
   res.render("app-welcome", {
-    compliment: rendomCompliment
+    compliment: rendomCompliment,
+    color: randomColor
   });
 });
 
