@@ -1,0 +1,18 @@
+body {
+  text-align: center;
+  color: #F4E0DE;
+  font-family: 'Creepster', cursive;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.ghost-host {
+  font-size: 60px;
+  padding-top: 50px;
+}
+
+.ghost-host img {
+  max-height: 100px;
+}
