@@ -39,9 +39,16 @@ app.engine(".hbs", hbs({
 
 app.use(express.static("public"));
 
+app.get("/:name", function(req, res){
+  res.render("app-show", {
+    name: req.params.name,
+    compliment: compliment
+  });
+});
+
 app.get("/", function(req, res){
   res.render("app-welcome", {
-    compliment: compliment,
+    compliment: compliment
   });
 });
 
