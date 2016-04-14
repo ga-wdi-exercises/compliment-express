@@ -12,10 +12,17 @@ app.set("view engine", "hbs");
 app.use("/assets", express.static("public"));
 
 app.get("/", function(req, res){
-  res.send("Here's a compliment");
+  res.render("app-welcome");
 });
 
-res.render("app-welcome");
+app.get("/compliments", function(req, res){
+   res.render("compliments-index", {
+     numCompliments: 10
+   });
+ });
+ 
+
+
 app.listen(3001, function(){
   console.log("It's aliive!");
 });
