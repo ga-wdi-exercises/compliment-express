@@ -12,8 +12,10 @@ app.listen(3001, function(){
   console.log("It's aliiive!");
 });
 function myCompliments(){
-
-}
+  for (i = 0; i < compliments.length; i++){
+    return compliments;
+  };
+};
 compliments = [
   "Your instructors love you",
   "High five = ^5",
