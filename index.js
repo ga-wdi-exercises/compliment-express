@@ -14,11 +14,11 @@ app.engine(".hbs", hbs({
 app.use("/assets", express.static("public"));
 
 function getCompliment(){
-  var rendomCompliment = db.compliments[Math.floor(Math.random()*db.compliments.length)];
-  return rendomCompliment
+  var randomCompliment = db.compliments[Math.floor(Math.random()*db.compliments.length)];
+  return randomCompliment
 }
 
-var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
+var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080", "lightgreen","gray","red" ]
 
 function getRandomColor(){
   var randomColor = colors[Math.floor(Math.random()*colors.length)];
@@ -27,21 +27,21 @@ function getRandomColor(){
 
 
 app.get("/", function(req, res){
-  var rendomCompliment = getCompliment();
+  var randomCompliment = getCompliment();
   var randomColor = getRandomColor();
   res.render("app-welcome", {
-    compliment: rendomCompliment,
+    compliment: randomCompliment,
     color: randomColor
   });
 });
 
 app.get("/:name", function(req, res){
   var name = req.params.name
-  var rendomCompliment = getCompliment();
+  var randomCompliment = getCompliment();
   var randomColor = getRandomColor();
   res.render("personal-compliment", {
     compliment: randomCompliment,
-    color: randomeColor,
+    color: randomColor,
     name: name
   })
 })
