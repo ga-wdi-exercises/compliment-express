@@ -1,20 +1,30 @@
 var express = require("express");
-var hbs = require("express-handlebars");
 var app = express();
+var hbs = require("express-handlebars");
+var bodyParser = require('body-parser');
+var compliments = require("./models/compliments.js")
+
 
 app.set("view engine", "hbs");
+app.use(bodyParser.json());
 
-compliments = [
-  "Your instructors love you",
-  "High five = ^5",
-  "Is it Ruby Tuesday yet?",
-  "It's almost beer o'clock",
-  "The Force is strong with you"
-]
+function complimentMe(module){
+  var randomIndex = Math.floor((Math.random() * module.length));
+  var randomInstance = module[randomIndex];
+  return randomInstance;
+}
 
-app.get("/", function(req,res){
-  res.send(compliments);
+function getSomeCompliments(module){
+  var randomIndex = Math.floor((Math.random() * module.length));
+  var randomInstance = module[randomIndex];
+  return randomInstance;
+}
+
+app.get("/", function(req, res){
+  var someCompliment = getSomeCompliments(compliments);
+  res.render("index.hbs", {compliment: someCompliment});
 });
+
 
 
 app.listen(3001, function(){
