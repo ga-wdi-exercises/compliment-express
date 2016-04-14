@@ -5,7 +5,7 @@ app.set("view engine", "hbs");
 app.get("/", express.static("public"));
 
 app.get("/", function(req, res){
-  res.render("app-welcome");
+  res.render("compliments");
 });
 
 app.listen(3001, function(){
