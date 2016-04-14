@@ -1,0 +1,6 @@
+<h2> There are {{compliments.length}} compliments. </h2>
+
+<!-- loop through each compliment -->
+{{#each compliments as |compliment|}}
+<p><a href="/allcompliments/{{compliment}}"> {{compliment}}</a></p>
+{{/each}}

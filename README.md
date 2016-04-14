@@ -1,34 +1,139 @@
-# WDI Emergency Compliment, in Express
+## NOTES
 
-## Mission…
+Express is taking Node and focusing/extending it to turn it into a full web server. So that computer can send requests to other computers. Can't do much in just Node.
 
-Create your own version of [Emergency Compliment](http://emergencycompliment.com/), using Express. When a user visits the site, they should be greeted with a WDI-themed compliment to cheer them up.
+Node is using JS to process files (doesn't have anything to do with browser)
+
+#Why use express?
+So that you can use JS in front end and back end.
+Express is small and light weight and starts out with nothing.
 
 
-## Level 1: generic compliment
+#1
+Type $ npm init
+-- npm init is like a ruby gem file. package.json is like a gem (module in node) file for Node apps.
+-- just hold down return until all questions are done.
+-- now you should have package.json file. Never edit this file
 
-When you visit the root (`"/"`) of your app, it should display a generic greeting and a randomly chosen compliment. The background color of the app should be randomized as well.
+#2
+Type $ npm install
+--this is like bundle install in Rails
 
-Here are some sample compliments and colors (feel free to substitute in your own):
+#3
+$ npm install --save express
+-- this downloads and installs a new module
+-- this downloads express
+-- -- save (creates dependencies and puts it in package.json file. If I only say npm install express, it won't do this.)
+
+#4
+You never want to push up node_modules to github so you need to create a git ignore file.
+
+$ touch .gitignore
+
+Then inside gitignore file do node_modules/*
+
+#5
+Create index.js file and type in this (now this is a Node app):
 
 ```js
-compliments = [
-  "Your instructors love you",
-  "High five = ^5",
-  "Is it Ruby Tuesday yet?",
-  "It's almost beer o'clock",
-  "The Force is strong with you"
-]
+var express = require("express");
 
-colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
+var app = express();
+
+app.get("/", function(req, res){
+  res.send("Hello");
+});
+
+app.listen(3001, function(){
+  console.log("I work");
+});
 ```
 
-## Level 2: personalized compliment
+Now to view site go to localhost:3001
 
-When you visit `"/name"` (ie: `"/randy"`), the greeting should personalize itself to the provided name. There should still be a random compliment and background color.
 
-## Level 3: user submitted compliments
+#6
+Get handle bars
+$ npm install --save express-handlebars
 
-Allow a user to add to the list of compliments using a POST request. You can submit POST requests to the app using Postman or a form.
+Then in index.js do
+```js
+var hbs = require("express-handlebars");
+```
 
-How/where would you store these compliments?  Need a hint?  Look back to the 
+#7
+Create Views folder and layout-main.hbs file inside it
+
+Inside views/layout-main.hbs
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Emergency Compliments </title>
+  </head>
+  <body>
+    <h1><a href="/"> Emergency Compliment </a></h1>
+    {{{body}}} <!-- this yields information -->
+  </body>
+</html>
+```
+
+#8
+Create a new file for compliments and call it compliment.hbs
+
+#9
+Get your new views to show up on your page.
+In index.js do:
+
+```js
+app.set("view engine", "hbs");
+app.engine(".hbs", hbs({
+  extname: ".hbs",
+  partialsDir: "views/",
+  layoutsDir: "views/",
+  defaultLayout: "layout-main"
+}));
+
+// and inside app.get("/", function(req, res){ do
+res.render("compliment"); //since my file name is
+
+```
+
+#10
+
+Create new folder called public (this is where js and css files go)
+Connct CSS and JS files to views
+
+in index.js
+```js
+app.use("/public",
+express.static("public"));
+```
+
+in layout-main.hbs do
+  <link rel="stylesheet" href="public/css/styles.css"/>
+
+#11
+
+Create js file in public and then link to it in layout-main.hbs
+
+#12
+
+Create new app.get("/newPageName", function(req, res){
+
+and make a new .hbs file for that new page
+Then make an object inside the new route and view the data in the .hbs page using handlebars
+
+#13
+Take out object from inside route and make it available on all pages. Create a db folder and inside that folder make a seeds.json file
+
+#14
+create a connection.js file in db folder.
+and type:
+```js
+var seedData = require("./seeds");
+```
+
+#15
+
+Create show page and route for it.
