@@ -1,0 +1,16 @@
+<html style="background-color: {{colors.color}}"></html>
+<h2>{{compliments.compliment}}</h2>
+
+{{#each compliments as |compliment| }}
+<!-- var complimentsJS = JSON.parse(compliments); -->
+<!-- function randomize(object){ -->
+  <!-- var random = Math.floor(Math.rando()*compliments.length);
+  var data = compliment[random]; -->
+<!-- } -->
+<h3>
+  <a href="/compliments/{{compliment.compliment}}">{{compliment.compliment}}</a>
+</h3>
+{{/each}}
+
+
+<!-- shuffle te compliments and print the first one (same for color!) -->
