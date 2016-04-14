@@ -1,0 +1,13 @@
+<h2> {{compliments.length}} may use this later..temp</h2>
+{{#each compliments as |compliment index|}}
+<h1>
+  {{compliment.compliment}}
+</h1>
+  {{/each}}
+
+
+<h2> Let's get personal!</h2>
+<form action="/compliments" method="post">
+  <input type="text" name="compliment[name]" placeholder="Enter your name for a personalized message" />
+  <button type="submit">Complimatic</button>
+</form>
