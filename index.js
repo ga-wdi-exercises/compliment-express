@@ -23,15 +23,14 @@ function getRandomItem(arrayOfItems){
   return randomInstance;
 }
 
-app.get("/", function(req, res){
-  res.render("welcome-compliment");
-});
+// app.get("/", function(req, res){
+//   res.render("/");
+// });
 
-app.get("/compliments", function(req,res){
+app.get("/", function(req,res){
   var randomCompliment = getRandomItem(db.compliments);
-  res.render("compliments-index",{
-    compliment: randomCompliment // e.g.  {"body":"a compliment"}
-    // compliments: db.compliments
+  res.render("compliments",{
+    compliment: randomCompliment
   });
 });
 
