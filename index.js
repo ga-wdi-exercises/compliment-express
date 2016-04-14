@@ -1,12 +1,10 @@
 var express     = require("express");
 var hbs         = require("express-handlebars");
 var db          = require("./db/connection");
-// var compliments = require("./models/compliments")
 
 var app         = express();
 
 app.set("port", process.env.PORT || 3001);
-
 app.set("view engine", "hbs");
 app.engine(".hbs",hbs({
   extname:      ".hbs",
@@ -23,14 +21,16 @@ function getRandomItem(arrayOfItems){
   return randomInstance;
 }
 
-// app.get("/", function(req, res){
-//   res.render("/");
-// });
-
 app.get("/", function(req,res){
   var randomCompliment = getRandomItem(db.compliments);
   res.render("compliments",{
     compliment: randomCompliment
+  });
+});
+
+app.post("/add-compliment", function(req, res){
+  compliment.create(req.body.compliment).then(function(compliment){
+    res.redirect("/compliments/" + compliment.body);
   });
 });
 
