@@ -1,3 +1,9 @@
 body {
   text-align: center;
+  color: #F4E0DE;
+}
+
+.ghost-host {
+  font-size: 40px;
+  padding-top: 50px;
 }

@@ -24,8 +24,10 @@ function randomItem(model){
 
 app.get("/", function(req, res){
   var randomCom = randomItem(compliments);
+  var randomCol = randomItem(colors);
   res.render("app-compliment", {
-    compliment: randomCom
+    compliment: randomCom,
+    color: randomCol
   });
 }); // end get index
 
