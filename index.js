@@ -1,10 +1,10 @@
 var express = require("express");
 var hbs = require("express-handlebars");
-var mongoose = require("./db/connection")
+var db = require("./db/connection")
 
 var app = express();
-
-var Compliment = mongoose.model("Compliment")
+// var compliments = require("./seeds")
+// var Compliment = mongoose.model("Compliment")
 
 app.set("port", process.env.PORT || 3001);
 app.set("view engine", "hbs")
@@ -19,11 +19,8 @@ app.engine(".hbs", hbs ({
 app.use("/assets", express.static("public"))
 
 app.get("/", function(req, res){
-  Compliment.find({}).then(function(compliments){
-    res.json(compliments)
-    // res.render("compliment-index", {
-    //   compliments: compliments
-    // });
+    res.render("compliment-index", {
+      compliments: db.compliments
   });
 });
 
