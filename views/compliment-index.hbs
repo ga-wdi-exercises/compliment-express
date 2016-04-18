@@ -1,4 +1,6 @@
 
-  {{#each compliments as |compliment|}}
-  <p> {{compliment.quote}} </p>
+<p> {{compliments.length}}</p>
+
+{{#each compliments as |compliment|}}
+<h2> {{compliment.quote}}<h3>
   {{/each}}

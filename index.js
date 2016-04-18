@@ -15,13 +15,14 @@ app.engine(".hbs", hbs ({
   layoutsDir:"views/",
   defaultLayout: "layout-main"
 }));
+//
+app.use("/assets", express.static("public"));
 
-app.use("/assets", express.static("public"))
 
 app.get("/", function(req, res){
-    res.render("compliment-index", {
-      compliments: db.compliments
-  });
+      res.render("compliment-index", {
+        compliments: db.compliments
+      });
 });
 
 app.listen(3001, function(){
