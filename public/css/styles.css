@@ -1,5 +1,7 @@
 body {
   margin-top: 200px;
+  max-width: 800px;
+  text-align: center;
 }
 
 h1 {

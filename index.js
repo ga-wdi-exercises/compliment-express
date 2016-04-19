@@ -32,6 +32,13 @@ app.get("/", function(req, res){
       console.log(colorIndex)
   });
 
+  app.get("/:name", function(req, res){
+    var complimentIndex = randomQuotes(compliments);
+    var colorIndex = randomQuotes(colors)
+    // var colorIndex = setInterval(function(){randomQuotes(colors); }, 3000);
+    res.render("sayHi-index.hbs", { compliment: complimentIndex, color: colorIndex, name: req.params.name});
+  })
+
 app.listen(3001, function(){
   console.log("We are in business people!");
 });
