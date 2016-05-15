@@ -1,10 +1,10 @@
 var express = require("express");
-// var express = require("express-handlebars");
+var express = require("express-handlebars");
 
 var app = express();
 
-app.get("/", function(req, res){
-  res.send("Hello, world!");
+app.get("/compliment", function(req, res){
+  res.render("compliment-welcome");
 });
 
 app.listen(3001, function(){
