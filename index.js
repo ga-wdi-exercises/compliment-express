@@ -25,8 +25,16 @@ app.engine(".hbs", hbs({
   defaultLayout:  "layout-main",
 }))
 
-app.get("/:name", function(req, res){
+app.get("/", function(req,res){
   res.render("app-index",{
+    backgroundColor: functions.randomColor(),
+    compliments: data[functions.randomIndex()],
+    getName: req.params.name
+  })
+})
+
+app.get("/:name", function(req, res){
+  res.render("app-index-name",{
     backgroundColor: functions.randomColor(),
     compliments: data[functions.randomIndex()],
     getName: req.params.name
