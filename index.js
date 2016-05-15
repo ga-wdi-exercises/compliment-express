@@ -26,13 +26,10 @@ app.engine(".hbs", hbs({
 }))
 
 app.get("/:name", function(req, res){
-  var getName = {
-    name: req.params.name
-  }
   res.render("app-index",{
     backgroundColor: functions.randomColor(),
     compliments: data[functions.randomIndex()],
-    printName: getName
+    getName: req.params.name
   })
 })
 
