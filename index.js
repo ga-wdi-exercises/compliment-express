@@ -40,8 +40,7 @@ app.get("/color/:color", function(req, res){
       hue: req.params.color,
       luminosity: 'bright'
     }),
-    compliments: data[functions.randomIndex()],
-    getName: req.params.name
+    compliments: data[functions.randomIndex()]
   })
 })
 
