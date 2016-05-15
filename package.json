@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "express": "^4.13.4",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "randomcolor": "^0.4.4"
   },
   "devDependencies": {},
   "scripts": {

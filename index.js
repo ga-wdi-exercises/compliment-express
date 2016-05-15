@@ -1,6 +1,7 @@
 var express    = require("express");
 var hbs        = require("express-handlebars");
 var data       = require("./data/compliment")
+var color      = require("randomcolor")
 
 var app        = express();
 
@@ -28,6 +29,17 @@ app.engine(".hbs", hbs({
 app.get("/", function(req,res){
   res.render("app-index",{
     backgroundColor: functions.randomColor(),
+    compliments: data[functions.randomIndex()]
+  })
+})
+
+//function from 'randomcolor' module
+app.get("/color/:color", function(req, res){
+  res.render("app-index",{
+    backgroundColor: color.randomColor({
+      hue: req.params.color,
+      luminosity: 'bright'
+    }),
     compliments: data[functions.randomIndex()],
     getName: req.params.name
   })
