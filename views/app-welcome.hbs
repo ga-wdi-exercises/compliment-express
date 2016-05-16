@@ -1,6 +1,7 @@
 
-<div id="one">{{randomComplement.complement}} </div>
+{{#if name}}
+<h2 class="name"> {{ name }}, </h2>
+</div>
+{{/if}}
 
-<script>
-document.body.style.backgroundColor = "{{randomColor.color}}";
-</script>
+<div id="one">{{randomComplement.complement}} </div>
