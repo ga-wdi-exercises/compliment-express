@@ -11,9 +11,46 @@
         text-align: justify;
         padding:3em;
       }
+      input{
+        background-color: rgba(255,255,255,0.5);
+        font-size: 0.5em;
+        margin-top: 4em;
+        padding: 0.3em;
+        color:black;
+        border: solid transparent;
+      }
+      input:focus, button:focus{
+        outline: none;
+        background-color:white;
+      }
+      button{
+        background-color: {{backgroundColor}};
+        border: 1px solid transparent;
+        font-size: 0.5em;
+      }
+      ::-webkit-input-placeholder {
+        color: rgba(0,0,0,0.5);
+        font-style:italic;
+      }
+      :-moz-placeholder { /* Firefox 18- */
+        color: rgba(0,0,0,0.5);
+        font-style:italic;
+      }
+      ::-moz-placeholder {  /* Firefox 19+ */
+        color: rgba(0,0,0,0.5);
+        font-style:italic;
+      }
+      :-ms-input-placeholder {
+        color: rgba(0,0,0,0.5);
+        font-style:italic;
+      }
     </style>
   </head>
   <body>
     {{{body}}}
+    <form action="/" method="post">
+      <input type="text" name="compliment[text]" placeholder="Add a compliment!">
+      <button type="submit">💞</button>
+    </form>
   </body>
 </html>

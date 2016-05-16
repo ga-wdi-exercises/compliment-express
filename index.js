@@ -1,4 +1,5 @@
 var express    = require("express");
+var parser     = require("body-parser")
 var hbs        = require("express-handlebars");
 var mongoose   = require("./data/connection")
 var color      = require("randomcolor")
@@ -24,6 +25,8 @@ app.engine(".hbs", hbs({
   layoutsDir:     "views/",
   defaultLayout:  "layout-main",
 }))
+
+app.use(parser.urlencoded({extended: true}))
 
 app.get("/", function(req,res){
   Compliment.find({}).then(function(compliments){
@@ -54,6 +57,12 @@ app.get("/:name", function(req, res){
       compliments: compliments[Math.floor(Math.random() * compliments.length)],
       getName: req.params.name
   })
+  })
+})
+
+app.post("/", function(req, res){
+  Compliment.create(req.body.compliment).then(function(){
+    res.redirect("/");
   })
 })
 
