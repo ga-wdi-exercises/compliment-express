@@ -1,0 +1,26 @@
+body {
+  text-align: center;
+}
+
+.image {
+  position: relative;
+  width: 100%;
+}
+
+.name {
+  position: absolute;
+  top: 100px;
+  left: 130px;
+  width: 100%;
+  font-size: 50px;
+}
+
+.trophies img {
+  height: 100px
+}
+
+.trophies {
+  background-color: white;
+  width: 500px;
+  margin: 5px auto;
+}
