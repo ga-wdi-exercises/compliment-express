@@ -12,11 +12,11 @@ app.engine(".hbs", hbs({
   layoutsDir:     "views/",
   defaultLayout:  "layout-main"
 }));
-
 app.get("/compliment", function(req, res){
   res.render("app-welcome");
 });
 
+app.use("/assets", express.static("public"));
 
 app.listen(3001, function(){
   console.log("It's Aliiiiiive!");
