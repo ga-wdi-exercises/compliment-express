@@ -14,9 +14,6 @@ var functions  = {
     var b = Math.floor(Math.random() * 256);
 
     return "rgb(" + r + "," + g + "," + b + ")";
-  },
-  randomIndex: function(){
-    return Math.floor(Math.random() * data.length)
   }
 };
 
@@ -39,20 +36,24 @@ app.get("/", function(req,res){
 
 //function from 'randomcolor' module
 app.get("/color/:color", function(req, res){
-  res.render("app-index",{
-    backgroundColor: color.randomColor({
-      hue: req.params.color,
-      luminosity: 'bright'
-    }),
-    compliments: data[functions.randomIndex()]
+  Compliment.find({}).then(function(compliments){
+    res.render("app-index",{
+      backgroundColor: color.randomColor({
+        hue: req.params.color,
+        luminosity: 'bright'
+      }),
+      compliments: compliments[Math.floor(Math.random() * compliments.length)]
+  })
   })
 })
 
 app.get("/:name", function(req, res){
-  res.render("app-index-name",{
-    backgroundColor: functions.randomColor(),
-    compliments: data[functions.randomIndex()],
-    getName: req.params.name
+  Compliment.find({}).then(function(compliments){
+    res.render("app-index-name",{
+      backgroundColor: functions.randomColor(),
+      compliments: compliments[Math.floor(Math.random() * compliments.length)],
+      getName: req.params.name
+  })
   })
 })
 
