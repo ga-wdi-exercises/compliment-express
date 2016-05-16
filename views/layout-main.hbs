@@ -12,21 +12,16 @@
         padding:3em;
       }
       input{
-        background-color: rgba(255,255,255,0.5);
+        background-color: rgba(255,255,255,0.6);
         font-size: 0.5em;
         margin-top: 4em;
-        padding: 0.3em;
+        padding: 0.35em;
         color:black;
         border: solid transparent;
       }
-      input:focus, button:focus{
+      input:focus{
         outline: none;
         background-color:white;
-      }
-      button{
-        background-color: {{backgroundColor}};
-        border: 1px solid transparent;
-        font-size: 0.5em;
       }
       ::-webkit-input-placeholder {
         color: rgba(0,0,0,0.5);
@@ -44,13 +39,43 @@
         color: rgba(0,0,0,0.5);
         font-style:italic;
       }
+      button{
+        background-color: {{backgroundColor}};
+        border: 1px solid transparent;
+        font-size: 0.5em;
+      }
+      button:focus{
+        outline:none;
+      }
+      button:hover{
+        font-size:0.7em;
+      }
+      div.new{
+        position: absolute;
+        top: 0.3em;
+        left: 0.3em;
+        z-index:1000;
+      }
+      a, a:visited{
+        color: white;
+        text-shadow: 2px 2px black;
+        text-decoration:none;
+      }
+      a:hover{
+        color: {{backgroundColor}};
+        text-shadow:none;
+        -webkit-transition: color 0.4s;
+      }
     </style>
   </head>
   <body>
+    <div class="new">
+      <a href="/" title="new compliment!">*</a>
+    </div>
     {{{body}}}
     <form action="/" method="post">
-      <input type="text" name="compliment[text]" placeholder="Add a compliment!">
-      <button type="submit">💞</button>
+      <input type="text" name="compliment[text]" placeholder="Add your own!">
+      <button type="submit" title="SUBMIT">💞</button>
     </form>
   </body>
 </html>

@@ -50,6 +50,15 @@ app.get("/color/:color", function(req, res){
   })
 })
 
+app.get("/last", function(req,res){
+  Compliment.find({}).then(function(compliments){
+    res.render("app-index", {
+      backgroundColor: functions.randomColor(),
+      compliments: compliments[(compliments.length - 1)]
+    })
+  })
+})
+
 app.get("/:name", function(req, res){
   Compliment.find({}).then(function(compliments){
     res.render("app-index-name",{
@@ -62,7 +71,7 @@ app.get("/:name", function(req, res){
 
 app.post("/", function(req, res){
   Compliment.create(req.body.compliment).then(function(){
-    res.redirect("/");
+    res.redirect("/last");
   })
 })
 
