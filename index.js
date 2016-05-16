@@ -1,9 +1,11 @@
 var express    = require("express");
 var hbs        = require("express-handlebars");
-var data       = require("./data/compliment")
+var mongoose   = require("./data/connection")
 var color      = require("randomcolor")
 
 var app        = express();
+
+var Compliment = mongoose.model("Compliment")
 
 var functions  = {
   randomColor : function(){
@@ -27,9 +29,11 @@ app.engine(".hbs", hbs({
 }))
 
 app.get("/", function(req,res){
-  res.render("app-index",{
-    backgroundColor: functions.randomColor(),
-    compliments: data[functions.randomIndex()]
+  Compliment.find({}).then(function(compliments){
+    res.render("app-index",{
+      backgroundColor: functions.randomColor(),
+      compliments: compliments[Math.floor(Math.random() * compliments.length)]
+  })
   })
 })
 

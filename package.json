@@ -6,6 +6,7 @@
   "dependencies": {
     "express": "^4.13.4",
     "express-handlebars": "^3.0.0",
+    "mongoose": "^4.4.17",
     "randomcolor": "^0.4.4"
   },
   "devDependencies": {},
