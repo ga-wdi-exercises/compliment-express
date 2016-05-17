@@ -1,4 +1,4 @@
-[
+module.exports = [
   "Your instructors love you",
   "High five = ^5",
   "Is it Ruby Tuesday yet?",
