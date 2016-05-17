@@ -1,9 +1,12 @@
 body {
-  background-color: lightblue;
-  color: black;
   font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   font-style: normal;
   font-variant: normal;
   font-weight: 500;
   line-height: 15.4px;
+  background-color: {{randColor}};
+}
+
+{{{body}}} {
+  background-color: {{randColor}}
 }
