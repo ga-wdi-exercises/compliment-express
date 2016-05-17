@@ -20,10 +20,10 @@ app.get("/", function(req, res){
   // res.json(compliment);
   var randomCompliment = compliment[Math.floor(Math.random() * compliment.length)];
 
-  var color = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"];
+  var color = ["#FFBF00", "#0080FF","#01DF3A","#FF0080", "#9966ff", "#FFD635"];
   var randomColor = color[Math.floor(Math.random() * color.length)];
 
-    res.render("compliments-index", {compliment: randomCompliment, colors: randomColor})
+    res.render("compliments-index", {compliment: randomCompliment, color: randomColor})
 });
 
 
