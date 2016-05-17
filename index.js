@@ -4,8 +4,6 @@ var db  = require("./db/connection");
 
 var app = express();
 
-
-
 app.set("view engine", "hbs");
 app.engine(".hbs", hbs({
   extname:        ".hbs",
@@ -15,6 +13,8 @@ app.engine(".hbs", hbs({
 }));
 app.use("/assets", express.static("public"));
 
+
+
 app.get("/", function(req, res){
   var compliment = db.compliments
   // res.json(compliment);
@@ -23,11 +23,16 @@ app.get("/", function(req, res){
   var color = ["#FFBF00", "#0080FF","#01DF3A","#FF0080", "#9966ff", "#FFD635"];
   var randomColor = color[Math.floor(Math.random() * color.length)];
 
-    res.render("compliments-index", {compliment: randomCompliment, color: randomColor})
+  var font = ["'Oswald', sans-serif","'Shadows Into Light', cursive"];
+  var randomFont = font[Math.floor(Math.random() * font.length)];
+
+
+    res.render("compliments-index", {compliment: randomCompliment, color: randomColor, font: randomFont})
 });
 
+app.get("/:name", function(req, res){
 
-
+});
 
 app.listen(3001, function(){
   console.log("It's aliiive!");
