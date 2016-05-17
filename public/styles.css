@@ -6,7 +6,3 @@ body {
   line-height: 15.4px;
   background-color: {{randColor}};
 }
-
-{{{body}}} {
-  background-color: {{randColor}}
-}
