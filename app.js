@@ -3,7 +3,7 @@ var app         = express();                // makes the app actually run Expres
 var hbs         = require("express-handlebars");
 var colors      = require("./db/colors");            // retrieves arrays of colors and
 var compliments = require("./db/compliments");    // compliments from these files
-var mongoose    = require("./db/connection")
+// var mongoose    = require("./db/connection")
 
 app.set('view engine', 'hbs');
 app.engine('.hbs', hbs({        // configures Handlebars.  Throwing an error, though.
