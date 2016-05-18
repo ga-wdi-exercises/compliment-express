@@ -11,7 +11,7 @@ function randPick(arr) {               // Randomly picks a whole integer based o
 }
 
 function get_random_color() {      // Found this on Stack Overflow
-    var letters = 'ABCDE'.split('');   // Uses these letters to generate light color values
+    var letters = '789AB'.split('');   // Uses these letters to generate light color values
     var color = '#';                // sets '#' to append later to the returned string
     for (var i=0; i<3; i++ ) {      // cycles through the following line three times
         color += letters[Math.floor(Math.random() * letters.length)];
@@ -28,11 +28,22 @@ app.engine('.hbs', hbs({        // configures Handlebars.  Threw an error, thoug
 }))
 
 app.get("/", function(req, res){     // directs the app to do something at the '/' path
-  // res.send("dog");                  // displays "dog" in the browser view.
-  var randColor = get_random_color()    // chooses totally randomly from function above
+  // res.send("dog");                  // displays "dog" in the browser view for hello world.
+  var randColor = get_random_color()    // chooses totally random color from function above
   // var randColor = randPick(colors)   // chooses randomly from colors.js file
   var randComp  = randPick(compliments)
   res.render("index", {
+    randColor: randColor,
+    randComp:  randComp
+  });
+});
+
+app.get("/:name", function(req, res){
+  var name = req.params.name;
+  var randColor = randPick(colors);
+  var randComp = randPick(compliments)
+  res.render("index", {
+    name: name,
     randColor: randColor,
     randComp:  randComp
   });
