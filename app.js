@@ -10,7 +10,7 @@ app.engine('.hbs', hbs({        // configures Handlebars.  Throwing an error, th
   extname:        ".hbs",
   partialsDir:    "views/",
   layoutsDir:     "views/",
-  defaultLayout:  "index.hbs",
+  defaultLayout:  "layout-main.hbs",
 }))
 
 app.get("/", function(req, res){     // directs the app to do something at the '/' path
