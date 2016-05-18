@@ -1,6 +1,5 @@
 var express = require("express");
 var hbs = require("express-handlebars");
-// var db = require("./db/connection");
 var app = express();
 
 var colors = require("./models/colors.js")
@@ -23,6 +22,14 @@ function randPick(array){
 
 app.get("/", function(req, res) {
   res.render("index.hbs", {
+    randColor: randPick(colors),
+   randCompli: randPick(compliments)
+  });
+});
+
+app.get("/:name", function(req, res){
+  res.render("show.hbs", {
+    name: req.params.name,
     randColor: randPick(colors),
    randCompli: randPick(compliments)
   });
