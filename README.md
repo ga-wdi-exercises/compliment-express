@@ -35,4 +35,5 @@ How/where would you store these compliments?
 
 
 
-remember randPick and Math.floor(Math.random)
+remember, and compare, randPick and Math.floor(Math.random)
+and remember {{{body}}}  (yes, with triple curly brackets)
