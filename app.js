@@ -10,6 +10,15 @@ function randPick(arr) {               // Randomly picks a whole integer based o
   return arr[pick];
 }
 
+function get_random_color() {      // Found this on Stack Overflow
+    var letters = 'ABCDE'.split('');   // Uses these letters to generate light color values
+    var color = '#';                // sets '#' to append later to the returned string
+    for (var i=0; i<3; i++ ) {      // cycles through the following line three times
+        color += letters[Math.floor(Math.random() * letters.length)];
+    }                           // the line above picks one of the five letter values
+    return color;         // returns a three-'digit' hex color, such as #abc, to use below.
+}
+
 app.set('view engine', 'hbs');
 app.engine('.hbs', hbs({        // configures Handlebars.  Threw an error, though,
   extname:        ".hbs",       // when I had required simply "handlebars" in line 3.
@@ -20,7 +29,8 @@ app.engine('.hbs', hbs({        // configures Handlebars.  Threw an error, thoug
 
 app.get("/", function(req, res){     // directs the app to do something at the '/' path
   // res.send("dog");                  // displays "dog" in the browser view.
-  var randColor = randPick(colors)
+  var randColor = get_random_color()    // chooses totally randomly from function above
+  // var randColor = randPick(colors)   // chooses randomly from colors.js file
   var randComp  = randPick(compliments)
   res.render("index", {
     randColor: randColor,
