@@ -32,3 +32,8 @@ When you visit `"/name"` (ie: `"/randy"`), the greeting should personalize itsel
 Allow a user to add to the list of compliments using a POST request. You can submit POST requests to the app using Postman or a form.
 
 How/where would you store these compliments?
+
+
+
+remember, and compare, randPick and Math.floor(Math.random)
+and remember {{{body}}}  (yes, with triple curly brackets)
