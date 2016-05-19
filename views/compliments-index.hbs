@@ -1,1 +1,5 @@
-<h2>{{compliments.length}}compliments</h2>
+<h2> There are {{comliments.length}} compliments.</h2>
+
+{{#each compliments as |compliment| }}
+<p><a href="/compliments/{{compliment.name}}">{{compliment.name}}</a></p>
+{{/each}}

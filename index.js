@@ -1,7 +1,6 @@
 var express = require("express");//
 var hbs = require("express-handlebars");
-var db = require(".db/connection");
-
+var db = require("./db/connection");
 
 var app = express();
 app.use("/public",
@@ -14,9 +13,25 @@ app.engine(".hbs", hbs({
   defaultLayout:"layout-main"
 }));
 
+app.get("/", function(req, res){
+  console.log(req.params.name);
+  res.render("app-welcome");
+});
 app.get("/compliments", function(req, res){
-  res.render("compliments-index", {
-    compliments: db.compliments
+  res.render("compliments-index.hbs", {
+    candidates: db.candidates
+  });
+app.get("/compliments/:name", function(req, res){
+var desiredCompliment = req.params.name;
+var complimentOut;
+  db.complimets.forEach(function(compliment){
+    if(comliment.name == desiredCompliment){
+       complimentOut = compliment;
+     }
+   });
+   res.render("compliments-show", {
+    compliment: complimentOut
+  });
   });
 });
 
