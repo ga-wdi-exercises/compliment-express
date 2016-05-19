@@ -1,6 +1,6 @@
 var express = require("express");
-var hbs = require("express-handlebars");
-var app = express();
+var hbs     = require("express-handlebars");
+var app     = express();
 
 app.set("view engine", "hbs");
 app.engine(".hbs", hbs({
@@ -11,6 +11,11 @@ app.engine(".hbs", hbs({
 }));
 
 app.use('/assets', express.static("public"));
+
+function randomPick(array){
+  var pick = Math.floor(Math.random() * array.length);
+    return array[pick];
+}
 
 app.get('/', function(req, res){
 
