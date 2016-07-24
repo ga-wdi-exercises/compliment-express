@@ -14,9 +14,7 @@ app.set("view engine", "hbs")
 app.use(express.static(__dirname +'/public'))
 
 // get the compliments.home method and set path / to the method
-app.get("/", function(req, res) {
-  res.render("index")
-})
+app.get("/", compliments.home)
 
 app.get("/:name", compliments.name)
 
