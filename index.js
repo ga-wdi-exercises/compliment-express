@@ -13,12 +13,29 @@ app.set("view engine", "hbs")
 // use non-hbs items in the public directory
 app.use(express.static(__dirname +'/public'))
 
+function randoComp() {
+  return comps[Math.floor(Math.random() * comps.length)]
+}
+
+function randoColor() {
+  return colors[Math.floor(Math.random() * colors.length)]
+}
+
 // get the compliments.home method and set path / to the method
 app.get("/", function(req, res) {
-  res.render("index")
-})
+    res.render("index", {
+      comp: randoComp(),
+      col: randoColor()
+    })
+  })
 
-app.get("/:name", compliments.name)
+app.get("/:name", function(req, res) {
+  res.render("index", {
+    comp: randoComp(),
+    col: randoColor(),
+    name: req.params.name
+  })
+})
 
 // app.get("/:compliment", compliments.getCompliment)
 
