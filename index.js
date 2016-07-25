@@ -8,7 +8,8 @@ var compliments = [
   "High five = ^5",
   "Is it Ruby Tuesday yet?",
   "It's almost beer o'clock",
-  "The Force is strong with you"
+  "The Force is strong with you",
+  "you are a beautiful person"
 ];
 
 
@@ -28,7 +29,7 @@ function shuffle(array){
       array[m] = array[i];
       array[i] = t;
     }
-    return array;
+    return array[0];
 }
 
 
@@ -36,7 +37,8 @@ function shuffle(array){
 app.get("/", function(req, res){
   res.render("index", {
     compliment: shuffle(compliments),
-    color: shuffle(colors)
+    color: shuffle(colors),
+    colorbg: shuffle(colors)
   })
 });
 
