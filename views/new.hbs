@@ -1,0 +1,21 @@
+<style>
+body {
+  /*font-color: white;
+  font-weight:bolder;
+  font-size: 30px;
+  text-align: center;
+  font-family:'Helvetica Neue';*/
+  background-color: {{color}};
+}
+</style>
+
+<h1>Hello {{name}}<h1>
+  <h1>Here is The Compliment Chosen Expressly for YOU!<h1>
+<div>
+   <p>{{compliment}}</p>
+</div>
+
+<form action="/{{name}}/new" method="POST">
+  <input type="text" name="name" placeholder="Please Add A Compliment" />
+  <input type="submit" value="Submit" />
+</form>
