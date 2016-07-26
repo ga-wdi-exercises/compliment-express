@@ -1,0 +1,24 @@
+{
+  "name": "emergency_compliment",
+  "version": "1.0.0",
+  "description": "## Mission…",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "express": "^4.14.0",
+    "nodemon": "^1.10.0"
+  }
+}
