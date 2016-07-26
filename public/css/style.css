@@ -1,0 +1,40 @@
+@import 'https://fonts.googleapis.com/css?family=Hind+Siliguri|Josefin+Slab';
+
+.body {
+    justify-content: center;
+}
+
+.top {
+    height: 33vh;
+    width: 100vw;
+    background-color: red;
+    border-bottom: 10px solid white;
+    justify-content: center;
+}
+
+.bottom {
+    height: 67vh;
+    width: 100vw;
+    background-color: blue;
+    border-top: 10px solid white;
+}
+
+.quote {
+    text-align: center;
+    top: 40%;
+    color: white;
+    width: 60vw;
+    font-family: 'Josefin Slab', sans-serif;
+    font-size: 3em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image {
+    display: block;
+    padding-top: 2em;
+    width: 12em;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 99;
+}
