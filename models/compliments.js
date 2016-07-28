@@ -1,5 +1,3 @@
-// is this cool? setting global vars/requires in a controller?
-
 var comps = require("./comps.js")
 var colors = require("./colors.js")
 
@@ -10,9 +8,6 @@ function randoCompAndColor() {
 }
 
 module.exports = {
-    // home method, called using app.get in index.js, render's hbs index view index.hbs and does function
-
-    // why can't I create non-method functions in here? Because it's an object duh
 
     home: function(req, res) {
       res.render("index", {

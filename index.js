@@ -28,11 +28,6 @@ app.post("/", function(req, res){
 
 app.get("/:name", compliments.name)
 
-// app.get("/:compliment", compliments.getCompliment)
-
-
-// app.use(route, module.method)
-
 app.listen(3030, function() {
   console.log("server on");
 })
