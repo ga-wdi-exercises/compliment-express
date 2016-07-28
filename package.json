@@ -1,0 +1,25 @@
+{
+  "name": "compliment-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.14.0",
+    "hbs": "^4.0.0"
+  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ga-wdi-exercises/compliment-express.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ga-wdi-exercises/compliment-express/issues"
+  },
+  "homepage": "https://github.com/ga-wdi-exercises/compliment-express#readme"
+}
