@@ -29,6 +29,5 @@ When you visit `"/name"` (ie: `"/randy"`), the greeting should personalize itsel
 
 ## Level 3: user submitted compliments
 
-Allow a user to add to the list of compliments using a POST request. You can submit POST requests to the app using Postman or a form.
 
-How/where would you store these compliments?
+Allow a user to add to the list of compliments using a POST request. You can submit POST requests to the app using Postman or a form. Hint make sure to include body-parser!
