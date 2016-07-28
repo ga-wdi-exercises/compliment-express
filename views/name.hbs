@@ -5,16 +5,19 @@
     background-color: {{color}};
   };
 </style>
+<!-- Address the user directly -->
 <h2>Hello, {{name}}</h2>
 
 <h1>Express Compliments</h1>
 
 <div>
   <h2>Your Compliment Today:</h2>
+  <!-- Give the user a compliment -->
   <p>{{compliment}}</p>
 </div>
 
 <form action="/{{name}}/new" method="POST">
+  <!-- Allow the used to enter a new compliment -->
  <input type="text" name="name" placeholder="Please Add A Compliment" />
  <input type="submit" value="Submit" />
 </form>

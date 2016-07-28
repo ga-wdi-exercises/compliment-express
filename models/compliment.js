@@ -1,3 +1,4 @@
+// A list of random compliments
 module.exports = [
   "Your instructors love you",
   "High five = ^5",
