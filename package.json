@@ -1,0 +1,20 @@
+{
+  "name": "emergency_compliment",
+  "version": "1.0.0",
+  "description": "## Mission…",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcordz/emergency_compliment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dcordz/emergency_compliment/issues"
+  },
+  "homepage": "https://github.com/dcordz/emergency_compliment#readme"
+}
