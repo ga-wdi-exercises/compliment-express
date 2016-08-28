@@ -1,0 +1,21 @@
+<style>
+  body {
+    font-size: 50px;
+    text-align: center;
+    background-color: {{randomColor}};
+  };
+</style>
+
+<h1>Welcome to emergency compliment!</h1>
+<h2>Hello, {{user_name}}</h2>
+
+<div>
+  <h1>Hello {{user_name}}! Here's your compliment:</h1>
+  <p>{{randomCompliment}}</p>
+</div>
+
+<form action="/" method="post">
+  <label for="user_name">Please enter your name</label>
+  <input id="user_name" type="text" name="user_name">
+  <input type="submit" value="Submit">
+</form>
