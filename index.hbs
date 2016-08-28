@@ -1,0 +1,23 @@
+<!-- app.get("/:number_of_bottles?", function(req, res){
+  if (req.params.number_of_bottles > 1) {
+    res.send(req.params.number_of_bottles + " bottles of beer on the wall. <br>" + req.params.number_of_bottles + " bottles of beer on the wall. " + req.params.number_of_bottles + " bottles of beer. <br> <a href='" + (req.params.number_of_bottles - 1) + "'>Take one down. Pass it around.</a>");
+  }
+  else if (req.params.number_of_bottles == 1) {
+    res.send(req.params.number_of_bottles + " bottle of beer on the wall. <br>" + req.params.number_of_bottles + " bottle of beer on the wall. " + req.params.number_of_bottles + " bottle of beer. <br> <a href='" + (req.params.number_of_bottles - 1) + "'>Take it down. Pass it around.</a>");
+  }
+  else {
+    res.send("No bottles of beer on the wall. <br> <a href='/'>Start over</a>");
+
+  }
+}) -->
+{{#if player_name}}
+  Hey {{player_name}}. There are:<br>
+{{/if}}
+{{#if next}}
+  {{bottles}} bottles of beer on the wall.<br>
+  {{bottles}} bottles of beer.<br>
+  <a href = '/{{next}}'>Take one down. Pass it around.</a>
+{{else}}
+  No bottles of beer on the wall.<br>
+  <a href = '/'>Start over.</a>
+{{/if}}
