@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/nickoki/compliment-express/issues"
   },
-  "homepage": "https://github.com/nickoki/compliment-express#readme"
+  "homepage": "https://github.com/nickoki/compliment-express#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
