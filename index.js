@@ -32,13 +32,11 @@ app.listen(3000, () => {
   console.log("app listening on port 3000");
 });
 
-// app.git ("/:name", (req,res) => {
-//   console.log(req.params.name)
-// let color = getColor();
-// let str=getCompliment();
-// var name = req.params.name
-// res.render("name", {name,str,color});
-// });
+app.get ("/", (req,res) => {
+let color = getColor();
+let str=getCompliment();
+res.render("index", {str,color});
+});
 
 
 app.get("/:id", (req, res) => {
