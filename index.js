@@ -8,6 +8,11 @@ app.listen(8000, () => {
   console.log("CONNECTED ON port 8000")
 })
 
+app.post("/new", (req, res) => {
+  compliments.push(req.body)
+  res.redirect("/")
+})
+
 app.get("/:name?", (req, res) => {
   let randComplimentsArr = shuffle(compliments)
   let randColorsArr = shuffle(colors)

@@ -1,5 +1,12 @@
 <div class="complimentBody" style="background-color: {{randColor}};">
-  <h1>Hello {{name}}</h1>
+
+  {{#if name}}
+    <h1>Hello {{name}}</h1>
+  {{else}}
+    <h1>What's Up</h1>
+  {{/if}}
+
   <p>{{randCompliment}}</p>
   <button type="button" onClick="window.location.reload();">Another Compliment!</button>
+  <button type="button" onClick="location.href = '/new';">Add a Compliment!</button>
 </div>
