@@ -8,16 +8,19 @@ app.listen(8000, () => {
   console.log("CONNECTED ON port 8000")
 })
 
-app.get("/", (req, res) => {
+app.get("/:name?", (req, res) => {
   let randComplimentsArr = shuffle(compliments)
   let randColorsArr = shuffle(colors)
 
   let randCompliment = select(randComplimentsArr)
   let randColor = select(randColorsArr)
+  let name = req.params.name
 
 
-  res.render("index", {randCompliment, randColor});
+  res.render("index", {randCompliment, randColor, name});
 })
+
+
 
 //Hardcoded data
 let compliments = [
