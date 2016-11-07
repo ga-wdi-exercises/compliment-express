@@ -18,11 +18,14 @@ app.get("/", (req, res) => {
   console.log(`${compliments}`)
   var randCompliment = compliments[Math.floor(Math.random() * compliments.length)];
   var randColor = colors[Math.floor(Math.random() * colors.length)];
-  res.render("index.hbs", {compliment: randCompliment, color: randColor})
-  // res.render("index.hbs", {color: randColor})
-
+  res.render("index.hbs", {compliment: randCompliment, color: randColor}) // sets the dynamic results on the view pages to these new functions.
 })
-
+app.get("/:name", (req, res) => {
+  // name: req.params.name
+  var randCompliment = compliments[Math.floor(Math.random() * compliments.length)];
+  var randColor = colors[Math.floor(Math.random() * colors.length)];
+  res.render("name-compliments-show", {name: req.params.name, compliment: randCompliment, color: randColor})
+})
 
 // App now has express.
 // when we enter "/" we display a compliment and color from .sample.
