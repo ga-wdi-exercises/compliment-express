@@ -8,15 +8,19 @@ var compliments = [
 ]
 var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
+app.set("view engine", "hbs")
 app.use(bodyParser.json())
 app.listen("2000", () => {
   console.log("Express is working")
 })
+
 app.get("/", (req, res) => {
   console.log(`${compliments}`)
   var randCompliment = compliments[Math.floor(Math.random() * compliments.length)];
-  res.send(`${randCompliment}`)
-  console.log(`${compliments}`)
+  var randColor = colors[Math.floor(Math.random() * colors.length)];
+  res.render("index.hbs", {compliment: randCompliment, color: randColor})
+  // res.render("index.hbs", {color: randColor})
+
 })
 
 
