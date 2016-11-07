@@ -9,15 +9,17 @@ app.listen(8000, () => {
 })
 
 app.get("/", (req, res) => {
-  res.send("helloooooooo world")
+  let randComplimentsArr = shuffle(compliments)
+  let randColorsArr = shuffle(colors)
+
+  let randCompliment = select(randComplimentsArr)
+  let randColor = select(randColorsArr)
+
+
+  res.render("index", {randCompliment, randColor});
 })
 
-
-
-
-
-
-
+//Hardcoded data
 let compliments = [
   "Your instructors love you",
   "High five = ^5",
@@ -27,3 +29,28 @@ let compliments = [
 ]
 
 let colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
+
+// Choose 1st item out of randomized compliment
+function select(array){
+  return array[0]
+}
+
+//Shuffle global function
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex ;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
