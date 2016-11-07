@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/merubin/compliment-express#readme",
   "dependencies": {
+    "@slack/client": "^3.6.0",
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "hbs": "^4.0.1"
   }
