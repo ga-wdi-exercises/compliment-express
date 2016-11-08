@@ -1,0 +1,29 @@
+*{
+  text-align: center;
+  margin: 0;
+}
+
+
+h1{
+  font-size: 70px;
+}
+p{
+  font-size: 70px;
+  color: #fff;
+}
+.complimentBody{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+button{
+  /*width: 100px;*/
+}

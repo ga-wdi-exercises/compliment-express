@@ -1,0 +1,21 @@
+<div class="complimentBody" style="background-color: {{randColor}};">
+
+  {{#if name}}
+    <h1>Hello {{name}}</h1>
+  {{else}}
+    <h1>What's Up</h1>
+  {{/if}}
+
+  <p>{{randCompliment}}</p>
+  <div class="anothercomp">
+    <button type="button" onClick="window.location.reload();">Another Compliment!</button>
+  </div>
+
+  <div class="newcompliment">
+    <form action="/" method="POST">
+       <input type="text" name="title" placeholder="Please Add A Compliment" />
+       <input type="submit" value="Submit" />
+    </form>
+  </div>
+
+</div>
