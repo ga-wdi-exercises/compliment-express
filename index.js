@@ -1,6 +1,11 @@
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
+var mongoose      = require("./db/connection");
+var Compliment = mongoose.model("Compliment")
+
+
+app.use(express.static("public"))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -29,6 +34,14 @@ app.get("/:name", (req, res) => {
   res.render("color", {color: colors, compliment: compliments, name: names})
 
 })
+
+app.post("/", function(req, res) {
+  res.json(req.body)
+  Compliment.create(req.body.compliment).then(compliment => {
+    res.redirect("/")
+  })
+})
+
 app.listen(3000, () => {
   console.log("app listening at http://localhost:3000/")
 })
