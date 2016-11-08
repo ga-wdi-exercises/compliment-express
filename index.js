@@ -13,6 +13,19 @@ app.get("/", function(req, res){
   res.render("index.hbs", {compliment: compliment, color: color})
 })
 
+app.get("/:name?", function(req, res){
+  var compliment = compliments[Math.floor(Math.random() * compliments.length)];
+  var color = colors[Math.floor(Math.random() * colors.length)];
+  var name = req.params.name
+  res.render("name.hbs", {compliment: compliment, color: color, name: name})
+})
+
+app.post("/:name/new", function(req, res){
+  var name = req.params.name
+  compliments.push(req.body.name)
+  res.redirect('/' + name)
+})
+
 var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
 var compliments = [
