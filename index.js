@@ -12,14 +12,22 @@ var compliments = [
 var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
 app.set("view engine", "hbs")
-app.get("/", (req, res) => {
+app.use(express.static(__dirname + '/public'))
+
+app.get("/:name?", (req, res) => {
+  console.log(req.params);
+  //getting that params is undefined?
   var compliment = compliments[Math.floor(Math.random()*compliments.length)]
   var background = colors[Math.floor(Math.random()*colors.length)]
+  var name = req.params
+  console.log(name);
   res.render("home", {
     compliment,
-    background
+    background,
+    name
   })
 })
+
 
 app.listen(3001, () => {
   console.log("alive");
