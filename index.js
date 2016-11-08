@@ -9,8 +9,8 @@ var compliments = [
 var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
 app.set("view engine", "hbs")
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.json()) // handles json requests
+app.use(bodyParser.urlencoded({extended:true})) // handles form submissions
 app.listen("2000", () => {
   console.log("Express is working")
 })
