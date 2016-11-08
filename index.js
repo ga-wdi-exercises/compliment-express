@@ -6,7 +6,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var compliment = [
   "You can do it",
-  "You are almsot there",
+  "You are almost there",
   "I believe in you"
 ]
 
@@ -23,7 +23,10 @@ app.get("/", (req, res) => {
 
 app.get("/:name", (req, res) => {
   var compliments = compliment[(Math.floor(Math.random()*3))]
-  res.send(`Hello, ${req.params.name}, ${compliments}`)
+    var colors = color[(Math.floor(Math.random()*4))]
+  // res.send(`Hello, ${req.params.name}, ${compliments}`)
+  var names = (req.params.name)
+  res.render("color", {color: colors, compliment: compliments, name: names})
 
 })
 app.listen(3000, () => {
