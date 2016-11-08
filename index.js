@@ -1,8 +1,9 @@
 var express       = require("express");
 var hbs           = require("express-handlebars");
 var parser        = require("body-parser")
-var compliments    = require("./compliments")
-var app = express()
+var compliments   = require("./compliments")
+var colors        = require("./colors")
+var app           = express()
 
 app.set("port", process.env.PORT || 3001);
 app.set("view engine", "hbs");
@@ -18,11 +19,24 @@ app.use(parser.urlencoded({extended:true}))
 
 app.get("/", function(req, res){
   randCompliment = compliments[Math.floor(Math.random() * compliments.length)];
-  console.log(randCompliment);
+  randColor = colors[Math.floor(Math.random() * colors.length)];
   res.render("index", {
-    randCompliment
+    randCompliment,
+    randColor
   });
 });
+
+app.get("/:name", function(req, res){
+  randCompliment = compliments[Math.floor(Math.random() * compliments.length)];
+  randColor = colors[Math.floor(Math.random() * colors.length)];
+  name = req.params.name
+  res.render("named", {
+    randCompliment,
+    randColor,
+    name
+  });
+})
+
 
 app.listen(app.get("port"), function(){
   console.log("It's aliiive!");

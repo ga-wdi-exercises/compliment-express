@@ -1,0 +1,11 @@
+body {
+  font-family: sans-serif;
+  color: white;
+}
+
+.compliment {
+  margin-top: 20vh;
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
+}
