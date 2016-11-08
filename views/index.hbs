@@ -7,6 +7,15 @@
   {{/if}}
 
   <p>{{randCompliment}}</p>
-  <button type="button" onClick="window.location.reload();">Another Compliment!</button>
-  <button type="button" onClick="location.href = '/new';">Add a Compliment!</button>
+  <div class="anothercomp">
+    <button type="button" onClick="window.location.reload();">Another Compliment!</button>
+  </div>
+
+  <div class="newcompliment">
+    <form action="/" method="POST">
+       <input type="text" name="title" placeholder="Please Add A Compliment" />
+       <input type="submit" value="Submit" />
+    </form>
+  </div>
+
 </div>

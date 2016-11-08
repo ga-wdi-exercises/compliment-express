@@ -1,16 +1,20 @@
 var express = require("express")
 var app = express()
+var bodyParser = require("body-parser")
 
 app.set("view engine","hbs")
 app.use(express.static(__dirname + "/public"))
+app.use(bodyParser.urlencoded({extended: true}))
 
 app.listen(8000, () => {
   console.log("CONNECTED ON port 8000")
 })
 
-app.post("/new", (req, res) => {
-  compliments.push(req.body)
-  res.redirect("/")
+app.post("/", (req, res) => {
+  console.log(req.body)
+  compliments.push(req.body.title)
+    res.redirect("/")
+
 })
 
 app.get("/:name?", (req, res) => {
@@ -20,7 +24,7 @@ app.get("/:name?", (req, res) => {
   let randCompliment = select(randComplimentsArr)
   let randColor = select(randColorsArr)
   let name = req.params.name
-
+  console.log(compliments)
 
   res.render("index", {randCompliment, randColor, name});
 })
