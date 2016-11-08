@@ -26,6 +26,20 @@ app.get("/", function(req, res){
   });
 });
 
+app.get("/new", function(req, res){
+  randColor = colors[Math.floor(Math.random() * colors.length)];
+  res.render("new", {
+    randColor
+  })
+})
+
+app.post("/compliments", function(req, res){
+  console.log(compliments.push(0));
+  compliments.push(req.body.compliment)
+  res.redirect("/")
+
+})
+
 app.get("/:name", function(req, res){
   randCompliment = compliments[Math.floor(Math.random() * compliments.length)];
   randColor = colors[Math.floor(Math.random() * colors.length)];
