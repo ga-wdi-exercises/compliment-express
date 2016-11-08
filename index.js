@@ -35,10 +35,10 @@ app.get("/:name", (req, res) => {
 
 })
 
-app.post("/", function(req, res) {
+app.post("/:compliment", function(req, res) {
   res.json(req.body)
   Compliment.create(req.body.compliment).then(compliment => {
-    res.redirect("/")
+    res.redirect("/:compliment")
   })
 })
 
