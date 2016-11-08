@@ -15,12 +15,10 @@ app.set("view engine", "hbs")
 app.use(express.static(__dirname + '/public'))
 
 app.get("/:name?", (req, res) => {
-  console.log(req.params);
   //getting that params is undefined?
   var compliment = compliments[Math.floor(Math.random()*compliments.length)]
   var background = colors[Math.floor(Math.random()*colors.length)]
-  var name = req.params
-  console.log(name);
+  var name = req.params.name
   res.render("home", {
     compliment,
     background,
