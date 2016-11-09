@@ -16,14 +16,22 @@ var compliments = [
   "The Force is strong with you"
 ]
 
+var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
-var color = ["#FFBF00"]
-// var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
+// stole this solution :(
+function getRandomStuff(module){
+  var randomIndex = Math.floor((Math.random() * module.length));
+  var randomInstance = module[randomIndex];
+  return randomInstance;
+}
+
+app.get("/", function(req, res){
+  var randomCompliment = getRandomStuff(compliments);
+  var randomColor = getRandomStuff(colors);
+  res.render("index.hbs", {compliment: randomCompliment, color: randomColor});
+});
+
 
 app.listen(3000, () => {
   console.log("3000")
-})
-
-app.get("/", (req, res) => {
-  res.render("index.hbs", {compliments: compliments, color: color})
 })
