@@ -1,32 +1,26 @@
 var express = require("express");
 var app = express();
 var hbs = require("hbs")
-var body-parser = require("body-parser")
+var bodyParser = require("body-parser")
+var compliments = require("./models/compliment")
+var colors = require("./models/color")
 
-var compliments = [
-  "Your instructors love you",
-  "High five = ^5",
-  "Is it Ruby Tuesday yet?",
-  "It's almost beer o'clock",
-  "The Force is strong with you"
-]
-
-var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
 
 app.set("view engine", "hbs")
 app.use(express.static("public"))
 
-function RandomCompliments(){
+function RandomCompliments(module){
     var randomComplimentIndex = Math.floor((Math.random() * module.length));
-  var randomInstance = module[randomComplimentIndex];
-  return randomInstance;
+    var randomInstance = module[randomComplimentIndex];
+    return randomInstance;
 }
 
 app.get("/", (req, res) => {
-    var randomComp= RandomCompliments(compliments)
+    var randomComp = RandomCompliments(compliments)
     var randomColor = RandomCompliments(colors)
-    var name = req.params.name;
-    res.render("index.hbs", {compliment: randomComp, color: randomColor, name: name})
+    res.render("index.hbs", {compliment: randomComp, color: randomColor})
 })
 
 app.listen(3000, () => {
