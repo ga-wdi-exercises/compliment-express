@@ -1,8 +1,10 @@
-var complimentExpress = require("express")
+var express = require("express")
 var app = express()
 
-app.listen(5000, () => {
-  console.log("app listening on port 5000")
-})
+var bodyParser = require("body-parser")
 
 app.set("view engine", "hbs")
+
+app.listen(3000, () => {
+  console.log("app listening on port 3000")
+})
