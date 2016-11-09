@@ -23,6 +23,12 @@ app.get("/", (req, res) => {
     res.render("index.hbs", {compliment: randomComp, color: randomColor})
 })
 
+app.get("/:name", (req, res) => {
+    var randomComp = RandomCompliments(compliments)
+    var randomColor = RandomCompliments(colors)
+    var name = req.params.name;
+    res.render("name.hbs", {compliment: randomComp, color: randomColor, name: name})
+})
 app.listen(3000, () => {
   console.log("app listening at http://localhost:3000/")
 })
