@@ -3,8 +3,10 @@ var app = express()
 
 var bodyParser = require("body-parser")
 
-app.set("view engine", "hbs")
+app.use(bodyParser.urlencoded({extended: true})); // no idea what this does
+app.use(bodyParser.json()); // no idea what this does
 
+app.set("view engine", "hbs")
 
 var compliments = [
   "Your instructors love you",
@@ -21,5 +23,5 @@ app.listen(3000, () => {
 })
 
 app.get("/", (req, res) => {
-  res.send(compliments)
+  res.render("index.hbs", {compliments: compliments})
 })
