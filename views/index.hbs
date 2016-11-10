@@ -4,4 +4,8 @@
   <h2>Here's your compliment:</h2>
   <p>{{name}} {{compliment}}</p>
 </div>
+<form action="/{{name}}" method="POST">
+ <input type="text" name="compliment" placeholder="Enter a compliment" >
+ <input type="submit" value="Submit" />
+</form>
 </main>
