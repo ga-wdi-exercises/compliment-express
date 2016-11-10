@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Kalam:400,700');
+
+body {
+  display: flex;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 12%;
+  width: 100%;
+  height: 90vh;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Kalam", cursive;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4)
+}
+
+a {
+  text-decoration: none;
+  font-family: "Helvetica Neue", sans-serif;
+  color: #fff;
+}
+
+.button {
+  margin-top: 1em;
+  border: 2px solid #fff;
+  padding: 1em;
+  text-transform: capitalize;
+  font-weight: bold;
+}
