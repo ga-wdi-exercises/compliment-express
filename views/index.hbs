@@ -1,16 +1,28 @@
 <style media="screen">
   body {
     background-color: {{currentColor}};
-    height: 600px;
+    height: 400px;
+    text-align: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
   }
   p {
     color: white;
     font-size: 54px;
     font-weight: bold;
   }
+  label {
+    color: white;
+    
+  }
+
 </style>
 
-<p>{{currentCompliment}}</p>
+<p class="potato">{{currentCompliment}}</p>
+<p>
+  <form action="/" method="post">
+  <label for="player_name">Please enter your name</label>
+  <input id="player_name" type="text" name="player_name">
+  <input type="submit">
+</form>
+</p>
