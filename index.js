@@ -12,9 +12,9 @@ var compliments = [
 var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
 app.get ("/", (req, res) =>{
-  var compliment = compliments[Math.floor(Math.random()compliments.length)];
-  var color = colors[Math.floor(Math.random()colors.length)];
-  res.render("index", {compliments, colors});
+  var compliment = compliments[Math.floor(Math.random() * compliments.length)];
+  var color = colors[Math.floor(Math.random() * colors.length)];
+  res.render("index", {compliment, color});
 })
 
 app.set("view engine", "hbs");
