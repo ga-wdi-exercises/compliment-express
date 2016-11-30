@@ -1,0 +1,16 @@
+<html style="background-color: {{randomColor}};">
+
+{{#if name}}
+<p>Hello {{name}}.</p>
+{{/if}}
+
+<p>{{randomCompliment}}</p>
+
+<div>
+  <form action="/" method="POST">
+    <input type="text" name="title" placeholder="Add a New Compliment" />
+    <input type="submit" value="Submit" />
+  </form>
+</div>
+
+</html>
