@@ -17,8 +17,17 @@ app.get ("/", (req, res) =>{
   res.render("index", {compliment, color});
 })
 
+app.get ("/:name", (req, res) =>{
+  compliment = compliments[Math.floor(Math.random() * compliments.length)],
+  color = colors[Math.floor(Math.random() * colors.length)],
+  name = req.params.name
+  res.render("index", {compliment, color, name})
+})
+
+
+
 app.set("view engine", "hbs");
-//
+
 app.listen(4000, () => {
   console.log("app listening on port 4000");
 });
