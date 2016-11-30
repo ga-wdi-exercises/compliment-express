@@ -1,0 +1,14 @@
+<h2>Hello, {{name}}</h2>
+
+
+<div>
+  <h2>Compliment: </h2>
+  <p>
+    {{compliment}}
+  </p>
+</div>
+
+<form action="/{{name}}/new" method="post">
+  <input type="text" name="name" placeholder="add a compliment">
+  <input type="submit" value="submit">
+</form>
