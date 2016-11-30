@@ -1,5 +1,9 @@
 var express = require("express");
 var app = express();
+var bodyParser = require("body-parser");
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 var compliments = [
   "Your instructors love you",
@@ -24,7 +28,10 @@ app.get ("/:name", (req, res) =>{
   res.render("index", {compliment, color, name})
 })
 
-
+app.post("/", (req, res) => {
+  compliments << req.body.newCompliment,
+  res.redirect("/")
+})
 
 app.set("view engine", "hbs");
 
