@@ -7,6 +7,7 @@ var app         = express();
 app.set("view engine", "hbs");
 app.use(express.static("public"));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 function randomize(model){
   let random = model[Math.floor(Math.random()*model.length)]
