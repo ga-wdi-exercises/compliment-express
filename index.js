@@ -29,7 +29,7 @@ app.get ("/:name", (req, res) =>{
 })
 
 app.post("/", (req, res) => {
-  compliments << req.body.newCompliment,
+  compliments.push(req.body.newCompliment),
   res.redirect("/")
 })
 
