@@ -1,0 +1,38 @@
+body {
+ font-family: "Helvetica";
+ color: white;
+ margin: 120px auto;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-content: center;
+ align-items: center;
+ text-align: center;
+}
+div{
+ font-size: 75px;
+ text-align: center;
+}
+a{
+ font-size: 40px;
+ color: #FFFFFF;
+ text-align: center;
+ text-decoration: none;
+}
+form{
+  align-self: center;
+  margin: 15px;
+  padding: 10px;
+  border: 2px solid white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+input {
+  margin: 10px;
+  padding: 10px 40px;
+  border-radius: 8px;
+}
