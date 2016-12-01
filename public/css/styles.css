@@ -5,6 +5,8 @@ body {
  display: flex;
  flex-direction: column;
  justify-content: center;
+ align-content: center;
+ align-items: center;
  text-align: center;
 }
 div{
@@ -19,24 +21,18 @@ a{
 }
 form{
   align-self: center;
-  margin: 40px, 0, 0, 0;
+  margin: 15px;
+  padding: 10px;
+  border: 2px solid white;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   align-content: center;
 }
-p {
-  font-size: 25px;
-  padding: 0;
-}
+
 input {
   margin: 10px;
-}
-#next{
- align-self: center;
- width: 40%;
- margin: 15px;
- padding: 10px;
- border: 2px solid white;
+  padding: 10px 40px;
+  border-radius: 8px;
 }

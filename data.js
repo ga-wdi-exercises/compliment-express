@@ -8,9 +8,6 @@ compliments = [
   "The Force is strong with you"
 ]
 
-
-
-
 module.exports = {
   colors,
   compliments
