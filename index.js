@@ -1,6 +1,10 @@
 var express = require("express");
 var app = express();
-app.set("view engine", "hbs")
+app.set("view engine", "hbs");
+
+var bodyParser = require("body-parser");
+app.use(bodyParser.json()); //handles json post requests
+app.use(bodyParser.urlencoded({ extended: true })); // handles form submissions
 
 var compliments = [
   "Your instructors love you",
@@ -20,9 +24,15 @@ app.listen(4000, () => {
   console.log("app listening on port 4000")
 })
 
-app.get("/", (req, res) => {
+app.get("/:name?", (req, res) => {
   res.render("index", {
     compliment: randomize(compliments),
-    color: randomize(colors)
+    color: randomize(colors),
+    name: req.params.name
   })
+})
+
+app.post("/", (req, res) => {
+  compliments.push(req.body.compliment_text)
+  res.redirect('/')
 })

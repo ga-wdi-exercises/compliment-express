@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Emergency Compliment</title>
-  </head>
-  <body>
-    {{{body}}}
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Emergency Compliment</title>
+  <style>
+    input{
+      padding: 30px;
+      font-size: 2em;
+      margin: 10px;
+      font-family: helvetica;
+      text-align: center;
+      border-radius: 30px
+    }
+    form {
+      width: 50%;
+      margin: 40px auto;
+    }
+  </style>
+</head>
+<body>
+  {{{body}}}
+  <br><br>
+
+  <form action="/" method="post">
+    <input id="compliment_text" name="compliment_text" type="text" placeholder="Add a Compliment!"><br>
+    <input type="submit">
+  </form>
+</body>
 </html>
