@@ -1,22 +1,21 @@
 var express = require("express");
 var app = express();
-app.use(express.static('/public'))
+app.use(express.static(__dirname + '/public'))
 app.set("view engine", "hbs");
 
-compliments = [
-  "Your instructors love you",
-  "High five = ^5",
-  "Is it Ruby Tuesday yet?",
-  "It's almost beer o'clock",
-  "The Force is strong with you"
-]
+var data = require("./data.js");
 
-colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
+
+
+app.get("/:name?", (req, res) => {
+  var color = data.colors[Math.floor(Math.random() * data.colors.length)];
+  var compliment = data.compliments[Math.floor(Math.random() * data.compliments.length)];
+  var name = req.params.name
+  
+  res.render("index", {color, compliment, name});
+});
+
 
 app.listen(4000, () => {
   console.log("app listening on port 4000");
-});
-
-app.get("/", (req, res) => {
-  res.render("index");
 });
