@@ -30,6 +30,7 @@ app.get("/:name", (req, res) => {
     "Is it Ruby Tuesday yet?",
     "It's almost beer o'clock",
     "The Force is strong with you"
+    "Too sexy for your cat!"
   ];
 
   var randomComplimentIndex = Math.floor((Math.random() * compliments.length - 1) + 1);
