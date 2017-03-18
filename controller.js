@@ -13,10 +13,12 @@ function randomElement(arr) {
 }
 
 module.exports = {
-  sample(req, res) {
+  index(req, res) {
     let compliment = randomElement(compliments)
+    let name = req.params.name
     res.render("index", {
-      compliment
+      compliment,
+      name
     })
   }
 }

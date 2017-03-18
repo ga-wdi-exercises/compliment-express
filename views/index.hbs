@@ -1,4 +1,7 @@
-<p>Hello!</p>
-<p>{{compliment}}</p>
+{{#if name}}
+  <p>Hello, {{name}}!</p>
+{{else}}
+  <p>Hello!</p>
+{{/if}}
 
-<!-- ${req.params.name}! -->
+<p>{{compliment}}</p>
