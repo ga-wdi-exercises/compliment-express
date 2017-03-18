@@ -1,20 +1,5 @@
-## Level 1: generic compliment
-
-When you visit the root (`"/"`) of your app, it should display a generic greeting and a randomly chosen compliment. The background color of the app should be randomized as well.
-
-Here are some sample compliments and colors (feel free to substitute in your own):
-
-```js
-compliments = [
-  "Your instructors love you",
-  "High five = ^5",
-  "Is it Ruby Tuesday yet?",
-  "It's almost beer o'clock",
-  "The Force is strong with you"
-]
-
-colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
-```
+The background color of the app should be randomized as well.
+colors = ['#FFBF00', '#0080FF', '#01DF3A', '#FF0080']
 
 ## Level 2: personalized compliment
 
