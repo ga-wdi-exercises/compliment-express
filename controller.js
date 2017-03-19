@@ -1,5 +1,5 @@
 const colors = ['#FFBF00', '#0080FF', '#01DF3A', '#FF0080']
-const compliments = [
+const sasses = [
   "Surely, someone is stupider than you.",
   "Turn that frown upside down ... Now wipe that smirk off your face.",
   "Really? That shirt with those pants?",
@@ -16,11 +16,11 @@ function randomElement(arr) {
 module.exports = {
   index(req, res) {
     let color = randomElement(colors)
-    let compliment = randomElement(compliments)
+    let sass = randomElement(sasses)
     let name = req.params.name
     res.render("index", {
       color,
-      compliment,
+      sass,
       name
     })
   }
