@@ -1,19 +1,25 @@
 const express = require("express")
 const app = express()
+const compliments = require("./compliments.js")
 
-compliments = [
-  "Your instructors love you",
-  "High five = ^5",
-  "Is it Ruby Tuesday yet?",
-  "It's almost beer o'clock",
-  "The Force is strong with you"
-]
+app.set("view engine", "hbs")
+
+// compliments = [
+//   "Your instructors love you",
+//   "High five = ^5",
+//   "Is it Ruby Tuesday yet?",
+//   "It's almost beer o'clock",
+//   "The Force is strong with you"
+// ]
 
 
 app.listen(4000, () => {
   console.log("app listening on port 4000")
 })
 
-app.get("/", (req,res) => {
-  res.send("Your instructors love you")
-})
+// app.get("/", (req,res) => {
+//   res.send("Your instructors love you")
+//   res.send()
+// })
+
+app.get("/", compliments.index)
