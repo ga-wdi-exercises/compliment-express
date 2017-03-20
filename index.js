@@ -1,6 +1,12 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 app.set("view engine", "hbs");
+
+
+app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 
 let compliments = [
@@ -15,12 +21,19 @@ let compliments = [
 let colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
 
-app.get("/", (req, res) => {
+app.get("/:name?", (req, res) => {
 
   let compliment = compliments[Math.floor(Math.random() * compliments.length)];
-  // res.send(console.log(compliment));
   let color = colors[Math.floor(Math.random() * colors.length)];
-  res.render("index", {compliment, color})
+  let name = req.params.name
+  res.render("index", {compliment, color, name})
+
+});
+
+app.post("/:name/new", (req, res) => {
+  compliments.push(req.body.newCompliment);
+  let name = req.params.name;
+  res.redirect(`/${name}`);
 });
 
 
