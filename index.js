@@ -1,4 +1,6 @@
 const express = require("express");
+const compliment = require("./compliment.js");
+
 const app = express();
 
 app.set("view engine", "hbs")
