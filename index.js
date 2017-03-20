@@ -8,7 +8,7 @@ app.use(express.static(__dirname + "/public"))
 
 
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.send("Hello" + `${compliment.push([Math.floor(Math.random()* compliment.length)])}`)
 })
 
 app.listen(4000, () => {
