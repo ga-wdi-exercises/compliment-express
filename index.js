@@ -19,10 +19,11 @@ function randomize(model){
   return random
 }
 
-app.get("/", (req, res) => {
+app.get("/:name?", (req, res) => {
+  let name = req.params.name
   let compliment = compliments[Math.floor(Math.random()* compliments.length)];
   let color = colors[Math.floor(Math.random()* colors.length)];
-  res.render("index", {compliment, color});
+  res.render("index", {name, compliment, color});
 })
 
 app.listen(4000, () => {
