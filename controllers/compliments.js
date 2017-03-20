@@ -12,11 +12,12 @@ module.exports = {
 
     let compliment = compliments[Math.floor(Math.random() * compliments.length)]
     let color = colors[Math.floor(Math.random()* colors.length)]
-
+    let name = req.body.name
 
     res.render('index', {
       compliment,
       color,
+      name
     })
   }
 }
