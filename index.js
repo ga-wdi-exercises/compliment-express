@@ -13,7 +13,9 @@ app.get("/", (req,res) => {
     "High five = ^5",
     "Is it Ruby Tuesday yet?",
     "It's almost beer o'clock",
-    "The Force is strong with you"
+    "The Force is strong with you",
+    "You look pretty today, but only today",
+    "Just remember, it could be worse, you could be dead"
   ]
   let colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
   let compliment = compliments[Math.floor(Math.random() * compliments.length)]
