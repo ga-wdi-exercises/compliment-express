@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const compliments = require('./controllers/compliments.js')
 const bodyParser = require('body-parser')
 
 
@@ -16,21 +15,43 @@ app.listen(4000, () => {
 })
 
 
-app.get('/', (req, res)=> {
-  res.render('welcome')
+let compliments = [
+  "Your instructors love you",
+   "High five = ^5",
+   "Is it Ruby Tuesday yet?",
+   "It's almost beer o'clock",
+   "The Force is strong with you"
+]
+
+let colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
+
+
+app.get('/', (req, res)=>{
+  let compliment = compliments[Math.floor(Math.random()* compliments.length)]
+  let color = colors[Math.floor(Math.random()* colors.length)]
+  res.render("index", {color, compliment})
 })
 
 
+app.get('/:name', (req, res)=>{
+  let compliment = compliments[Math.floor(Math.random()* compliments.length)]
+  let color = colors[Math.floor(Math.random()* colors.length)]
+  let name = req.params.name
 
-app.get("/", compliments.index)
-app.get('/:name', compliments.index)
+  res.render("index", {color, compliment, name})
+})
+
+app.post('/', (req, res)=>{
+  let compliment = compliments[Math.floor(Math.random()* compliments.length)]
+  let color = colors[Math.floor(Math.random()* colors.length)]
+  let name = req.body.name
+  let newCompliment = []
+  res.render("index", {color, compliment, name, newCompliment})
+})
 
 app.post('/:name', (req, res)=>{
+  let compliment = compliments[Math.floor(Math.random()* compliments.length)]
+  let color = colors[Math.floor(Math.random()* colors.length)]
   let name = req.body.name
-
-  res.render('index', {
-    name,
-    compliments
-
-  })
+  res.render("index", {color, compliment, name})
 })
