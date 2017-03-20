@@ -1,8 +1,10 @@
-<!-- {{#if name}}
-Hey {{name}}
-{{/if}} -->
-
 Hey {{name}}, {{compliment}}
 
 <body style="background-color: {{color}};">
 </body>
+
+<form action="/" method="post">
+  <label for="new_compliment"> Add a compliment </label>
+  <input id="new_compliment" type="text" name="new_compliment">
+  <input type="submit">
+</form>
