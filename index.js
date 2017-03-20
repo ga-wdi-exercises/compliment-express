@@ -15,8 +15,6 @@ function findRandom(thing) {
 app.get('/', (req, res) => {
     let index = findRandom(compliments)
     let color = findRandom(colors)
-    console.log(index);
-    console.log(colors[color]);
     res.render('index.hbs', {
         compliment: compliments[index],
         color: colors[color]
