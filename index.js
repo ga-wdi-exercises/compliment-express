@@ -1,5 +1,8 @@
 
-const compliments = [
+var express = require("express");
+var app = express();
+
+compliments = [
   "Your instructors love you",
   "High five = ^5",
   "Is it Ruby Tuesday yet?",
@@ -7,12 +10,13 @@ const compliments = [
   "The Force is strong with you"
 ]
 
-const colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
+color = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
 
 
-var express = require("express");
-var app = express();
+// app.set("view engine", "hbs");
+// app.use(express.static(__dirname + '/public'))
+
 
 
 app.listen(4000, () => {
@@ -20,12 +24,25 @@ app.listen(4000, () => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.send("helloworld")
 });
 
 app.get("/:name?", (req, res) => {
-  var color = colors[Math.floor(Math.random()*colors.length)]
-  body.style.backgroundColor = color;
+  let randomColor = color[Math.floor(Math.random() * color.length)]
+  let randomCompliment = compliments[Math.floor(Math.random() * compliments.length)]
+  let name = req.params.name
+  let htmlString = `
+  <html>
+  <style>
+  body{
+    background-color: ${randomColor};
+  }
+  </style>
+  <body>
+  <h1>Hi ${name} ${randomCompliment}</h1>
+  </body>
+  </html>
+  `
 
-  res.send(`Hello ${req.params.name}`);
+  res.send(htmlString)
 });
