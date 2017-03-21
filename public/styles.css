@@ -1,0 +1,39 @@
+
+
+body {
+  text-align: center;
+  font-size: 40px;
+  color: white;
+
+}
+
+.compliment {
+  width: 80vw;
+  margin: 0 auto;
+  border: 8px solid white;
+  padding: 50px;
+
+}
+
+h2 {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h3 {
+  font-variant: small-caps;
+}
+
+.button{
+  background-color: pink;
+  text-decoration: none;
+  display:block;
+  margin: 0 auto;
+  padding: 50px;
+  height: 20vh;
+  width: 30vw;
+  text-align: center;
+  margin-top: 90px;
+  border: 6px dashed white;
+}
