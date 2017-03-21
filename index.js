@@ -41,3 +41,36 @@ app.listen(app.get("port"), function(){
 //     });
 //   })
 // });
+
+//Display a random compliment
+app.get('/', (req, res) => {
+  Compliment.find({}).then( (compliments) => {
+    var randomNum = Math.floor((Math.random() * (compliments.length -1) ));
+    var compliment = compliments[randomNum];
+    res.render("compliments", {
+      compliment: compliment
+    })
+  })
+});
+
+// //Display a random compliment - not working
+// app.get('/', (req, res) => {
+//   Color.find({})
+//   .then( (colors) => {
+//      randomColorNum = Math.floor((Math.random() * (colors.length -1) ));
+//      color = colors[randomColorNum];
+//      console.log(color)
+//   })
+//   Compliment.find({})
+//   .then( (compliments) => {
+//      randomNum = Math.floor((Math.random() * (compliments.length -1) ));
+//      compliment = compliments[randomNum];
+//      console.log(compliment)
+//   })
+//   .then( (color, compliment) => {
+//     res.render("compliments.hbs"), {
+//     compliment: compliment,
+//     color: color
+//     });
+//   })
+// });
