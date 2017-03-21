@@ -53,6 +53,18 @@ app.get('/', (req, res) => {
   })
 });
 
+//Display a customized compliment
+app.get('/:name', (req, res) => {
+    let who = `${req.params.name}`
+    Compliment.find({}).then( (compliments) => {
+      var randomNum = Math.floor((Math.random() * (compliments.length -1) ));
+      var compliment = compliments[randomNum];
+      res.render("customized", {
+        compliment, who
+      })
+    })
+})
+
 // //Display a random compliment - not working
 // app.get('/', (req, res) => {
 //   Color.find({})
