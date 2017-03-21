@@ -1,7 +1,6 @@
 const express = require("express")
 const app = express()
 const bodyParser = require("body-parser")
-// const compliments = require("./compliments.js")
 
 var compliments = [
   "Your instructors love you!!" ,
