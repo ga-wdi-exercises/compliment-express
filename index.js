@@ -8,7 +8,7 @@ var mongoose = require("./db/connection");
 
 //The app
 var app     = express();
- 
+
 //The model
 var Compliment = mongoose.model("Compliment");
 
@@ -31,12 +31,23 @@ app.listen(app.get("port"), function(){
 });
 
 //Routes
-//Displays all compliments
+// //Displays all compliments
+// app.get('/', (req, res) => {
+//   Compliment.find({}).then( (compliments) => {
+//     console.log(compliments)
+//     res.render("compliments", {
+//       compliments: compliments
+//     });
+//   })
+// });
+
+//Display a random compliment
 app.get('/', (req, res) => {
   Compliment.find({}).then( (compliments) => {
-    console.log(compliments)
+    var randomNum = Math.floor((Math.random() * (compliments.length -1) ));
+    var compliment = compliments[randomNum];
     res.render("compliments", {
-      compliments: compliments
-    });
+      compliment: compliment
+    })
   })
 });
