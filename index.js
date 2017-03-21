@@ -9,8 +9,9 @@ var mongoose = require("./db/connection");
 //The app
 var app     = express();
 
-//The model
+//The models
 var Compliment = mongoose.model("Compliment");
+var Color = mongoose.model("Color");
 
 //The server
 app.set("port", process.env.PORT || 3001);
@@ -40,14 +41,3 @@ app.listen(app.get("port"), function(){
 //     });
 //   })
 // });
-
-//Display a random compliment
-app.get('/', (req, res) => {
-  Compliment.find({}).then( (compliments) => {
-    var randomNum = Math.floor((Math.random() * (compliments.length -1) ));
-    var compliment = compliments[randomNum];
-    res.render("compliments", {
-      compliment: compliment
-    })
-  })
-});
