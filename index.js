@@ -1,25 +1,36 @@
-const express = require("express");
-const app = express();
 
-let compliments = [
-  "Your instructors love you",
-  "High five = ^5",
-  "Is it Ruby Tuesday yet?",
-  "It's almost beer o'clock",
-  "The Force is strong with you"
-]
-compliment = compliments[Math.floor(Math.random() * compliments.length)];
-console.log(compliment)
+var express = require("express");
+var app = express();
+var bodyParser = require('body-parser')
 
-let colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
+var compliments = require("./model/compliment")
+var colors = require("./model/color");
 
-color = colors[Math.floor(Math.random() * colors.length)];
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
-console.log(color)
+app.set("view engine","hbs");
+app.use(express.static(__dirname + "/public"));
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
+function colorPicker(){
+  var color = colors[Math.floor(Math.random() * colors.length)];
+  console.log(color)
+  return color
+}
+
+function getRandom(){
+  var compliment = compliments[Math.floor(Math.random() * compliments.length)];
+   console.log(compliment)
+   return compliment
+}
+
+app.get("/", function(req, res){
+   var RandomCompliment = getRandom(compliments)
+   var Randomcolor = colorPicker(colors)
+   res.render("compliment.hbs", {compliment: RandomCompliment, color: Randomcolor})
+   console.log("hello")
 });
+
 
 
 
