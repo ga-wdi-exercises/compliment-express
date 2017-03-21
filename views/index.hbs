@@ -4,17 +4,16 @@
 <div class="app_body">
 <div class="compliment_box"  style="background:{{color}};">
 
-<h2>{{name}}</h2>
-<p>{{compliment}}</p>
+<p>{{compliment}} {{name}}</p>
 
-<button value="Refresh Page" id="button1" onClick="window.location.reload()"></button>
+<button value="Refresh Page" id="button1" onClick="window.location.reload()">Get</button>
 </div>
 
 <div class="form_box">
 
-<button value="Refresh Page" id="button2" onClick="window.location.reload()"></button>
+<button value="Refresh Page" id="button2" onClick="window.location.reload()">More</button>
 
-  <form action="submit" method="post">
+  <form action="submit" method="push">
     <input type="text" name="compliment" placeholder="Add a compliment">
     <input type="submit" value="Submit">
   </form>
