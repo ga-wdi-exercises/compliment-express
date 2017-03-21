@@ -1,0 +1,25 @@
+{
+  "name": "compliment-express",
+  "version": "1.0.0",
+  "description": "## Mission…",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Justin-Shin/compliment-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Justin-Shin/compliment-express/issues"
+  },
+  "homepage": "https://github.com/Justin-Shin/compliment-express#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "hbs": "^4.0.1",
+    "nodemon": "^1.11.0"
+  }
+}
