@@ -1,0 +1,13 @@
+{{#if name}}
+  <h2>Hi {{name}},</h2>
+{{/if}}
+<div class="compliment">{{compliment}}</div>
+<button id="another">Please Sir, my have some more?</button>
+<style media="screen">
+  html {
+    background: {{color}};
+  }
+</style>
+<script type="text/javascript">
+  document.getElementById('another').addEventListener("click", () => { location.reload() })
+</script>
