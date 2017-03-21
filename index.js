@@ -7,7 +7,11 @@ app.get("/", (req, res) => {
   let insults = [
     "I don't have the time or crayons to explain this to you",
     "You CSSuck at this",
-    "Please rm -rf yourself from my presence"
+    "Please rm -rf yourself from my presence",
+    "!Good-Job",
+    "You're so DataBasic...",
+    "Internet Explorer do this faster than you",
+    "Back away from the Computer! If I needed a ProblemFactory I would have written one"
   ]
 
   let colors = [
@@ -28,15 +32,20 @@ app.get("/", (req, res) => {
   let insult = insults[Math.floor(Math.random() * insults.length)]
   let colorOne = colors[Math.floor(Math.random() * colors.length)]
   let colorTwo = colors[Math.floor(Math.random() * colors.length)]
+  let colorThree = colors[Math.floor(Math.random() * colors.length)]
 
-  res.render("generic", {insult, colorOne, colorTwo})
+  res.render("generic", {insult, colorOne, colorTwo, colorThree})
 })
 
 app.get("/:name", (req, res) => {
   let insults = [
     "I don't have the time or crayons to explain this to you",
     "You CSSuck at this",
-    "Please rm -rf yourself from my presence"
+    "Please rm -rf yourself from my presence",
+    "!Good-Job",
+    "You're so DataBasic...",
+    "Internet Explorer do this faster than you",
+    "Back away from the Computer! If I needed a ProblemFactory I would have written one"
   ]
 
   let colors = [
@@ -57,10 +66,11 @@ app.get("/:name", (req, res) => {
   let insult = insults[Math.floor(Math.random() * insults.length)]
   let colorOne = colors[Math.floor(Math.random() * colors.length)]
   let colorTwo = colors[Math.floor(Math.random() * colors.length)]
+  let colorThree = colors[Math.floor(Math.random() * colors.length)]
 
   let name = req.params.name
 
-  res.render("personalized", {insult, colorOne, colorTwo, name})
+  res.render("personalized", {insult, colorOne, colorTwo, colorThree, name})
 })
 
 
