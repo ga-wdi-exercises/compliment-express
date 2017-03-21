@@ -4,7 +4,7 @@ var parser  = require("body-parser");
 var hbs     = require("express-handlebars");
 
 //database
-var mongoose= require("./db/connection");
+var mongoose = require("./db/connection");
 
 //The app
 var app     = express();
@@ -28,4 +28,15 @@ app.use(parser.json({extended: true}));
 
 app.listen(app.get("port"), function(){
   console.log("It's aliiive!");
+});
+
+//Routes
+//Displays all compliments
+app.get('/', (req, res) => {
+  Compliment.find({}).then( (compliments) => {
+    console.log(compliments)
+    res.render("compliments", {
+      compliments: compliments
+    });
+  })
 });
