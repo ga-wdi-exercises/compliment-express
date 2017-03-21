@@ -8,7 +8,7 @@ var mongoose = require("./db/connection");
 
 //The app
 var app     = express();
-
+ 
 //The model
 var Compliment = mongoose.model("Compliment");
 
