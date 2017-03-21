@@ -4,14 +4,23 @@
 
 <div class="compliment_box"  style="background:{{color}};">
 
-<p>{{name}}, {{compliment}}</p>
+<p>{{name}}</p>
+<p>{{compliment}}</p>
 
 </div>
 
 
 <div class="button_box">
 
-  <input type="button" value="Refresh Page" onClick="window.location.reload()">
+  <button value="Refresh Page" onClick="window.location.reload()">Again!</button>
+
+</div>
+
+<div class="form_box">
+  <form action="submit" method="post">
+    <input type="text" name="compliment" placeholder="Add a compliment">
+    <input type="submit" value="Submit">
+  </form>
 
 </div>
 
