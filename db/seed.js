@@ -7,9 +7,11 @@ const colors = require('./colors.json')
 const sasses = require('./sasses.json')
 
 Color.remove({}).then(() => {
-  Color.collection.insert(colors)
-})
-
-Sass.remove({}).then(() => {
-  Sass.collection.insert(sasses)
+  Sass.remove({}).then(() => {
+    Color.collection.insert(colors).then(() => {
+      Sass.collection.insert(sasses).then(() => {
+        process.exit()
+      })
+    })
+  })
 })

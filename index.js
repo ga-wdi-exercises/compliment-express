@@ -21,6 +21,12 @@ app.listen(app.get('port'), () => {
   console.log('Express is watching your every move ...')
 })
 
+function randomElement(arr) {
+  let len = arr.length
+  let index = Math.floor(Math.random() * len)
+  return arr[index]
+}
+
 const Color = models.Color
 const Sass = models.Sass
 
@@ -44,9 +50,3 @@ app.post('/', (req, res) => {
     res.redirect('/' + req.params.name)
   })
 })
-
-function randomElement(arr) {
-  let len = arr.length
-  let index = Math.floor(Math.random() * len)
-  return arr[index]
-}
