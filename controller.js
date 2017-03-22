@@ -1,4 +1,4 @@
-const models = require('./models.js')
+const models = require('./db/models.js')
 
 const Color = models.Color
 const Sass = models.Sass
@@ -11,15 +11,17 @@ function randomElement(arr) {
 
 module.exports = {
   index(req, res) {
-    let colors = Color.find({})
-    let sasses = Sass.find({})
-    let color = randomElement(colors)
-    let sass = randomElement(sasses)
-    let name = req.params.name
-    res.render("index", {
-      color,
-      sass,
-      name
+    Color.find({}).then(colors => {
+      Sass.find({}).then(sasses => {
+        let color = randomElement(colors)
+        let sass = randomElement(sasses)
+        let name = req.params.name
+        res.render('index', {
+          color,
+          sass,
+          name
+        })
+      })
     })
   }
 }

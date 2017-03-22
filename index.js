@@ -1,11 +1,24 @@
-const express = require("express")
+const express = require('express')
+const hbs = require('express-handlebars')
+const parser = require('body-parser')
+
 const app = express()
 const controller = require("./controller.js")
 
-app.set("view engine", "hbs")
+app.use(express.static(__dirname + '/public'))
+app.use(parser.urlencoded({extended: true}))
 
-app.listen(4000, _ => {
-  console.log("App listening on port 4000")
+app.set('view engine', 'hbs')
+app.engine('.hbs', hbs({
+  extname:        '.hbs',
+  partialsDir:    'views/',
+  layoutsDir:     'views/',
+  defaultLayout:  'layout'
+}))
+
+app.set('port', process.env.PORT || 4000)
+app.listen(app.get('port'), () => {
+  console.log('Express is watching your every move ...')
 })
 
-app.get("/:name?", controller.index)
+app.get('/:name?', controller.index)
