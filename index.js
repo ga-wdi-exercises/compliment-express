@@ -7,6 +7,9 @@ const app = express();
 app.set("view engine", "hbs")
 app.use(express.static(__dirname + "/public"))
 
+app.use( bodyParser.json() )
+app.use (bodyParser.urlencoded({extended: true}) )
+
 compliments = [
   "You are smarter than you think",
   "You have a beautiful spirit",
@@ -23,17 +26,16 @@ app.get("/", function (req, res) {
  res.render("index", {compliment, color})
 })
 
+app.post("/new", function (req, res){
+  compliments.push(req.body.complimentNew)
+  res.redirect("/")
+})
+
 app.get("/:name", function (req, res){
   let name = req.params.name;
   let compliment = compliments[Math.floor(Math.random() * compliments.length)];
   let color = colors[Math.floor(Math.random() * colors.length)];
   res.render("show", {name, compliment, color})
-})
-
-app.post("/:name/new", function (req, res){
-  let name = req.params.name;
-  compliments.push(req.body.complimentNew)
-  res.redirect("show")
 })
 
 app.listen(4000, () => {
