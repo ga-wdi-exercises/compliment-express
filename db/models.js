@@ -4,14 +4,14 @@ const ColorSchema = mongoose.Schema({
   hash: String
 })
 
-const ComplimentSchema = mongoose.Schema({
+const SassSchema = mongoose.Schema({
   text: String,
 })
 
 const Color = mongoose.model('Color', ColorSchema)
-const Compliment = mongoose.model('Compliment', ComplimentSchema)
+const Sass = mongoose.model('Sass', SassSchema)
 
 module.exports = {
   Color,
-  Compliment
+  Sass
 }

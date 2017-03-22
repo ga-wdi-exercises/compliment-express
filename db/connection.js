@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/emergency-compliment', (err) => {
+mongoose.connect('mongodb://localhost/sasses', (err) => {
   if (err) {
     console.log(err)
   } else {
