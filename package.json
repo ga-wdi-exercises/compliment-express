@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ngcarter/compliment-express#readme",
   "dependencies": {
     "express": "^4.15.2",
-    "hbs": "^4.0.1"
+    "hbs": "^4.0.1",
+    "mongoose": "^4.9.1"
   }
 }
