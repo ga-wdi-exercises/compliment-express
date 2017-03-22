@@ -1,0 +1,9 @@
+<h1>Express Compliments</h1>
+
+Hey, {{name}}
+<p>{{compliment}}</p>
+
+<form action="/{{name}}/new" method="POST">
+  <input type="text" name="newCompliment" placeholder="Add a Compliment"/>
+  <input type="submit" value="Submit"/>
+</form>
