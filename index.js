@@ -1,14 +1,25 @@
 const express = require("express");
-const compliment = require("./compliment.js");
+// const compliment = require("./compliment.js");
 
 const app = express();
 
 app.set("view engine", "hbs")
 app.use(express.static(__dirname + "/public"))
 
+compliments = [
+  "You are smarter than you think",
+  "You have a beautiful spirit",
+  "You are getting better at javascript",
+  "remember when you knew nothing? Look how far, you've come!"
+]
 
-app.get("/", (req, res) => {
-  res.send("Hello" + `${compliment.push([Math.floor(Math.random()* compliment.length)])}`)
+colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
+
+app.get("/", function (req, res) {
+
+ let compliment = compliments[Math.floor(Math.random() * compliments.length)];
+ let color = colors[Math.floor(Math.random() * colors.length)];
+ res.render("index", {compliment, color})
 })
 
 app.listen(4000, () => {
