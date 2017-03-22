@@ -1,0 +1,26 @@
+<h1>Welcome to Compliment maker</h1>
+<hr>
+
+<h2>{{compliment}}</h2>
+<style>
+  body {
+    text-align: center;
+    padding: 5em;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 25px;
+    background-color: {{color}};
+  }
+</style>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<form action="/new" method="post">
+  <label for="complimentNew">Enter a compliment</label>
+  <input type="text" name="complimentNew" placeholder="Compliment">
+  <input type="submit" value="Submit">
+</form>
