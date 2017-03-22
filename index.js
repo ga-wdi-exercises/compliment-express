@@ -1,6 +1,10 @@
 
 var express = require("express");
+const parser = require("body-parser")
 var app = express();
+
+app.use(parser.json());
+app.use(parser.urlencoded({extended: true}));
 
 compliments = [
   "Your instructors love you",
@@ -14,11 +18,6 @@ color = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
 
 
-// app.set("view engine", "hbs");
-// app.use(express.static(__dirname + '/public'))
-
-
-
 app.listen(4000, () => {
   console.log("app listening on port 4000");
 });
@@ -26,6 +25,10 @@ app.listen(4000, () => {
 app.get("/", (req, res) => {
   res.send("helloworld")
 });
+
+// app.post("/", (req,res))=>{
+//   compliments.push(req.body.compliment)
+// }
 
 app.get("/:name?", (req, res) => {
   let randomColor = color[Math.floor(Math.random() * color.length)]
@@ -40,9 +43,14 @@ app.get("/:name?", (req, res) => {
   </style>
   <body>
   <h1>Hi ${name} ${randomCompliment}</h1>
+  <form action="/" method="post">
+    <input type="text" name="compliment">
+    <button type="submit">Add Compliment</button>
+  </form>
   </body>
   </html>
   `
 
   res.send(htmlString)
+
 });
