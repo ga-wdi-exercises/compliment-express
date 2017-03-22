@@ -11,8 +11,20 @@
     body {
       margin: 0 auto;
     }
-    header {
+    header, footer {
       padding: 0 40px;
+    }
+    footer * {
+      display: inline-block;
+    }
+    input[type="text"] {
+      padding: 5px;
+      font-size: 18px;
+      width: 300px;
+    }
+    button {
+      padding: 5px;
+      font-size: 18px;
     }
     main {
       color: white;
@@ -24,20 +36,23 @@
     .compliment {
       height: 30%;
     }
-    button {
+    #button {
       padding: 20px;
       font-size: 20px;
     }
     </style>
   </head>
   <body>
+
     <header>
       <h1>Emergency Compliment</h1>
     </header>
+
     {{{body}}}
+
     <script>
     document.getElementById("button").addEventListener("click", () => {
-      location.reload();
+      window.location.href=window.location.href
     })
     </script>
   </body>
