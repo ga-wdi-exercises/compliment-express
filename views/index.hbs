@@ -1,0 +1,24 @@
+<body style='background: {{color}}'>
+<form action="/{{name}}" method="post">
+ <label for="name">Please Enter Your Name</label>
+ <input type="text" name="name" value="{{name}}">
+ <button type="submit">Submit</button>
+</form>
+
+<br>
+
+Hi, {{name}} <br>
+Compliment: {{compliment}}
+<br>
+<br>
+
+<form action="/" method="post">
+ <label for="name">Add a Compliment</label>
+ <input type="text" name="newCompliment" placeholder="Compliment">
+ <button type="submit">Submit</button>
+</form>
+
+{{newCompliment}}
+
+
+</body>
