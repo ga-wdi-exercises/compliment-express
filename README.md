@@ -1,5 +1,5 @@
 # WDI Emergency Compliment, in Express
-
+ 
 ## Mission…
 
 Create your own version of [Emergency Compliment](http://emergencycompliment.com/), using Express. When a user visits the site, they should be greeted with a WDI-themed compliment to cheer them up.
