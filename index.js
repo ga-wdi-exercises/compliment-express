@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 // const compliment = require("./compliment.js");
 
 const app = express();
@@ -28,6 +29,13 @@ app.get("/:name", function (req, res){
   let color = colors[Math.floor(Math.random() * colors.length)];
   res.render("show", {name, compliment, color})
 })
+
+app.post("/:name/new", function (req, res){
+  let name = req.params.name;
+  compliments.push(req.body.complimentNew)
+  res.redirect("show")
+})
+
 app.listen(4000, () => {
   console.log("app listening on port 4000");
 })
