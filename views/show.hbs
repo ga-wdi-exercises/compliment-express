@@ -1,0 +1,18 @@
+
+<style>
+  body {
+    background-color: {{randomColor}} ;
+  }
+</style>
+
+<h1>
+  Hi {{name}}, {{randomCompliment}}
+</h1>
+
+<footer>
+  <h2>Add a compliment</h2>
+  <form action="/compliments" method="post">
+    <input type="text" name="compliment">
+    <button type="submit">Submit</button>
+  </form>
+</footer>
