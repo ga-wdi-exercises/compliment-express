@@ -18,16 +18,16 @@ function getRandomCompliments(module){
 }
 
 app.get("/", function(req,res){
-  var randomCompliment = getRandomCompliments(compliments);
-  var randomColor = getRandomCompliments(colors);
-  res.render("index.hbs", {compliment: randomCompliment, color: randomColor});
+  var compliment = getRandomCompliments(compliments);
+  var color = getRandomCompliments(colors);
+  res.render("index.hbs", {compliment: compliment, color: color});
 });
 
 app.get("/:name", function(req, res){
-  var randomCompliment = getRandomCompliments(compliments);
-  var randomColor = getRandomCompliments(colors);
+  var compliment = getRandomCompliments(compliments);
+  var color = getRandomCompliments(colors);
   var name = req.params.name;
-  res.render("name.hbs", {compliment: randomCompliment, color: randomColor, name: name});
+  res.render("name.hbs", {compliment: compliment, color: color, name: name});
 });
 
 app.post("/:name/new", function(req, res){
