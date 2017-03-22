@@ -1,11 +1,14 @@
 <style>
   body {
-    background-color: {{color.rgb}}
+    background-color: {{color.rgb}};
   }
 </style>
-
-<h2>Compliments come here</h2>
 
 <h3>
   {{compliment.body}}
 </h3>
+
+<form action="/" method="post">
+  <input type="text" name="compliment[body]" placeholder="New Compliment">
+  <Button type="submit">Add A Compliment</button>
+</form>

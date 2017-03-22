@@ -65,6 +65,15 @@ app.get('/:name', (req, res) => {
     })
 })
 
+// //Post a compliment
+app.post("/", function(req, res){
+    Compliment.create(req.body.compliment).then( (compliment) => {
+      console.log(compliment)
+      res.redirect("/")
+    })
+});
+
+
 // //Display a random compliment - not working
 // app.get('/', (req, res) => {
 //   Color.find({})
