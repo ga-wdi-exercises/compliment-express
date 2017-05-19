@@ -25,3 +25,11 @@ app.get("/", (req,res) => {
   let randomColor = random(colors);
   res.render("index", {randomCompliment, randomColor});
 });
+
+app.get("/:name", (req,res) => {
+  let randomCompliment = random(compliments);
+  let randomColor = random(colors);
+  let name = req.params.name;
+
+  res.render("personalized.hbs",{randomCompliment, randomColor, name})
+})
