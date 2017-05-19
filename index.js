@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
+app.set("view engine", "hbs");
+app.use(express.static(__dirname + '/public'))
 
 app.listen(4000, () => {
   console.log('App listening on port 4000')
 })
-
-app.get("/", (req,res) => {
 
 let compliments = [
   "Your instructors love you",
@@ -13,16 +13,15 @@ let compliments = [
   "Is it Ruby Tuesday yet?",
   "It's almost beer o'clock",
   "The Force is strong with you"
-]
-
-
-
+];
 let colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
- function random(arr){
-   return arr[Math.floor (Math.random() * arr.length)];
+let random = (arr) => {
+   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-
-  res.send(random(compliments))
+app.get("/", (req,res) => {
+  let randomCompliment = random(compliments);
+  let randomColor = random(colors);
+  res.render("index", {randomCompliment, randomColor});
 });
