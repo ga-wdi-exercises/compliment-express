@@ -27,3 +27,10 @@ app.get("/", (req, res) => {
 	var color = colors[Math.floor(Math.random() * colors.length)];
     res.render("index", {compliment, color});
 });
+
+app.get("/:name", (req, res) => {
+	var compliment = compliments[Math.floor(Math.random() * compliments.length)];
+	var color = colors[Math.floor(Math.random() * colors.length)];
+	var name = req.params.name;
+	res.render("name", {name, compliment, color});
+});
