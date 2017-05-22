@@ -1,7 +1,11 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
 
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.set("view engine", "hbs");
 
 app.listen(4000, () => {
@@ -33,4 +37,9 @@ app.get("/:name", (req, res) => {
 	var color = colors[Math.floor(Math.random() * colors.length)];
 	var name = req.params.name;
 	res.render("name", {name, compliment, color});
+});
+
+app.post("/", (req, res) => {
+	var newCompliment = req.body.new_compliment
+	compliments.push(newCompliment);
 });
