@@ -1,0 +1,36 @@
+<style>
+  body {
+    font-size: 30px;
+    text-align: center;
+    background-color: {{color}};
+  }
+  div{
+    margin-bottom: 20px;
+  }
+  a{
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    border-style: outset;
+    margin-bottom: 20px;
+  }
+  a:hover{
+    border-style: inset;
+    border-color: lightgray;
+  }
+</style>
+<h2>Hello, {{name}}</h2>
+
+<h1>Compliments</h1>
+
+<div>
+  <h2>Your Compliment:</h2>
+  <p>{{compliment}}</p>
+  <a href="/{{name}}">New Compliment</a>
+</div>
+
+<form action="/{{name}}/new" method="POST">
+ <input type="text" name="name" placeholder="Add A Compliment" />
+ <input type="submit" value="Submit" />
+</form>
