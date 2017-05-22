@@ -1,0 +1,90 @@
+<style>
+
+body{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 30px;
+  font-family: 'Barrio', cursive;
+}
+
+h2,h1 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: 'Barrio', cursive;
+}
+
+h3{
+  font-size: 50px;
+  text-align: center;
+  font-family: 'Barrio', cursive;
+}
+
+a, #form{
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  border:1px solid white;
+  border-radius: 10px;
+}
+
+nav {
+  margin: 0 auto;
+}
+
+.refresh{
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  font-size: 20px;
+  margin: 10px 30px;
+  font-family: 'Barrio', cursive;
+}
+
+#refresh{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+input, button {
+  font-family: 'Barrio', cursive;
+}
+
+input {
+  width: 150px;
+  height: 35px;
+  font-size: 110%;
+}
+
+button {
+  width: 100px;
+  height: 30px;
+  font-size: 100%;
+}
+
+</style>
+
+<nav>
+<h3>Emergency Compliment</h3>
+</nav>
+
+<h1> Welcome {{{name}}}!</h1>
+<h1>{{{compliment}}}</h1>
+<a href=""><div class='refresh'>  More? </div></a>
+
+<div id='form'>
+<form  action="/{{name}}/new" method="post">
+  <input type="text" name="newCompliment" placeholder="Add a compliment">
+  <button type='submit'> Submit </button>
+</form>
+</div>
