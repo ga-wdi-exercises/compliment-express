@@ -1,35 +1,39 @@
 <style>
   body {
-    font-size: 30px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: snow;
+    font-size: 25px;
     text-align: center;
     background-color: {{color}};
   }
+  h1{
+    font-size: 20px;
+    text-align: left;
+  }
   div{
+    margin-top: 200px;
     margin-bottom: 20px;
   }
   a{
-    padding: 10px;
-    color: white;
+    padding: 20px 40px;
     text-decoration: none;
+    color: snow;
     border: 2px solid white;
     border-style: outset;
-    margin-bottom: 20px;
   }
   a:hover{
     border-style: inset;
     border-color: lightgray;
-  }
+  };
 </style>
-<h2>Hello, {{name}}</h2>
 
-<h1>Compliments</h1>
-
+<h1>WDI Compliments</h1>
+<h2>Hello {{name}}</h2>
 <div>
-  <h2>Your Compliment:</h2>
-  <p>{{compliment}}</p>
-  <a href="/{{name}}">New Compliment</a>
+  <h2>{{compliment}}</h2>
+  <br>
+  <a href="/{{name}}">New</a>
 </div>
-
 <form action="/{{name}}/new" method="POST">
  <input type="text" name="name" placeholder="Add A Compliment" />
  <input type="submit" value="Submit" />
