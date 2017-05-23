@@ -4,7 +4,9 @@
   "description": "## Mission…",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
     "hbs": "^4.0.1",
     "mongoose": "^4.10.0"
   },
