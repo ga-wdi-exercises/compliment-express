@@ -1,0 +1,24 @@
+{
+  "name": "compliment-express",
+  "version": "1.0.0",
+  "description": "## Mission…",
+  "main": "index.js",
+  "dependencies": {
+    "mongoose": "^4.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/utamilah/compliment-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/utamilah/compliment-express/issues"
+  },
+  "homepage": "https://github.com/utamilah/compliment-express#readme"
+}
