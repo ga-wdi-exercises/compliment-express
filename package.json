@@ -4,6 +4,8 @@
   "description": "## Mission…",
   "main": "index.js",
   "dependencies": {
+    "express": "^4.15.3",
+    "hbs": "^4.0.1",
     "mongoose": "^4.10.0"
   },
   "devDependencies": {},
