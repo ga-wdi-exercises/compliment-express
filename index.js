@@ -30,6 +30,13 @@ app.get("/", function(req, res) {
   res.render("index", {compliment: randomCompliment, color: randomColor})
 })
 
+app.get("/:name", function(req, res) {
+  var name = req.params.name
+  var randomCompliment = randomItem(compliments)
+  var randomColor = randomItem(colors)
+  res.render("index", {name, compliment: randomCompliment, color: randomColor})
+})
+
 
 app.listen(4000, () => {
   console.log("app listening on port 4000");
