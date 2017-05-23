@@ -1,0 +1,29 @@
+{
+  "name": "my_compliments",
+  "version": "1.0.0",
+  "description": "new_compliments",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lgmusic24/compliment-express.git"
+  },
+  "keywords": [
+    "compliment"
+  ],
+  "author": "luisa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lgmusic24/compliment-express/issues"
+  },
+  "homepage": "https://github.com/lgmusic24/compliment-express#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "hbs": "^4.0.1",
+    "module_name": "^1.0.0",
+    "mongoose": "^4.10.2"
+  }
+}
