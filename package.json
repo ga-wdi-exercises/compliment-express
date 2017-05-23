@@ -19,6 +19,7 @@
   "homepage": "https://github.com/electricflannel/compliment-express#readme",
   "dependencies": {
     "express": "^4.15.3",
+    "hbs": "^4.0.1",
     "mongoose": "^4.10.1"
   }
 }
