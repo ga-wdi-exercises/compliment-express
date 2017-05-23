@@ -1,0 +1,29 @@
+
+<style>
+	html {
+		background-color: {{color}}
+	}
+	.main {
+		margin: auto;
+		width: 80%;
+		padding-top: 35%;
+		text-align: center;
+		color: white;
+		font-size: 3em;
+	}
+</style>
+
+<div class="main">
+	
+
+	{{#if name}}
+	  <h2>{{compliment}}, {{name}}</h2>
+	{{else}}
+		<form action="/" method="post">
+		  <input id="userCompliment" type="text" name="userCompliment">
+		  <input type="submit">
+		</form>
+	  <h2>{{compliment}}</h2>
+	{{/if}}
+	
+</div>
