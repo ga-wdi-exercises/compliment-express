@@ -15,5 +15,10 @@
 
 
 <div class="main">
-	<h2>{{compliment}}</h2>
+	{{#if name}}
+	  <h2>{{compliment}}, {{name}}</h2>
+	{{else}}
+	  <h2>{{compliment}}</h2>
+	{{/if}}
+	
 </div>
