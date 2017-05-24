@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+app.set("view engine", "hbs");
+
 let compliments = [
   "Your instructors love you",
   "High five = ^5",
@@ -29,9 +31,18 @@ function getColors(array) {
 }
 
 
-
+// randos have to be declared inside the handler in order to be repeated
 app.get("/", (req, res) => {
-  res.send("Cheer Up! -  " + getCompliments(compliments))
+  var randoCompliment = getCompliments(compliments);
+  var randoColor = getColors(colors);
+  res.render("index", {compliment: randoCompliment, color: randoColor});
+})
+
+app.get("/:name", (req, res) => {
+  var randoCompliment = getCompliments(compliments);
+  var randoColor = getColors(colors);
+  var name = req.params.name;
+  res.render("name", {compliment: randoCompliment, color: randoColor, name: name});
 })
 
 
