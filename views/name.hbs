@@ -1,0 +1,18 @@
+<style>
+  body {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    background-color: {{color}};
+  };
+</style>
+
+
+<h1>Cheer up, {{name}}!  {{compliment}} </h1>
+
+
+<h2>Care to add your own?</h2>
+<form action="/{{name}}/new" method="post">
+  <input type="text" name="name" placeholder="say something nice">
+  <input type="submit">
+</form>
