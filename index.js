@@ -1,7 +1,11 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
 
 app.set("view engine", "hbs");
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 let compliments = [
   "Your instructors love you",
@@ -43,6 +47,12 @@ app.get("/:name", (req, res) => {
   var randoColor = getColors(colors);
   var name = req.params.name;
   res.render("name", {compliment: randoCompliment, color: randoColor, name: name});
+})
+
+app.post("/:name/new", (req, res) => {
+  compliments.push(req.body.name);
+  var name = req.params.name;
+  res.redirect('/' + name);
 })
 
 
