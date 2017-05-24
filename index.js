@@ -13,13 +13,22 @@ let compliments = [
   "Your arms look great in that shirt"
 ]
 
+let colors = ["#00AEDB", "#A200FF","#F47835","#D41243", "#8EC127"]
+
 
 function getCompliments(array) {
   var randomIndex = Math.floor((Math.random() * array.length))
   var randomCompliment = array[randomIndex]
   return randomCompliment
-
 }
+
+function getColors(array) {
+  var randomIndex = Math.floor((Math.random() * array.length))
+  var randomColor = array[randomIndex]
+  return randomColor
+}
+
+
 
 app.get("/", (req, res) => {
   res.send("Cheer Up! -  " + getCompliments(compliments))
