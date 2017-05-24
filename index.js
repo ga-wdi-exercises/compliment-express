@@ -1,7 +1,11 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser")
+
 app.set("view engine","hbs");
 
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 
 var compliments = [
   "Your instructors love you",
@@ -35,6 +39,11 @@ app.get("/:name", function(req, res) {
   var randomCompliment = randomItem(compliments)
   var randomColor = randomItem(colors)
   res.render("index", {name, compliment: randomCompliment, color: randomColor})
+})
+
+app.post("/", function(req, res) {
+  compliments.push(req.body.comp)
+  res.redirect("/")
 })
 
 
