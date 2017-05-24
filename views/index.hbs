@@ -1,0 +1,11 @@
+
+{{#if user_name}}
+  <h1>Welcome {{user_name}}</h1>
+  <a href='/{{user_name}}'>Generate Compliments</a>
+{{else}}
+  <form action="/" method="post">
+    <label for="user_name">Please enter your name</label>
+    <input id="user_name" type="text" name="user_name">
+    <input type="submit">
+  </form>
+{{/if}}
