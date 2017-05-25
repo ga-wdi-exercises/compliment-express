@@ -3,9 +3,8 @@ const app = express();
 app.set("view engine", "hbs");
 app.use(express.static(__dirname + '/public'))
 
-app.listen(4000, () => {
-  console.log('App listening on port 4000')
-})
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
 
 let compliments = [
   "Your instructors love you",
@@ -20,6 +19,8 @@ let random = (arr) => {
    return arr[Math.floor(Math.random() * arr.length)];
 }
 
+let userCompliments = {};
+
 app.get("/", (req,res) => {
   let randomCompliment = random(compliments);
   let randomColor = random(colors);
@@ -27,9 +28,31 @@ app.get("/", (req,res) => {
 });
 
 app.get("/:name", (req,res) => {
-  let randomCompliment = random(compliments);
+  let user = userCompliments[req.params.name]
+
+  if (user) {
+    let randomCompliment = user[user.length - 1]
+  }
+  else {
+     randomCompliment = random(compliments);
+  }
   let randomColor = random(colors);
   let name = req.params.name;
-
   res.render("personalized.hbs",{randomCompliment, randomColor, name})
+})
+
+app.post("/:name", function(req, res){
+  if(userCompliments[req.params.name]) {
+      userCompliments[req.params.name].push(req.body.compliment);
+      }
+      else {
+        userCompliments[req.params.name] = [];
+        userCompliments[req.params.name].push(req.body.compliment);
+      }
+    var name = req.params.name;
+    res.redirect(`/${name}`);
+  })
+
+app.listen(4000, () => {
+  console.log('App listening on port 4000')
 })
