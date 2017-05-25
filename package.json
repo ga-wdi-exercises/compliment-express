@@ -1,0 +1,26 @@
+{
+  "name": "compliment-express",
+  "version": "1.0.0",
+  "description": "## Mission…",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "hbs": "^3.1.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amlakgirma/compliment-express.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/amlakgirma/compliment-express/issues"
+  },
+  "homepage": "https://github.com/amlakgirma/compliment-express#readme"
+}
