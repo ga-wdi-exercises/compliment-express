@@ -1,0 +1,20 @@
+<style>
+  body {
+    font-size: 30px;
+    text-align: center;
+    background-color: {{color}};
+  };
+</style>
+<h2>Hello, {{name}}</h2>
+
+<h1>Express Compliments</h1>
+
+<div>
+  <h2>Your Compliment Today:</h2>
+  <p>{{compliment}}</p>
+</div>
+
+<form action="/{{name}}/new" method="POST">
+ <input type="text" name="name" placeholder="Please Add A Compliment" />
+ <input type="submit" value="Submit" />
+</form>
