@@ -2,6 +2,10 @@ const express = require("express");
 const app = express();
 const compliments = require("./models/compliment")
 const colors = require("./models/color")
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.json()); //handles json post requests
+app.use(bodyParser.urlencoded({ extended: true })); // handles form submissions
 
 
 app.set("view engine","hbs")
@@ -21,7 +25,19 @@ app.get("/", function(req,res){
   res.render("index", {compliment: randomCompliment, color: randomColor});
 });
 
+app.get("/:name", function(req, res){
+  var randomCompliment = getRandomCompliments(compliments);
+  var randomColor = getRandomCompliments(colors);
+  var name = req.params.name;
+  res.render("name.hbs",{compliment: randomCompliment, color: randomColor, name: name});
+});
 
+
+app.post("/:name/new", function(req, res){
+  compliments.push(req.body.name);
+  var name = req.params.name;
+  res.redirect('/' + name);
+});
 
 
 app.listen(4000, () => {
