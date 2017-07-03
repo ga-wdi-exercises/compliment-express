@@ -1,42 +1,12 @@
 const express = require("express")
 const app = express()
 
-compliments = [
-  "Your instructors love you",
-  "High five = ^5",
-  "Is it Ruby Tuesday yet?",
-  "It's almost beer o'clock",
-  "The Force is strong with you"
-]
+const complimentsController = require("./controllers/complimentsController")
 
-colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
-
-function randomColor() {
-    var randomColor = Math.floor(Math.random() * colors.length)
-    return randomColor
-}
-
-function randomCompliment() {
-    var randomCompliment = Math.floor(Math.random() * compliments.length)
-    return randomCompliment
-}
+app.set("view engine", "hbs")
 
 
-app.get("/", (req, res) => {
-  var changeCompliment = randomCompliment()
-  var changeColor = randomColor()
-
-  res.send(`<body style="background-color:${colors[changeColor]};">${compliments[changeCompliment]}</body>`)
-})
-
-app.get("/:name", (req, res)=>{
-  var changeCompliment = randomCompliment()
-  var changeColor = randomColor()
-
-  res.send(`<body style="background-color:${colors[changeColor]};">${compliments[changeCompliment]}, ${req.params.name}.</body>`)
-})
-
-
+app.get("/:name?", complimentsController.index)
 
 
 
