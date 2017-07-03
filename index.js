@@ -11,11 +11,29 @@ compliments = [
 
 colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
+function randomColor() {
+    var randomColor = Math.floor(Math.random() * colors.length)
+    return randomColor
+}
+
+function randomCompliment() {
+    var randomCompliment = Math.floor(Math.random() * compliments.length)
+    return randomCompliment
+}
+
 
 app.get("/", (req, res) => {
-  var randomCompliment = Math.floor(Math.random() * compliments.length)
-  var randomColor = Math.floor(Math.random() * colors.length)
-  res.send(`<body style="background-color:${colors[randomColor]};">${compliments[randomCompliment]}</body>`)
+  var changeCompliment = randomCompliment()
+  var changeColor = randomColor()
+
+  res.send(`<body style="background-color:${colors[changeColor]};">${compliments[changeCompliment]}</body>`)
+})
+
+app.get("/:name", (req, res)=>{
+  var changeCompliment = randomCompliment()
+  var changeColor = randomColor()
+
+  res.send(`<body style="background-color:${colors[changeColor]};">${compliments[changeCompliment]}, ${req.params.name}.</body>`)
 })
 
 
