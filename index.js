@@ -18,5 +18,6 @@ app.listen(4000,()=>{
 	console.log("listening on port 4000")
 })
 app.get("/:name",(req,res) => {
-	res.send(`<h1>${compliments[randomThing(compliments)]}</h1>`)
+	res.send(`<h1>${req.params.name}, remember that...</h1>
+		<h2>${compliments[randomThing(compliments)]}</h2>`)
 })
