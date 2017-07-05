@@ -18,17 +18,22 @@ compliments = [
 
 colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
+function getRandomCompliments(module){
+  var randomIndex = Math.floor((Math.random() * module.length));
+  var randomInstance = module[randomIndex];
+  return randomInstance;
+}
 app.get("/", (req, res) => {
   res.send(compliments.random)
-  var randCompliment = getRandCompliments(compliments);
-  var randColor = getRandCompliments(colors);
-  res.render("index.hbs", {compliment: randCompliment, color: randColor});
+  var randomCompliment = getRandomCompliments(compliments);
+  var randomColor = getRandomCompliments(colors);
+  res.render("index.hbs", {compliment: randomCompliment, color: randomColor});
 })
 
 app.get("/:name?", (req, res) => {
   res.send(`Hello ${req.params.name}`)
-  var randCompliment = getRandCompliments(compliments);
-  var randColor = getRandCompliments(colors);
+  var randomCompliment = getRandomCompliments(compliments);
+  var randomColor = getRandomCompliments(colors);
   var name = req.params.name;
 })
 
