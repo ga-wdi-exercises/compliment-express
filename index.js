@@ -11,16 +11,16 @@ colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
 const express = require("express")
 const app = express()
+const bodyParser = require("body-parser")
 
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 
-app.get("/", (req, res) => {
-  let numCompliment = Math.floor(Math.random() * compliments.length);
-  let numColor = Math.floor(Math.random() * colors.length);
-  console.log(compliments[numCompliment]);
-  console.log(colors[numColor]);
-  document.body.background = "red";
-  res.send(compliments[numCompliment])
-})
+app.set("view engine", "hbs")
+
+app.get("/", complimentsController.index)
+
+app.get("/:name?", complimentsController.index)
 
 
 app.listen(4000, () => {

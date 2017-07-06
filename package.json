@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/scottpiercew/compliment-express#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "hbs": "^4.0.1"
   }
 }
