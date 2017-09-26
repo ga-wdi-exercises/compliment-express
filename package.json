@@ -1,0 +1,27 @@
+{
+  "name": "compliment-express",
+  "version": "1.0.0",
+  "description": "## Mission…",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.15.5",
+    "express-handlebars": "^3.0.0",
+    "hbs": "^4.0.1",
+    "mongoose": "^4.11.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amarinder1/compliment-express.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amarinder1/compliment-express/issues"
+  },
+  "homepage": "https://github.com/Amarinder1/compliment-express#readme"
+}
