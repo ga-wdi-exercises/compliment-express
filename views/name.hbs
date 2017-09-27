@@ -1,0 +1,15 @@
+<!--view page when user inputs name  -->
+
+<style>
+  body{
+    background-color: {{color}};
+  }
+</style>
+
+<h1>Express Compliments</h1>
+<p>Hi {{name}}!! Your compliment is {{compliment}}</p>
+
+<form action="/{{name}}/compliment" method="POST">
+ <input type="text" name="name" placeholder="Please Add A Compliment" />
+ <input type="submit" value="Submit" />
+</form>
