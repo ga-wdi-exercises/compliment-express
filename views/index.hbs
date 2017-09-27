@@ -1,0 +1,16 @@
+<h1><a href="/">Express Compliments</a></h1>
+{{compliment}}
+
+
+<h2><a href="/compliments">List of all compliments</a></h2>
+<h2>Add a compliment</h2>
+{{#each compliments as |compliment index|}}
+<h3>
+{{compliment.content}}
+</h3>
+{{/each}}
+
+<form action="/compliments" method="post">
+  <input name="compliment[content]" type="text" placeholder="Content"/>
+  <button type="submit">Submit</button>
+</form>
