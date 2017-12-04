@@ -1,0 +1,17 @@
+{{#if alert}}
+  <h2> {{alert}} </h2>
+{{/if}}
+
+{{#if name}}
+  <h1>Hey {{name}}</h1>
+{{/if}}
+
+<h1> {{compliment}} </h1>
+
+<form action="/" method="post">
+  <label for="compliment">Add your own</label>
+  <input type="text" name="compliment">
+  <input type="submit">
+</form>
+
+<a href = "/">Refresh</a>
