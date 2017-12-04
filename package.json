@@ -1,0 +1,24 @@
+{
+  "name": "compliment-express",
+  "version": "1.0.0",
+  "description": "## Mission…",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/troysipp/compliment-express.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/troysipp/compliment-express/issues"
+  },
+  "homepage": "https://github.com/troysipp/compliment-express#readme",
+  "dependencies": {
+    "global": "^4.3.2",
+    "hbs": "^4.0.1",
+    "nodemon": "^1.12.1"
+  }
+}
