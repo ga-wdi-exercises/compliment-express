@@ -3,6 +3,8 @@ const hbs = require('hbs')
 
 const app = express()
 
+app.set('view engine', 'hbs')
+
 compliments = [
   "Your instructors love you",
   "High five = ^5",
@@ -14,7 +16,7 @@ compliments = [
 colors = ["fda339", "57d6d4", "ff5f60", "a7db48"]
 
 app.get('/', (req, res) => {
-  res.send()
+  res.render('index')
 })
 
 app.listen(3000, () => {
