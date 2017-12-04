@@ -1,4 +1,5 @@
 const express = require('express')
+const hbs = require('hbs')
 
 const app = express()
 
@@ -13,7 +14,7 @@ compliments = [
 colors = ["fda339", "57d6d4", "ff5f60", "a7db48"]
 
 app.get('/', (req, res) => {
-  res.send('hi')
+  res.send()
 })
 
 app.listen(3000, () => {
