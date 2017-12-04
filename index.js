@@ -30,8 +30,7 @@ app.get("/:name?", (req, res, next) => {
 
 app.post("/:name?", (req, res, next) => {
   compliments.push(req.body.new_compliment);
-  let name = req.body.old_name || "";
-  res.redirect("/" + name);
+  res.redirect("/" + req.params.name);
 });
 
 app.listen(3000, () => {
