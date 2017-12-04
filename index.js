@@ -19,8 +19,8 @@ let colors = ["#FFBF00", "#0080FF", "#01DF3A", "#FF0080"];
 app.get("/:name?", (req, res, next) => {
   let name = req.params.name || "";
   let capital_name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-  let compliment = compliments[Math.floor(Math.random() * 6)];
-  let color = colors[Math.floor(Math.random() * 4)];
+  let compliment = compliments[Math.floor(Math.random() * compliments.length)];
+  let color = colors[Math.floor(Math.random() * colors.length)];
   res.render("index", {
     compliment: compliment,
     color: color,
