@@ -1,0 +1,15 @@
+<div style="background-color: {{color}}" class="container center">
+  <div class="column">
+    <div class="center">
+      <h1>Hi, {{name}}</h1>
+    </div>
+    <div class="center">
+      <h1>{{compliment}}</h1>
+    </div>
+    <form class="center column" action="/{{name}}" method="post">
+      <label for="compliment"> Please enter a compliment </label>
+      <input type="text" name="compliment">
+      <input type="submit">
+    </form>
+  </div>
+</div>
