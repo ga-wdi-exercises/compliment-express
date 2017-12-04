@@ -2,3 +2,11 @@
 
 <h1>Hello {{capital_name}}</h1>
 <h2>{{compliment}}</h2>
+
+
+<form action="/{{capital_name}}" method="post">
+  <label for="player_name">Add a compliment here</label>
+  <input type="text" name="new_compliment">
+  <input type="hidden" name="old_name" value="{{capital_name}}">
+  <input type="submit">
+</form>
