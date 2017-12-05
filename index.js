@@ -18,9 +18,11 @@ colors = ['#FFBF00', '#0080FF', '#01DF3A', '#FF0080']
 app.get('/', (req, res) => {
 	let n = Math.floor(Math.random() * compliments.length)
 	let compliment = compliments[n]
-	// res.send(compliments[n])
+	let bgColor = colors[Math.floor(Math.random() * colors.length)]
+
 	res.render('index', {
-		compliment: compliment
+		compliment: compliment,
+		bgColor: bgColor
 	})
 })
 
