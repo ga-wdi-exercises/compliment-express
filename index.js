@@ -18,10 +18,14 @@ compliments = [
 
 colors = ['#FFBF00', '#0080FF', '#01DF3A', '#FF0080']
 
+let capitalize = function(word) {
+	return word.charAt(0).toUpperCase() + word.slice(1)
+}
+
 app.get('/:name?', (req, res) => {
 	let compliment = compliments[Math.floor(Math.random() * compliments.length)]
 	let bgColor = colors[Math.floor(Math.random() * colors.length)]
-	let name = req.params.name || 'WDI 19'
+	let name = capitalize(req.params.name || '')
 
 	res.render('index', {
 		compliment: compliment,
@@ -31,17 +35,8 @@ app.get('/:name?', (req, res) => {
 })
 
 app.post('/:name?', (req, res) => {
-	let compliment = compliments[Math.floor(Math.random() * compliments.length)]
-	let bgColor = colors[Math.floor(Math.random() * colors.length)]
-	let name = req.params.name || 'WDI 19'
-
 	compliments.push(req.body.new_compliment)
-
-	res.render('index', {
-		compliment: compliment,
-		bgColor: bgColor,
-		name: name
-	})
+	res.redirect(`/${req.params.name}`)
 })
 
 app.listen(3000, () => {
