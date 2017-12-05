@@ -2,8 +2,19 @@
 
 <h1>Emergency Compliment</h1>
 
+<h4>{{ name }}</h4>
+
 <br>
 
-<h3>{{ name }}, {{ randomCompliment }}</h3>
+<h3><div class="next">{{ randomCompliment }}</div></h3>
 
-<p><a href="/" class="next">next compliment</a></p>
+<p><a href="/{{name}}">next compliment</a></p>
+
+<br>
+
+<h4>Submit A New Compliment</h4>
+<form action="/{{name}}" method="post">
+  <label for="newCompliment">Type your compliment:</label>
+  <input type="text" name="newCompliment">
+  <input type="submit">
+</form>
