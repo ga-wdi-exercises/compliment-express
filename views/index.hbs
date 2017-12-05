@@ -1,20 +1,28 @@
-<h4>Welcome to</h4>
+<div class="container">
+  <div class="header">
+    <h4>Welcome to</h4>
 
-<h1>Emergency Compliment</h1>
+    <h1>Emergency Compliment</h1>
 
-<h4>{{ name }}</h4>
+    <h4>{{ name }}</h4>
+  </div>
 
-<br>
+  <br>
 
-<h3><div class="next">{{ randomCompliment }}</div></h3>
+  <div class="compliment">
+    <h3><div class="next">{{ randomCompliment }}</div></h3>
 
-<p><a href="/{{name}}">next compliment</a></p>
+    <p><a href="/{{name}}">next compliment</a></p>
+  </div>
 
-<br>
+  <br>
 
-<h4>Submit A New Compliment</h4>
-<form action="/{{name}}" method="post">
-  <label for="newCompliment">Type your compliment:</label>
-  <input type="text" name="newCompliment">
-  <input type="submit">
-</form>
+  <div class="form">
+    <p>Submit A New Compliment</p>
+    <form action="/{{name}}" method="post">
+      <label for="newCompliment">Type your compliment:</label>
+      <input type="text" name="newCompliment">
+      <input type="submit">
+    </form>
+  </div>
+</div>

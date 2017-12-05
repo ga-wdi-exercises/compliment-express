@@ -35,7 +35,7 @@ app.get('/:name?', (req, res) => {
 
 app.post('/:name?', (req, res) => {
   compliments.push(req.body.newCompliment)
-  res.redirect(`/${req.params.name}`)
+  res.redirect('back')
 })
 
 app.listen(3000, () => {
