@@ -1,26 +1,46 @@
 const express = require("express")
 const router = express.Router()
 
-router.get("/", (req, res) => {
-	let compliments = [
-		"Your instructors love you",
-		"High five = ^5",
-		"Is it Ruby Tuesday yet?",
-		"It's almost beer o'clock",
-		"The Force is strong with you"
-	]
+compliments = [
+	"Your instructors love you",
+	"High five = ^5",
+	"Is it Ruby Tuesday yet?",
+	"It's almost beer o'clock",
+	"The Force is strong with you"
+]
+colors = ["#FFBF00", "#0080FF", "#01DF3A", "#FF0080"]
+
+router.get("/:name?", (req, res) => {
+	let name = req.params.name
+
+	let randColor = colors[Math.floor(Math.random() * colors.length)]
+
+	let randCompliment =
+		compliments[Math.floor(Math.random() * compliments.length)]
+
+	res.render("index", {
+		name: name,
+		randCompliment: randCompliment,
+		randColor: randColor
+	})
+})
+
+router.post("/:name?", (req, res) => {
+	compliments.push(req.body.compliment)
+
 	let colors = ["#FFBF00", "#0080FF", "#01DF3A", "#FF0080"]
 
-	var randColor = myArray[Math.floor(Math.random() * myArray.length)]
+	let randColor = colors[Math.floor(Math.random() * colors.length)]
 
-	var randComplimetn = myArray[Math.floor(Math.random() * myArray.length)]
+	let randCompliment =
+		compliments[Math.floor(Math.random() * compliments.length)]
 
-	let bottles = req.params.num || 99
-	let next = bottles - 1
+	let name = req.params.name
 
-	res.render("bottles/index", {
-		bottles: bottles,
-		next: next
+	res.render("index", {
+		name: name,
+		randCompliment: randCompliment,
+		randColor: randColor
 	})
 })
 
