@@ -44,10 +44,10 @@ app.get('/:name?', (req, res) => {
 		color: color
 	})
 })
-// app.post('/', (req, res) => {
-// 	// res.send('hello' + req.params.name)
-// 	// console.log(req.body)
-// })
+app.post('/', (req, res) => {
+	compliments.push(req.body.anotherCompliment), res.redirect('/')
+})
+
 app.listen(3000, () => {
 	console.log('app listening on port 3000')
 })
