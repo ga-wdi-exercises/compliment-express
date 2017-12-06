@@ -15,6 +15,12 @@ router.get('/', (req, res) => {
     })
 })
 
+router.post("/", (req, res) => {
+  Compliment.create(req.body.compliment)
+  .then(function (compliment){
+    res.redirect("/compliments")
+  })
+})
 
 
 module.exports = router
