@@ -1,0 +1,13 @@
+<div class="compliment">
+  <h1>Hi {{name}}</h1>
+  <h1 class="font">{{compliment.body}}</h1>
+  <h3>Create Compliment:</h3>
+  <form action="/compliments" method="post">
+    <input type="text" name="compliment[body]" placeholder="Compliment">
+    <button type="submit">Submit</button>
+  </form>
+
+  <form action="/compliments/:name" method="post">
+
+  </form>
+</div>
