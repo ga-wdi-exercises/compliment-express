@@ -1,0 +1,14 @@
+<main>
+  {{#if name}}
+    <h1>Hey {{ name }}! {{ compliment }}</h1>
+  {{else}}
+    <h1>{{ compliment }}</h1>
+  {{/if}}
+
+  <a href="/{{ name }}">another</a>
+
+  <form action="/{{ name }}" method="post">
+    <input type="text" name="new_compliment" placeholder="Enter a compliment">
+    <input type="submit">
+  </form>
+</main>
