@@ -41,7 +41,8 @@ app.get('/:name?', (req, res) => {
 	let color = colors[Math.floor(Math.random() * colors.length)]
 	res.render('index', {
 		compliment: compliment,
-		color: color
+		color: color,
+		name: req.params.name
 	})
 })
 app.post('/', (req, res) => {
