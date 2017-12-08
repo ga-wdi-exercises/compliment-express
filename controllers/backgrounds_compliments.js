@@ -28,20 +28,21 @@ router.get("/:name?", (req, res) => {
 router.post("/:name?", (req, res) => {
 	compliments.push(req.body.compliment)
 
-	let colors = ["#FFBF00", "#0080FF", "#01DF3A", "#FF0080"]
-
-	let randColor = colors[Math.floor(Math.random() * colors.length)]
-
-	let randCompliment =
-		compliments[Math.floor(Math.random() * compliments.length)]
-
-	let name = req.params.name
-
-	res.render("index", {
-		name: name,
-		randCompliment: randCompliment,
-		randColor: randColor
-	})
+	res.redirect("back")
+	// let colors = ["#FFBF00", "#0080FF", "#01DF3A", "#FF0080"]
+	//
+	// let randColor = colors[Math.floor(Math.random() * colors.length)]
+	//
+	// let randCompliment =
+	// 	compliments[Math.floor(Math.random() * compliments.length)]
+	//
+	// let name = req.params.name
+	//
+	// res.render("index", {
+	// 	name: name,
+	// 	randCompliment: randCompliment,
+	// 	randColor: randColor
+	// })
 })
 
 module.exports = router
