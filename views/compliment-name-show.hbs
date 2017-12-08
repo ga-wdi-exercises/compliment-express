@@ -1,0 +1,12 @@
+<h1>Hey {{name}}! Looks like you need a compliment!</h1>
+<h1>{{compliment.body}}</h1>
+
+<h2>Compliment yourself!</h2>
+<form action="/compliments" method="post">
+  <input type="text" name="compliment[body]" placeholder="The compliment!">
+  <input type="submit">
+</form>
+
+<form action="/compliments/:name" method="post">
+
+</form>
