@@ -1,0 +1,10 @@
+<h1>Emergency Compliment</h1>
+<h2>Greetings! {{ name }}</h2>
+<div> {{ randCompliment }} </div>
+
+
+<form action="/{{ name }}" method="post">
+  <label for="compliment">Please enter your compliment</label>
+  <input type="text" name="compliment" placeholder="enter your compliment">
+  <input type="submit">
+</form>
