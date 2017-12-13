@@ -17,10 +17,10 @@ compliments = [
 
 colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
-var randComp = getRandomElement(compliments)
-var randColor = getRandomElement(colors)
 
 app.get('/', (request, response) => {
+  var randComp = getRandomElement(compliments)
+  var randColor = getRandomElement(colors)
   response.render("index", {
     // random compliment
     randComp,
