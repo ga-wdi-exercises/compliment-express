@@ -26,14 +26,15 @@ function generateRandom() {
 
 // root route
 app.get("/", function(req, res) {
-    generateRandom();
-    res.render("welcome");
+    // generateRandom();
+    var test = 'TEST';
+    res.render("welcome", {test: test});
 })
 
 // personalized route
 app.get("/:name", function(req, res) {
-    var name = req.params.name
-    res.send('Hello ' + name)
+    var name = req.params.name;
+    res.render("customized", {name: name});
 })
 
 // define the applications port
