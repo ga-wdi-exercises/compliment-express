@@ -6,11 +6,18 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// random generator
+function generateRandom() {
+    console.log("RANDOM WORKS");
+}
+
+// root route
 app.get("/", function(req, res) {
-    res.send('HELLO')
+    generateRandom();
+    res.send('HELLO');
 })
 
 // define the applications port
 app.listen(3000, function() {
-    console.log("The app is up and running on port 3000")
+    console.log("The app is up and running on port 3000");
 })
