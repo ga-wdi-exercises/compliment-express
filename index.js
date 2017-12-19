@@ -10,8 +10,7 @@ app.engine('.hbs', hbs({
     partialsDir:    'views/',
     layoutsDir:     'views/',
     defaultLayout:  'layout'
-}))
-  
+})) 
 
 // Serve static content (css, etc) for the app from the “public” directory in the application directory
 app.use(express.static(__dirname + '/public')); 
@@ -29,6 +28,12 @@ function generateRandom() {
 app.get("/", function(req, res) {
     generateRandom();
     res.render("welcome");
+})
+
+// personalized route
+app.get("/:name", function(req, res) {
+    var name = req.params.name
+    res.send('Hello ' + name)
 })
 
 // define the applications port
