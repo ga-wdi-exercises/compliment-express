@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/probstin/compliment-express#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "hbs": "^4.0.1"
   }
 }
