@@ -29,19 +29,36 @@ function generateRandom(arr) {
     return randomVal
 }
 
-// root route passes compliments and colors arrays to generateRandom fxn
+// level 1: generic compliment
 app.get("/", function(req, res) {
     var randomCompliment = generateRandom(compliments)
     var randomColor = generateRandom(colors)
     res.render("welcome", { compliment: randomCompliment, color: randomColor })
 })
 
-// personalized route
+// level 2: personalized compliment
 app.get("/:name", function(req, res) {
     var name = req.params.name
     var randomCompliment = generateRandom(compliments)
     var randomColor = generateRandom(colors)
     res.render("customized", { name: name, compliment: randomCompliment, color: randomColor })
+})
+
+// level 3: user submitted compliments
+// app.get("/create", function(req, res) {
+//     res.render("create")
+// })
+
+// app.post("/create/new", function(req, res) {
+//     compliments.push(req.body.compliment)
+//     res.redirect('/')
+// })
+
+// level 3: user submitted compliments
+app.post("/:name/create", function(req, res) {
+    compliments.push(req.body.compliment)
+    var name = req.params.name
+    res.redirect('/' + name)
 })
 
 // define the applications port
