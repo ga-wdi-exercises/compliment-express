@@ -20,3 +20,12 @@ app.listen(4000, () => {
 app.get("/", (request, response) => {
   response.send("Hello World")
 })
+
+// configure app to use body parser
+// below your other require() statements
+const bodyParser = require("body-parser")
+
+// below require and before any routes
+// tell Express to use bodyParser
+app.use(bodyParser.json()) //handles json post requests
+app.use(bodyParser.urlencoded({ extended: true })) // handles form submissions
