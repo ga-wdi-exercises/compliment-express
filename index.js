@@ -39,7 +39,9 @@ app.get("/", function(req, res) {
 // personalized route
 app.get("/:name", function(req, res) {
     var name = req.params.name
-    res.render("customized", {name: name})
+    var randomCompliment = generateRandom(compliments)
+    var randomColor = generateRandom(colors)
+    res.render("customized", { name: name, compliment: randomCompliment, color: randomColor })
 })
 
 // define the applications port
