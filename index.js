@@ -1,6 +1,6 @@
 const express = require('express')
 const hbs = require('express-handlebars')
-// const parser = require('body-parser')
+const parser = require('body-parser')
 const app = express()
 
 var compliments = [
@@ -26,11 +26,15 @@ app.engine('.hbs', hbs({
     defaultLayout:  'layout'   
 }))
 
-// app.use(bodyParser.json())
-// app.use(bodyParser.urlencoded({ extended: true }))
+app.use(parser.json())
+app.use(parser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-    res.render('welcome')
+    let current_compliment_index = Math.floor(Math.random() * compliments.length)
+    let feelGood = compliments[current_compliment_index]
+    res.render('welcome'), {
+         
+    }
 })
 // Hello Express - app.get('/', (req, res) => {
 //     res.render('welcome', {
