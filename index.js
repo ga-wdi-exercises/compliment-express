@@ -1,7 +1,7 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var hbs = require('express-handlebars');
-var app = express();
+var express = require('express')
+var bodyParser = require('body-parser')
+var hbs = require('express-handlebars')
+var app = express()
 
 // data arrays
 var compliments = ["Your instructors love you", "High five = ^5", "Is it Ruby Tuesday yet?", "It's almost beer o'clock", "The Force is strong with you"]
@@ -17,11 +17,11 @@ app.engine('.hbs', hbs({
 })) 
 
 // Serve static content (css, etc) for the app from the “public” directory in the application directory
-app.use(express.static(__dirname + '/public')); 
+app.use(express.static(__dirname + '/public'))
 
 // establish bodyParser 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 
 // random generator
 function generateRandom(arr) {
@@ -29,21 +29,20 @@ function generateRandom(arr) {
     return randomVal
 }
 
-// root route
+// root route passes compliments and colors arrays to generateRandom fxn
 app.get("/", function(req, res) {
     var randomCompliment = generateRandom(compliments)
     var randomColor = generateRandom(colors)
-    var test = 'TEST';
-    res.render("welcome", { compliment: randomCompliment, color: randomColor });
+    res.render("welcome", { compliment: randomCompliment, color: randomColor })
 })
 
 // personalized route
 app.get("/:name", function(req, res) {
-    var name = req.params.name;
-    res.render("customized", {name: name});
+    var name = req.params.name
+    res.render("customized", {name: name})
 })
 
 // define the applications port
 app.listen(3000, function() {
-    console.log("The app is up and running on port 3000");
+    console.log("The app is up and running on port 3000")
 })
