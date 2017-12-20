@@ -26,7 +26,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 // random generator
 function generateRandom(arr) {
     var randomVal = arr[Math.floor(Math.random() * arr.length)]
-    console.log(randomVal)
     return randomVal
 }
 
