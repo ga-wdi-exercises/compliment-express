@@ -3,6 +3,10 @@ var bodyParser = require('body-parser');
 var hbs = require('express-handlebars');
 var app = express();
 
+// data arrays
+var compliments = ["Your instructors love you", "High five = ^5", "Is it Ruby Tuesday yet?", "It's almost beer o'clock", "The Force is strong with you"]
+var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
+
 // handlebars config
 app.set("view engine", "hbs")
 app.engine('.hbs', hbs({
@@ -20,15 +24,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 // random generator
-function generateRandom() {
-    console.log("RANDOM WORKS");
+function generateRandom(arr) {
+    var randomVal = arr[Math.floor(Math.random() * arr.length)]
+    console.log(randomVal)
 }
 
 // root route
 app.get("/", function(req, res) {
-    // generateRandom();
+    var randomCompliment = generateRandom(compliments)
+    var randomColor = generateRandom(colors)
     var test = 'TEST';
-    res.render("welcome", {test: test});
+    res.render("welcome", { compliment: randomCompliment, color: randomColor });
 })
 
 // personalized route
