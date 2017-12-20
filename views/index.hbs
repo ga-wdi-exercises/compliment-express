@@ -1,1 +1,11 @@
-Hello. {{comp}} 
+<style>
+  body {
+    background: {{color}}
+  }
+</style>
+
+{{#if visitor}}
+  Hey {{visitor}}. {{comp}}
+{{else}}
+  Hello. {{comp}}
+{{/if}}

@@ -1,6 +1,7 @@
 
 const express = require('express')
 const bodyParser = require('body-parser')
+const hbs        = require('hbs')
 const app = express()
 
 app.set('view engine', 'hbs')
@@ -20,17 +21,17 @@ complement = [
   ]
 
 colors = [
-    "#FFBF00", 
+    "#FFBF00",
     "#0080FF",
     "#01DF3A",
-    "#FF0080"]
-
+    "#FF0080"
+  ]
 
 app.get('/', (req, res) => {
   let compIndex = getRandomInt()
   let comp = complement[compIndex]
-  let pageColor = colors[compIndex]
-  res.render('index', {comp, pageColor})
+  let color = colors[compIndex]
+  res.render('index', {comp, color})
 })
 
 function getRandomInt() {
@@ -39,6 +40,13 @@ function getRandomInt() {
     return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
+app.get('/:visitor?', (req, res) => {
+  let compIndex = getRandomInt()
+  let comp = complement[compIndex]  
+  let color = colors[compIndex]
+  let visitor = req.params.visitor
+  res.render('index', {comp, color, visitor})
+})
 
 // app.post('/', (req, res) => {
 //   res.render('index', {
