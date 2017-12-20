@@ -27,6 +27,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 function generateRandom(arr) {
     var randomVal = arr[Math.floor(Math.random() * arr.length)]
     console.log(randomVal)
+    return randomVal
 }
 
 // root route
