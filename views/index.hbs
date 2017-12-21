@@ -1,0 +1,17 @@
+<style>
+  body {
+    background: {{color}}
+  }
+</style>
+
+{{#if visitor}}
+  <h1>Hey {{visitor}}. {{comp}}</h1>
+{{else}}
+  <h1>Hello. {{comp}}</h1>
+{{/if}}
+
+<h2>Add New Compliment</h2>
+<form action="/" method="post">
+  <input type="text" name="newComp" placeholder="compliment">
+  <input type="submit" value="Submit">
+</form>
