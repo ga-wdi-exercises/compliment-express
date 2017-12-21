@@ -20,6 +20,8 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "hbs": "^4.0.1",
+    "method-override": "^2.3.10",
     "reverse-string": "0.0.6"
-  }
+  },
+  "devDependencies": {}
 }
