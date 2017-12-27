@@ -6,10 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="/css/styles.css">
   <title>Emergency Compliment</title>
+  <style>body {background: {{color}};}</style>
 </head>
 <body>
   <div>
-    <h1>{{compliment}}</h1>
+    {{#if name}}
+      <h1>{{name}}, {{compliment}}</h1>
+    {{else}}
+       <h1>{{compliment}}</h1>
+    {{/if}}
   </div>
 </body>
 </html>
