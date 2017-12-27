@@ -1,0 +1,15 @@
+div {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  font-family: 'Courier New', sans-serif;
+  color: rgb(255, 143, 98);
+  font-weight: 700;
+  font-size: 280%;
+  text-decoration:none;
+  text-shadow:0px 1px 8px #000000;
+}
