@@ -9,7 +9,7 @@ var compliments = [
   "It's almost beer o'clock",
   "The Force is strong with you"
 ]
-
+var name = ''
 // Randomizer main object with 2 functions which return random compliments/colors
 var randomizer = {
   randomComp: () => {
@@ -21,6 +21,12 @@ var randomizer = {
     let randomKey = Math.floor(Math.random() * colors.length)
     let randomColor = colors[randomKey]
     return randomColor
+  },
+  setName: (newName) => {
+    name = newName
+  },
+  saveComp: (compliment) => {
+    compliments.push(compliment)
   }
 }
 
