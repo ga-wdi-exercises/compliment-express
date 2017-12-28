@@ -1,0 +1,10 @@
+body {
+    background-color: dodgerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    margin-bottom: 50px;
+}

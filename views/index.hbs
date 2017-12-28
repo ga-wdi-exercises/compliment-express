@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Random Compliment</title>
-    </head>
-
-    <body>
-        {{body}}
-    </body>
-
-</html>
+<div>
+    {{#if name}}
+    <h3>{{name}}'s emergency compliment</h3>
+    {{else}}
+    <h3>emergency compliment</h3>
+    {{/if}}
+</div>
+<h1>{{compliment}}</h1>
+<div class="buttons">
+    <a href="#">Thanks!</a>
+    <a href="#">meh.</a>
+</div>
