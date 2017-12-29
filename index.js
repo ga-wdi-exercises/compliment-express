@@ -22,7 +22,7 @@ app.set('view engine', 'hbs')
 app.engine('.hbs', hbs({
     extname:        '.hbs',
     partialsDir:    'views/',
-    layoutsDir:        'views/',
+    layoutsDir:     'views/',
     defaultLayout:  'layout'   
 }))
 
@@ -30,11 +30,9 @@ app.use(parser.json())
 app.use(parser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
-    let current_compliment_index = Math.floor(Math.random() * compliments.length)
-    let feelGood = compliments[current_compliment_index]
-    res.render('welcome'), {
-         
-    }
+    let comp = compliments[Math.floor(Math.random()*compliments.length)]
+    let ranColor = colors[Math.floor(Math.random()*colors.length)]
+    res.render('index', {comp, ranColor})
 })
 // Hello Express - app.get('/', (req, res) => {
 //     res.render('welcome', {
