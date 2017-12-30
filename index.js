@@ -1,6 +1,6 @@
 const express = require("express")
 const app = express()
-const hbs = require("express-handlebars")
+const hbs = require("hbs")
 const bodyParser = require("body-parser")
 
 app.set("view engine", "hbs")
@@ -15,17 +15,30 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 /////////////
 
-app.get("/:name", (req, res) => {
-    res.send(`hello ${req.params.name}`)
+app.get("/", (req, res) => {
+    res.send("fizz buzz")
 })
 
-app.get("/", (req, res) => {
-    res.send("")
+app.get("/:complimentNum?", (req, res) => {
+    let complimentsArr = [
+        "Your instructors love you",
+        "High five = ^5",
+        "Is it Ruby Tuesday yet?",
+        "It's almost beer o'clock",
+        "The Force is strong with you"
+      ]
+    let compliment = req.params.complimentNum || complimentsArr[(Math.floor(Math.random() * 4))]
+    if (compliment + 1 <= complimentsArr.length - 1) {
+        let next = compliment + 1
+    } else {
+        let next = complimentsArr[0]
+    }
+    res.send(`<h1>Compliment Express</h1>` + compliment)
 })
 
 ////////////
 
 app.listen(4000, () => {
-    console.log("listening on port 4002")
+    console.log("listening on port 4000")
 })
 
