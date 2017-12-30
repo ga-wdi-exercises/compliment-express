@@ -34,10 +34,6 @@ app.get('/', (req, res) => {
     let ranColor = colors[Math.floor(Math.random()*colors.length)]
     res.render('index', {comp, ranColor})
 })
-
-app.get('/', (req, res) => {
-    res.render('layout', {ranColor})
-})
 // Hello Express - app.get('/', (req, res) => {
 //     res.render('welcome', {
 //         player_name: req.body.player_name,
