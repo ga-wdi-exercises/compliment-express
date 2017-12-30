@@ -16,7 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 /////////////
 
 app.get("/", (req, res) => {
-    res.send("fizz buzz")
+    // double check - math in or outside quotes:
+    res.redirect('/' + (Math.floor(Math.random() * 4)))
 })
 
 app.get("/:complimentNum?", (req, res) => {
@@ -27,9 +28,9 @@ app.get("/:complimentNum?", (req, res) => {
         "It's almost beer o'clock",
         "The Force is strong with you"
       ]
-    let compliment = req.params.complimentNum || complimentsArr[(Math.floor(Math.random() * 4))]
-    if (compliment + 1 <= complimentsArr.length - 1) {
-        let next = compliment + 1
+    let compliment = complimentsArr[req.params.complimentNum] || complimentsArr[(Math.floor(Math.random() * 4))]
+    if (complimentsArr[req.params.complimentNum + 1] <= complimentsArr.length - 1) {
+        let next = complimentsArr[req.params.complimentNum + 1]
     } else {
         let next = complimentsArr[0]
     }
