@@ -1,9 +1,25 @@
 <!doctype html>
-<html>
-  <head>
-    <title>Compliment Express</title>
-  </head>
-  <body>
-   {{{index.hbs}}}
-  </body>
+    <html>
+        <head>
+            <title>
+                {{#if title}}
+                    {{title}}
+                {{else}}
+                    Compliment Express
+                {{/if}}
+            </title>
+            <link rel="stylesheets" href="main.css">
+        
+        </head>
+        <body>
+          <h1>
+            Compliment Express
+          </h1>
+          {{{body}}}
+
+          {{#> scripts-block}}
+
+          {{/scripts-block}}
+        </body>
 </html>
+

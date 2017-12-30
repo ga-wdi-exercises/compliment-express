@@ -29,12 +29,17 @@ app.get("/:complimentNum?", (req, res) => {
         "The Force is strong with you"
       ]
     let compliment = complimentsArr[req.params.complimentNum] || complimentsArr[(Math.floor(Math.random() * 4))]
+    // * not working:
+    let next
     if (complimentsArr[req.params.complimentNum + 1] <= complimentsArr.length - 1) {
         let next = complimentsArr[req.params.complimentNum + 1]
     } else {
         let next = complimentsArr[0]
     }
-    res.send(`<h1>Compliment Express</h1>` + compliment)
+    // res.send(`<h1>Compliment Express</h1>` + compliment)
+
+    // next is not defined?
+    res.render('index', {compliment: compliment, next: next})
 })
 
 ////////////
