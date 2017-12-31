@@ -12,7 +12,7 @@ function randomize (min, max) {
     var random = (Math.floor(Math.random() * compliments.length))
     var body = document.body
     body.style.background = colors[random]
-    document.getElementsByTagName('h1')[0].innerText = compliments[random]
+    document.getElementsByTagName('h2')[0].innerText = compliments[random]
 }
 
 randomize(0, 4)

@@ -1,4 +1,14 @@
-h1 {
+body {
+    text-align: center;
+}
+/* h1 {
     text-align: center;
     vertical-align: center;
 }
+h2 {
+    text-align: center;
+    vertical-align: center;
+}
+.new-compliment {
+    margin: 0 auto;
+} */

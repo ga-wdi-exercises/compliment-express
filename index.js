@@ -1,8 +1,12 @@
 const express = require('express')
 const app = express()
+const parser = require('body-parser')
 
 app.use('/assets/', express.static('public'))
 app.set('view engine', 'hbs')
+
+app.use(parser.json())
+app.use(parser.urlencoded({ extended: true }))
 
 let compliments = [
     "Your instructors love you",
@@ -17,10 +21,17 @@ app.get('/', (req, res) => {
 })
 
 app.get('/:name', (req, res) => {
-    res.render('compliment-index')
     let name = req.params.name
-    let greeting = `Hi ${name}`
+    res.render('compliment-index', { name })
+    // let greeting = `Hi ${name}`
     // res.send(`${greeting} ${randomCompliement}`)
+})
+
+app.post('/', (req, res) => {
+    res.render('compliment-index', {
+        name: req.body.compliment,
+
+    })
 })
 
 // app.get('/:name', (req, res) => {
