@@ -29,11 +29,16 @@ app.engine('.hbs', hbs({
 app.use(parser.json())
 app.use(parser.urlencoded({ extended: true }))
 
-app.get('/', (req, res) => {
+app.get('/:name', (req, res) => {
     let comp = compliments[Math.floor(Math.random()*compliments.length)]
     let ranColor = colors[Math.floor(Math.random()*colors.length)]
-    res.render('index', {comp, ranColor})
+    let name = req.params.name
+    res.render('index', {name, comp, ranColor})
 })
+
+// app.get('/:name', (req, res) => {
+    // res.send(`Hello ${req.params.name}`)
+// })
 // Hello Express - app.get('/', (req, res) => {
 //     res.render('welcome', {
 //         player_name: req.body.player_name,
