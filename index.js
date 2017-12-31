@@ -42,11 +42,11 @@ app.get("/:name", (req, res)=> {
 
 // Create New Compliment: 
 
-app.post("/", (req, res) => {
-    let name = req.params.name
-    compliments.push(req.body.name)
-    res.redirect("/")
-})
+// app.post("/", (req, res) => {
+//     let name = req.params.name
+//     compliments.push(req.body.name)
+//     res.redirect("/")
+// })
 
 
 app.listen(4000, () => {
