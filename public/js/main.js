@@ -2,7 +2,7 @@ colors = ["#FFBF00", "#0080FF", "#01DF3A", "#FF0080", "rgb(212, 8, 69)", "rgb(16
 
 // random color function:
 var randomColor = function () {
-    return colors[Math.floor(Math.random() * colors.length - 1)]
+    return colors[Math.floor(Math.random() * colors.length)]
 
 }
 // var body = document.getElementsByTagName('body')

@@ -3,27 +3,13 @@ const app = express()
 const hbs = require("hbs")
 const bodyParser = require("body-parser")
 // ** require models(colors, compliments):
-// * move compliments array to module in 'models' directory:
-const complimentsArray = 
-[
-    "Your instructors love you",
-    "High five = ^5",
-    "Is it Ruby Tuesday yet?",
-    "It's almost beer o'clock",
-    "The Force is strong with you",
-    "Even if you were cloned, you'd still be one of a kind. And the better looking one.",
-    "Your smile is proof that the best things in life are free.",
-    "You're smarter than Google and Mary Poppins combined.",
-    "You inspire me and most likely strangers. Also, friends and stalkers. You are the inspiration to many.",
-    "Are you a beaver, because damn.",
-    "Aside from food, you're my favorite."
-]
+const compliments = require('./models/compliments')
 
 
 // function to generate random compliment:
 function randomCompliment() {
 
-return complimentsArray[Math.floor(Math.random() * (complimentsArray.length - 1))]
+return compliments[Math.floor(Math.random() * (compliments.length - 1))]
 }
 
 app.set("view engine", "hbs")
@@ -56,9 +42,12 @@ app.get("/:name", (req, res)=> {
 
 // Create New Compliment: 
 
+app.post("/", (req, res) => {
+    let name = req.params.name
+    compliments.push(req.body.name)
+    res.redirect("/")
+})
 
-
-////////////
 
 app.listen(4000, () => {
     console.log("listening on port 4000")
