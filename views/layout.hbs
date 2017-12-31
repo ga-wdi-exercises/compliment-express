@@ -2,24 +2,18 @@
     <html>
         <head>
             <title>
-                {{#if title}}
-                    {{title}}
-                {{else}}
                     Compliment Express
-                {{/if}}
             </title>
-            <link rel="stylesheets" href="main.css">
+              <link rel="stylesheet" type="text/css" href="/css/main.css" />
+
         
         </head>
         <body>
-          <h1>
+          <h2>
             Compliment Express
-          </h1>
+          </h2>
           {{{body}}}
-
-          {{#> scripts-block}}
-
-          {{/scripts-block}}
+          <script src="/js/main.js"></script>
         </body>
 </html>
 

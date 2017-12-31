@@ -20,5 +20,8 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "hbs": "^4.0.1"
+  },
+  "devDependencies": {
+    "handlebars-helper-asset": "^0.1.0"
   }
 }
