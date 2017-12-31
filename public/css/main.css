@@ -3,39 +3,46 @@ body {
     padding: 0;
     margin: 0 auto;
     color: white;
-    font-family: 'Tahoma', sans-serif;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 1px;
 }
 h1 {
+    font-size: 42px;
     color: white;
-    height: 50px;
-    width: 400px;
+    height: auto;
     margin: 0 auto;
-    padding: 130px 10px;
-    
+    padding: 50px 10px;
+    font-weight: 600;
 }
 h2 {
-    font-size: 18px;
+    margin: 20px;
+    font-size: 22px;
     text-align: left;
 }
 h2 span {
     text-align: right;
 }
+h3{
+    font-size: 30px;
+    padding: 0;
+    margin: 100px auto 0;
+}
 a {
+    padding: 0;
+    margin: 0 auto;
     font-size: 22px;
     text-decoration: none;
     color: white;
-    font-weight: 600;   
-    
+    font-weight: 600;
 }
 button {
+    padding: 0;
+    margin: 10px;
     font-size: 30;
     border: 3px solid white;
     height: 80px;
     width: 200px;
     margin: 20px;
     background-color: transparent;
-    
-    
-    color: rgb(99, 9, 102);
 }
-/* "rgb(212, 8, 69)", "rgb(164, 73, 250)", "rgb(16, 167, 255)", "rgb(16, 72, 255)", "rgb(37, 255, 226)", "rgb(3, 209, 216)", "rgb(1, 219, 110)", "rgb(5, 231, 17)", "rgb(144, 231, 5)", "rgb(255, 178, 10)", "rgb(255, 128, 10)", "rgb(243, 56, 9)", "rgb(150, 0, 137)", "rgb(99, 9, 102)" */
+

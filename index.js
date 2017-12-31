@@ -2,6 +2,29 @@ const express = require("express")
 const app = express()
 const hbs = require("hbs")
 const bodyParser = require("body-parser")
+// ** require models(colors, compliments):
+// * move compliments array to module in 'models' directory:
+const complimentsArray = 
+[
+    "Your instructors love you",
+    "High five = ^5",
+    "Is it Ruby Tuesday yet?",
+    "It's almost beer o'clock",
+    "The Force is strong with you",
+    "Even if you were cloned, you'd still be one of a kind. And the better looking one.",
+    "Your smile is proof that the best things in life are free.",
+    "You're smarter than Google and Mary Poppins combined.",
+    "You inspire me and most likely strangers. Also, friends and stalkers. You are the inspiration to many.",
+    "Are you a beaver, because damn.",
+    "Aside from food, you're my favorite."
+]
+
+
+// function to generate random compliment:
+function randomCompliment() {
+
+return complimentsArray[Math.floor(Math.random() * (complimentsArray.length - 1))]
+}
 
 app.set("view engine", "hbs")
 
@@ -16,42 +39,19 @@ app.use(bodyParser.urlencoded({ extended: true }))
 /////////////
 
 app.get("/", (req, res) => {
-    // double check - math in or outside quotes:
-    res.redirect('/' + (Math.floor(Math.random() * 11)))
+    let compliment = randomCompliment()
+    console.log(compliment)
+    let next = '/'
+    res.render('index', {compliment: compliment, next: next})
 })
 
-        // app.get('/css/main.css', function(req, res){
-        //     res.send('css/main.css')
-        //     res.end()
-        // })
+// customize to user: 
 
-app.get("/:complimentNum?", (req, res) => {
-    let complimentsArr = [
-        "Your instructors love you",
-        "High five = ^5",
-        "Is it Ruby Tuesday yet?",
-        "It's almost beer o'clock",
-        "The Force is strong with you",
-        "Even if you were cloned, you'd still be one of a kind. And the better looking one.",
-        "Your smile is proof that the best things in life are free.",
-        "You're smarter than Google and Mary Poppins combined.",
-        "You inspire me and most likely strangers. Also, friends and stalkers. You are the inspiration to many.",
-        "Are you a beaver, because damn.",
-        "Aside from food, you're my favorite."
-      ]
-    let compliment = complimentsArr[req.params.complimentNum] || complimentsArr[(Math.floor(Math.random() * 11))]
-    // * not working:
-    // if (complimentsArr[req.params.complimentNum + 1] <= complimentsArr.length - 1) {
-    //     let next = complimentsArr[req.params.complimentNum + 1]
-    // } else {
-    //     let next = complimentsArr[0]
-    // }
-    // // * replaced with: 
-    let next = (Math.floor(Math.random() * 11))
-    // res.send(`<h1>Compliment Express</h1>` + compliment)
-
-    // next is not defined?
-    res.render('index', {compliment: compliment, next: next})
+app.get("/:name", (req, res)=> {
+    let name = req.params.name
+    let compliment = randomCompliment()
+    let next = '/' + req.params.name
+    res.render('index', {name: name, compliment: compliment, next: next})
 })
 
 ////////////
