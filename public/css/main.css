@@ -2,29 +2,40 @@ body {
     text-align: center;
     padding: 0;
     margin: 0 auto;
-    color: darkslateblue;
+    color: white;
+    font-family: 'Tahoma', sans-serif;
 }
 h1 {
     color: white;
-    background-color: grey;
     height: 50px;
     width: 400px;
     margin: 0 auto;
     padding: 130px 10px;
+    
 }
 h2 {
-    border: 2px solid rgb(65, 40, 8);
-    background-color: thistle;
+    font-size: 18px;
+    text-align: left;
+}
+h2 span {
+    text-align: right;
 }
 a {
     font-size: 22px;
     text-decoration: none;
+    color: white;
+    font-weight: 600;   
     
 }
 button {
     font-size: 30;
-    border: 2px solid rgb(65, 40, 8);
-    background-color: thistle;
-    height: 100px;
-    width: 300px;
+    border: 3px solid white;
+    height: 80px;
+    width: 200px;
+    margin: 20px;
+    background-color: transparent;
+    
+    
+    color: rgb(99, 9, 102);
 }
+/* "rgb(212, 8, 69)", "rgb(164, 73, 250)", "rgb(16, 167, 255)", "rgb(16, 72, 255)", "rgb(37, 255, 226)", "rgb(3, 209, 216)", "rgb(1, 219, 110)", "rgb(5, 231, 17)", "rgb(144, 231, 5)", "rgb(255, 178, 10)", "rgb(255, 128, 10)", "rgb(243, 56, 9)", "rgb(150, 0, 137)", "rgb(99, 9, 102)" */
