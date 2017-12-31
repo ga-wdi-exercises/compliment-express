@@ -34,8 +34,10 @@ a {
     text-decoration: none;
     color: white;
     font-weight: 600;
+    height: 80px;
+    width: 200px;
 }
-button {
+button, input {
     padding: 0;
     margin: 10px;
     font-size: 30;
@@ -45,4 +47,18 @@ button {
     margin: 20px;
     background-color: transparent;
 }
-
+input {
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+.input{
+    padding: 0 10px;
+    margin: 0;
+    width: 60%;
+    height: 74px;
+}
+.formH2 {
+    margin: 100px 20px 20px;
+}
