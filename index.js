@@ -30,12 +30,13 @@ app.get("/:complimentNum?", (req, res) => {
       ]
     let compliment = complimentsArr[req.params.complimentNum] || complimentsArr[(Math.floor(Math.random() * 4))]
     // * not working:
-    let next
-    if (complimentsArr[req.params.complimentNum + 1] <= complimentsArr.length - 1) {
-        let next = complimentsArr[req.params.complimentNum + 1]
-    } else {
-        let next = complimentsArr[0]
-    }
+    // if (complimentsArr[req.params.complimentNum + 1] <= complimentsArr.length - 1) {
+    //     let next = complimentsArr[req.params.complimentNum + 1]
+    // } else {
+    //     let next = complimentsArr[0]
+    // }
+    // // * replaced with: 
+    let next = (Math.floor(Math.random() * 4))
     // res.send(`<h1>Compliment Express</h1>` + compliment)
 
     // next is not defined?
