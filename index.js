@@ -1,6 +1,10 @@
 const express = require('express')
 const app = express()
 
+const parser = require('body-parser')
+
+app.use(parser.urlencoded({extended: true}))
+
 var compliments = [
   'Your instructors love you',
   'High five = ^5',
@@ -36,6 +40,11 @@ app.get('/:name?', (req, res) => {
   var randColor = colors[colorIndex]
   res.render('index', {randCompliment, randColor, name})
 })
+
+app.post('/', (req, res) => {
+   compliments.push(req.body.newCompliment)
+})
+
 app.listen(5000, () => {
   console.log('listening on port 5000')
 })
