@@ -1,0 +1,64 @@
+body {
+    text-align: center;
+    padding: 0;
+    margin: 0 auto;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 1px;
+}
+h1 {
+    font-size: 42px;
+    color: white;
+    height: auto;
+    margin: 0 auto;
+    padding: 50px 10px;
+    font-weight: 600;
+}
+h2 {
+    margin: 20px;
+    font-size: 22px;
+    text-align: left;
+}
+h2 span {
+    text-align: right;
+}
+h3{
+    font-size: 30px;
+    padding: 0;
+    margin: 100px auto 0;
+}
+a {
+    padding: 0;
+    margin: 0 auto;
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    height: 80px;
+    width: 200px;
+}
+button, input {
+    padding: 0;
+    margin: 10px;
+    font-size: 30;
+    border: 3px solid white;
+    height: 80px;
+    width: 200px;
+    margin: 20px;
+    background-color: transparent;
+}
+input {
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+.input{
+    padding: 0 10px;
+    margin: 0;
+    width: 60%;
+    height: 74px;
+}
+.formH2 {
+    margin: 100px 20px 20px;
+}
