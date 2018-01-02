@@ -14,7 +14,7 @@ var compliments = [
 var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
 
 app.listen(4000, () => {
-    console.log('app listening')
+    console.log('app listening on 4000')
 })
 
 app.set('view engine', 'hbs')
@@ -29,11 +29,24 @@ app.engine('.hbs', hbs({
 app.use(parser.json())
 app.use(parser.urlencoded({ extended: true }))
 
+app.get('/', (req, res) => {
+    let comp = compliments[Math.floor(Math.random()*compliments.length)]
+    let ranColor = colors[Math.floor(Math.random()*colors.length)]
+    res.render('index', {comp, ranColor})
+})
+
 app.get('/:name', (req, res) => {
     let comp = compliments[Math.floor(Math.random()*compliments.length)]
     let ranColor = colors[Math.floor(Math.random()*colors.length)]
     let name = req.params.name
     res.render('index', {name, comp, ranColor})
+})
+
+app.post('/:name', (req, res) => {
+    compliments.create(req.body.compliments)
+    res.render('index', {
+        new_comp: req.body.new_comp
+    })
 })
 
 // app.get('/:name', (req, res) => {

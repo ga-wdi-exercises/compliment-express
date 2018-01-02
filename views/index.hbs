@@ -1,6 +1,16 @@
-<h1>Hello {{name}}, {{comp}}</h1>
+<h1>Hello {{name}} {{comp}}</h1>
+
 <style>
     body{
         background-color: {{ranColor}};
         }
 </style>
+
+<form action="/" method="post">
+  <label for="new_comp">Please enter your own compliment:</label>
+  <input id="new_comp" type="text" name="player_name">
+  <input type="submit">
+  {{#if player_name}}
+  Hey {{player_name}}, there are {{bottles}} left on the wall.
+  {{/if}}
+</form>
