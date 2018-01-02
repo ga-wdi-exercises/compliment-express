@@ -27,6 +27,15 @@ app.get('/', (req, res) => {
   res.render('index', {randCompliment, randColor})
 })
 
+app.get('/:name?', (req, res) => {
+  var index = Math.floor(Math.random() * 11)
+  var colorIndex = Math.floor(Math.random() * 8)
+  var name = req.params.name
+
+  var randCompliment = compliments[index]
+  var randColor = colors[colorIndex]
+  res.render('index', {randCompliment, randColor, name})
+})
 app.listen(5000, () => {
   console.log('listening on port 5000')
 })
