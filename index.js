@@ -23,6 +23,10 @@ var colors = ['#FFBF00', '#0080FF', '#01DF3A', '#FF0080', '#008000', '#ffe4c4', 
 
 app.set('view engine', 'hbs')
 
+app.post('/', (req, res) => {
+  compliments.push(req.body.newCompliment)
+})
+
 app.get('/', (req, res) => {
   var index = Math.floor(Math.random() * 11)
   var colorIndex = Math.floor(Math.random() * 8)
@@ -39,10 +43,6 @@ app.get('/:name?', (req, res) => {
   var randCompliment = compliments[index]
   var randColor = colors[colorIndex]
   res.render('index', {randCompliment, randColor, name})
-})
-
-app.post('/', (req, res) => {
-   compliments.push(req.body.newCompliment)
 })
 
 app.listen(5000, () => {
