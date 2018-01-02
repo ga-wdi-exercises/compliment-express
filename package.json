@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Chris-L-Tran/compliment-express/issues"
   },
-  "homepage": "https://github.com/Chris-L-Tran/compliment-express#readme"
+  "homepage": "https://github.com/Chris-L-Tran/compliment-express#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "hbs": "^4.0.1"
+  }
 }
