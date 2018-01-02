@@ -12,7 +12,8 @@ var compliments = [
 app.set('view engine', 'hbs')
 
 app.get('/', (req, res) => {
-  var randCompliment = compliments[1]
+  var index = Math.floor(Math.random() * 5)
+  var randCompliment = compliments[index]
   res.render('index', {randCompliment})
 })
 
