@@ -1,0 +1,13 @@
+<style>
+    body { background-color: {{color}} }
+</style>
+
+<h1>Hey {{name}}!</h1>
+
+<h2>{{compliment}}</h2>
+
+<form action="/{{name}}/create" method="post">
+    <input type="text" name="compliment" placeholder="Enter your comment here..."/>
+    <button type="submit">Create</button>
+</form>
+ 
