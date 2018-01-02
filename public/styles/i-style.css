@@ -1,6 +1,7 @@
 body {
     background-color: dodgerblue;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }

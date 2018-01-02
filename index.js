@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/:name', (req, res) => {
-    res.render('index', { name: name })
+    res.render('index', { name: req.params.name })
 })
 
 //every time page is reloaded or maybe when the compliment refreshes, change the background color
