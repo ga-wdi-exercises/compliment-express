@@ -1,0 +1,22 @@
+Welcome to Chris' Emergency Compliment <br />
+
+{{#if name}}
+  Hello {{name}} <br />
+  {{randCompliment}} <br />
+  <a href='/{{name}}'>Thanks</a>
+  <style>
+  body {background-color: {{randColor}};}
+</style>
+{{else}}
+  {{randCompliment}} <br />
+  <a href='/'>Thanks</a>
+  <style>
+  body {background-color: {{randColor}};}
+  </style>
+{{/if}} <br />
+
+Would you like to add a compliment<br />
+<form action='/' method='post'>
+  <input type='text' name='newCompliment' placeholder='Compliment'>
+  <input type='submit' value='add'>
+</form>
