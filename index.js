@@ -15,13 +15,13 @@ var compliments = [
   'You are freakishly good at thumb wars'
 ]
 
-var colors = ['#FFBF00', '#0080FF', '#01DF3A', '#FF0080']
+var colors = ['#FFBF00', '#0080FF', '#01DF3A', '#FF0080', '#008000', '#ffe4c4', '#dcdcdc', '#e6e6fa']
 
 app.set('view engine', 'hbs')
 
 app.get('/', (req, res) => {
   var index = Math.floor(Math.random() * 11)
-  var colorIndex = Math.floor(Math.random() * 4)
+  var colorIndex = Math.floor(Math.random() * 8)
   var randCompliment = compliments[index]
   var randColor = colors[colorIndex]
   res.render('index', {randCompliment, randColor})
