@@ -1,9 +1,16 @@
 Welcome to Chris' Emergency Compliment <br />
 
-Hello {{name}} <br />
-
-{{randCompliment}} <br />
-<a href='/'>Thanks</a>
-<style>
-body {background-color: {{randColor}};}
+{{#if name}}
+  Hello {{name}} <br />
+  {{randCompliment}} <br />
+  <a href='/{{name}}'>Thanks</a>
+  <style>
+  body {background-color: {{randColor}};}
 </style>
+{{else}}
+  {{randCompliment}} <br />
+  <a href='/'>Thanks</a>
+  <style>
+  body {background-color: {{randColor}};}
+  </style>
+{{/if}}
