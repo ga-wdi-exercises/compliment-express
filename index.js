@@ -5,6 +5,9 @@ const parser = require('body-parser')
 
 app.use(parser.urlencoded({extended: true}))
 
+var numCompliments = 11;
+var numColors = 8;
+
 var compliments = [
   'Your instructors love you',
   'High five = ^5',
@@ -25,19 +28,26 @@ app.set('view engine', 'hbs')
 
 app.post('/', (req, res) => {
   compliments.push(req.body.newCompliment)
+  numCompliments++
+
+  var index = Math.floor(Math.random() * numCompliments)
+  var colorIndex = Math.floor(Math.random() * numColors)
+  var randCompliment = compliments[index]
+  var randColor = colors[colorIndex]
+  res.render('index', {randCompliment, randColor})
 })
 
 app.get('/', (req, res) => {
-  var index = Math.floor(Math.random() * 11)
-  var colorIndex = Math.floor(Math.random() * 8)
+  var index = Math.floor(Math.random() * numCompliments)
+  var colorIndex = Math.floor(Math.random() * numColors)
   var randCompliment = compliments[index]
   var randColor = colors[colorIndex]
   res.render('index', {randCompliment, randColor})
 })
 
 app.get('/:name?', (req, res) => {
-  var index = Math.floor(Math.random() * 11)
-  var colorIndex = Math.floor(Math.random() * 8)
+  var index = Math.floor(Math.random() * numCompliments)
+  var colorIndex = Math.floor(Math.random() * numColors)
   var name = req.params.name
 
   var randCompliment = compliments[index]
