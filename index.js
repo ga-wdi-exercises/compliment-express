@@ -14,12 +14,13 @@ const randomNumber = function () {
 
 const colors = ['red', 'blue', 'green', 'gold', 'lime']
 
-const displayCompliment = compliments[randomNumber()]
-const displayColor = colors[randomNumber()]
-
 app.get('/', (req, res) => {
-  res.send(`${compliments[randomNumber()]} <body style=background-color:${colors[randomNumber()]}></body>`)
+  res.send(`Hello! ${compliments[randomNumber()]} <body style=background-color:${colors[randomNumber()]}></body>`)
 })
+
+app.get('/:name', (req, res) => {
+    res.send(`Hello ${req.params.name}! ${compliments[randomNumber()]} <body style=background-color:${colors[randomNumber()]}></body>`)
+  })
 
 app.listen('4000', () => {
   console.log('listening on port 4000')
