@@ -1,6 +1,12 @@
 const express = require('express')
 const app = express()
 
+const bodyParser = require("body-parser")
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
+
+app.set('view engine', 'hbs')
+
 const compliments = [
   'Your instructors love you',
   'High five = ^5',
@@ -15,12 +21,19 @@ const randomNumber = function () {
 const colors = ['red', 'blue', 'green', 'gold', 'lime']
 
 app.get('/', (req, res) => {
-  res.send(`Hello! ${compliments[randomNumber()]} <body style=background-color:${colors[randomNumber()]}></body>`)
+  res.render('welcome')
 })
 
 app.get('/:name', (req, res) => {
     res.send(`Hello ${req.params.name}! ${compliments[randomNumber()]} <body style=background-color:${colors[randomNumber()]}></body>`)
   })
+
+app.post('/', (req, res) => {
+  res.render('index', {
+    user_compliment: req.body.user_compliment
+  })
+  compliments.push(req.body.user_compliment)
+})
 
 app.listen('4000', () => {
   console.log('listening on port 4000')
