@@ -19,9 +19,13 @@ const randomNumber = function () {
 }
 
 const colors = ['red', 'blue', 'green', 'gold', 'lime']
+const background = `background-color:${colors[randomNumber()]}`
 
 app.get('/', (req, res) => {
-  res.render('welcome')
+  res.render('welcome', {
+    compliment: compliments[randomNumber()],
+    background: background
+  })
 })
 
 app.get('/:name', (req, res) => {
